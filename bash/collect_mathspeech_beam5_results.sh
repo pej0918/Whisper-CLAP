@@ -4,12 +4,12 @@ set -euo pipefail
 ROOT="/home/pej0918/Projects/Audio_Text"
 EXP_ROOT="${ROOT}/MathSpeech/Experiments"
 LOG_DIR="${EXP_ROOT}/logs_all_methods_epoch10_beam5"
+CONTROLLED_LORA_LOG_DIR="${EXP_ROOT}/logs_lora_whisper_controlled_epoch10_beam5"
 OUT_CSV="${EXP_ROOT}/mathspeech_beam5_results.csv"
 OUT_MD="${EXP_ROOT}/mathspeech_beam5_results.md"
 
 python - <<'PY'
 import json
-import os
 import re
 from pathlib import Path
 
@@ -17,6 +17,7 @@ import pandas as pd
 
 EXP_ROOT = Path("/home/pej0918/Projects/Audio_Text/MathSpeech/Experiments")
 LOG_DIR = EXP_ROOT / "logs_all_methods_epoch10_beam5"
+CONTROLLED_LORA_LOG_DIR = EXP_ROOT / "logs_lora_whisper_controlled_epoch10_beam5"
 OUT_CSV = EXP_ROOT / "mathspeech_beam5_results.csv"
 OUT_MD = EXP_ROOT / "mathspeech_beam5_results.md"
 
@@ -48,9 +49,9 @@ METHODS = [
     },
     {
         "method": "LoRA-Whisper",
-        "dir": EXP_ROOT / "epoch10_beam5_lora_whisper_r16",
-        "log": LOG_DIR / "05_lora_whisper.log",
-        "setting": "LoRA r=16 alpha=32 q/v; CE only; lr=1e-5; valid WER-best; beam=5 eval",
+        "dir": EXP_ROOT / "epoch10_beam5_lora_whisper_controlled_r32_qkvfc",
+        "log": CONTROLLED_LORA_LOG_DIR / "lora_whisper_controlled.log",
+        "setting": "LoRA-Whisper-style; r=32; q/k/v/fc1/fc2; CE only; lr=1e-5; valid WER-best; beam=5 eval",
     },
     {
         "method": "KAUST-style Residual Adapter",
@@ -98,8 +99,7 @@ def read_metric_csv(path):
         df = pd.read_csv(path)
         if len(df) == 0:
             return {}
-        row = df.iloc[0].to_dict()
-        return row
+        return df.iloc[0].to_dict()
     except Exception as exc:
         return {"metric_error": str(exc)}
 
