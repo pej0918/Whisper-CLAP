@@ -32,7 +32,8 @@ OURS_TEST_CSV="${OURS_TEST_CSV:-${SPLIT_DIR}/mathspeech_test_source_seed42.csv}"
 CLAP_EMB="${CLAP_EMB:-/data1/eunju/datasets/mathspeech/dataset/mathspeech_clap_text_emb.pt}"
 
 OUT_ROOT="${OUT_ROOT:-/data1/eunju/clap_whisper_results/mathspeech_common_grid_seed${SEED}_6gpu}"
-LORA_TARGET_MODULES="${LORA_TARGET_MODULES:-q_proj,k_proj,v_proj,out_proj,fc1,fc2}"
+LORA_TARGETS_WITH_OUTPROJ="${LORA_TARGETS_WITH_OUTPROJ:-q_proj,k_proj,v_proj,out_proj,fc1,fc2}"
+LORA_TARGETS_NO_OUTPROJ="${LORA_TARGETS_NO_OUTPROJ:-q_proj,k_proj,v_proj,fc1,fc2}"
 mkdir -p "${OUT_ROOT}/logs"
 
 require_file(){ [[ -f "$1" ]] || { echo "[ERROR] Missing file: $1" >&2; exit 1; }; }
@@ -41,7 +42,8 @@ for f in "${TRAIN_CSV}" "${VAL_CSV}" "${TEST_CSV}" "${OURS_TRAIN_CSV}" "${OURS_V
 echo "[CONFIG] OUT_ROOT=${OUT_ROOT} GPUS=${GPU_LIST[*]} EPOCHS=${EPOCHS} BEAMS=${BEAMS[*]}"
 echo "Full/LoRA train=${TRAIN_CSV}"
 echo "Ours train=${OURS_TRAIN_CSV}"
-echo "LoRA targets=${LORA_TARGET_MODULES}"
+echo "LoRA with out_proj=${LORA_TARGETS_WITH_OUTPROJ}"
+echo "LoRA no out_proj=${LORA_TARGETS_NO_OUTPROJ}"
 
 run_eval_whisper(){
   local gpu="$1" model_path="$2" out_dir="$3" beam="$4"
@@ -101,10 +103,12 @@ run_ours_job(){
 }
 
 run_lora_job(){
-  local gpu="$1" lr="$2" out_dir="${OUT_ROOT}/lora_whisper_lr${lr}_outproj"; mkdir -p "$out_dir"
+  local gpu="$1" lr="$2" variant="$3" targets="$4"
+  local out_dir="${OUT_ROOT}/lora_whisper_lr${lr}_${variant}"; mkdir -p "$out_dir"
+  echo "[LORA] variant=${variant} targets=${targets} lr=${lr}"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_whisper_lora_controlled.py \
     --train "${TRAIN_CSV}" --dev "${VAL_CSV}" --output_dir "$out_dir" --model "${MODEL}" \
-    --rank 32 --lora_alpha 32 --target_modules "${LORA_TARGET_MODULES}" \
+    --rank 32 --lora_alpha 32 --target_modules "${targets}" \
     --epochs "${EPOCHS}" --learning_rate "$lr" --train_batch_size "${BATCH_SIZE}" \
     --eval_batch_size "${EVAL_BATCH_SIZE}" --gradient_accumulation_steps 1 --num_workers "${NUM_WORKERS}" \
     --generation_num_beams 5 --generation_max_length "${MAX_NEW_TOKENS}" --seed "${SEED}" \
@@ -128,22 +132,27 @@ for beam in "${BEAMS[@]}"; do run_eval_whisper "${GPU_LIST[0]}" "${MODEL}" "${OU
 
 pids=(); names=()
 launch(){ local name="$1"; shift; echo "[LAUNCH] $name"; ( "$@" ) > "${OUT_ROOT}/logs/${name}.launcher.log" 2>&1 & pids+=("$!"); names+=("$name"); }
+
+# Wave 1: six jobs, one per GPU.
 launch "fullft_lr1e-5_gpu${GPU_LIST[0]}" run_fullft_job "${GPU_LIST[0]}" 1e-5
 launch "fullft_lr1e-4_gpu${GPU_LIST[1]}" run_fullft_job "${GPU_LIST[1]}" 1e-4
 launch "ours_lr1e-5_gpu${GPU_LIST[2]}" run_ours_job "${GPU_LIST[2]}" 1e-5
 launch "ours_lr1e-4_gpu${GPU_LIST[3]}" run_ours_job "${GPU_LIST[3]}" 1e-4
-launch "lora_lr1e-5_gpu${GPU_LIST[4]}" run_lora_job "${GPU_LIST[4]}" 1e-5
-launch "lora_lr1e-4_gpu${GPU_LIST[5]}" run_lora_job "${GPU_LIST[5]}" 1e-4
+launch "lora_outproj_lr1e-5_gpu${GPU_LIST[4]}" run_lora_job "${GPU_LIST[4]}" 1e-5 outproj "${LORA_TARGETS_WITH_OUTPROJ}"
+launch "lora_outproj_lr1e-4_gpu${GPU_LIST[5]}" run_lora_job "${GPU_LIST[5]}" 1e-4 outproj "${LORA_TARGETS_WITH_OUTPROJ}"
 status=0
 for i in "${!pids[@]}"; do if wait "${pids[$i]}"; then echo "[DONE] ${names[$i]}"; else echo "[FAILED] ${names[$i]}" >&2; status=1; fi; done
 [[ "$status" -eq 0 ]] || { echo "[ERROR] First wave failed" >&2; exit "$status"; }
 
+# Wave 2: residual LR grid + LoRA without out_proj LR grid in parallel.
 pids=(); names=()
 launch "residual_lr1e-5_gpu${GPU_LIST[0]}" run_residual_job "${GPU_LIST[0]}" 1e-5
 launch "residual_lr1e-4_gpu${GPU_LIST[1]}" run_residual_job "${GPU_LIST[1]}" 1e-4
+launch "lora_nooutproj_lr1e-5_gpu${GPU_LIST[2]}" run_lora_job "${GPU_LIST[2]}" 1e-5 nooutproj "${LORA_TARGETS_NO_OUTPROJ}"
+launch "lora_nooutproj_lr1e-4_gpu${GPU_LIST[3]}" run_lora_job "${GPU_LIST[3]}" 1e-4 nooutproj "${LORA_TARGETS_NO_OUTPROJ}"
 status=0
 for i in "${!pids[@]}"; do if wait "${pids[$i]}"; then echo "[DONE] ${names[$i]}"; else echo "[FAILED] ${names[$i]}" >&2; status=1; fi; done
-[[ "$status" -eq 0 ]] || { echo "[ERROR] Residual wave failed" >&2; exit "$status"; }
+[[ "$status" -eq 0 ]] || { echo "[ERROR] Second wave failed" >&2; exit "$status"; }
 
 "${PYTHON}" -u scripts/collect_asr_results.py --output_dir "${OUT_ROOT}"
 echo "[DONE] ${OUT_ROOT}"
