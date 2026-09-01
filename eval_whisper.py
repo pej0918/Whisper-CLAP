@@ -57,19 +57,14 @@ def collate_fn(batch):
     return batch
 
 
-def set_forced_decoder_ids(model, processor, model_kind: str):
-    forced_decoder_ids = processor.get_decoder_prompt_ids(
+def get_forced_decoder_ids(processor):
+    # Do NOT also write this into model.config/generation_config.
+    # Passing forced_decoder_ids to generate is enough. Writing both places
+    # creates a duplicated ForceTokensLogitsProcessor on some transformers versions.
+    return processor.get_decoder_prompt_ids(
         language="english",
         task="transcribe",
     )
-    if model_kind in {"hf", "lora"}:
-        target = model.base_model.model if model_kind == "lora" and hasattr(model, "base_model") else model
-        target.config.forced_decoder_ids = forced_decoder_ids
-        target.generation_config.forced_decoder_ids = forced_decoder_ids
-    else:
-        model.whisper.config.forced_decoder_ids = forced_decoder_ids
-        model.whisper.generation_config.forced_decoder_ids = forced_decoder_ids
-    return forced_decoder_ids
 
 
 def load_hf_model(args, dtype):
@@ -307,7 +302,7 @@ def main():
 
     model = load_model(args, dtype=dtype)
     model = model.to(device)
-    forced_decoder_ids = set_forced_decoder_ids(model, processor, args.model_kind)
+    forced_decoder_ids = get_forced_decoder_ids(processor)
 
     out, summary = run_eval(args, model, processor, loader, device, dtype, forced_decoder_ids)
 
