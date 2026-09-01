@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import torch
 from jiwer import wer as jiwer_wer
-from peft import LoraConfig, TaskType, get_peft_model
+from peft import LoraConfig, get_peft_model
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, get_linear_schedule_with_warmup
@@ -91,16 +91,16 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch_size", type=int, default=4)
-    # LoRA-Whisper uses AdamW with peak learning rate 1e-4.
-    parser.add_argument("--lr", type=float, default=1e-4)
+    # Main controlled comparison uses the same optimizer protocol as other trainable baselines.
+    parser.add_argument("--lr", type=float, default=1e-5)
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--warmup_ratio", type=float, default=0.05)
     parser.add_argument("--grad_accum_steps", type=int, default=1)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--fp16", action="store_true")
-    # LoRA-Whisper reports best performance at r=32 and applies LoRA to
-    # Wq, Wk, Wv, and feed-forward layers in both encoder and decoder.
-    # In HF Whisper, these correspond to q_proj, k_proj, v_proj, fc1, fc2.
+    # LoRA-Whisper-style architecture: r=32 and LoRA on Wq, Wk, Wv,
+    # and feed-forward layers. In HF Whisper these map to q_proj, k_proj,
+    # v_proj, fc1, and fc2 in both encoder and decoder.
     parser.add_argument("--lora_r", type=int, default=32)
     parser.add_argument("--lora_alpha", type=int, default=32)
     parser.add_argument("--lora_dropout", type=float, default=0.0)
@@ -156,7 +156,11 @@ def main():
         target_modules=target_modules,
         lora_dropout=args.lora_dropout,
         bias="none",
-        task_type=TaskType.SEQ_2_SEQ_LM,
+        # Do not set task_type=SEQ_2_SEQ_LM here. Whisper uses input_features
+        # rather than input_ids as encoder input, and the Seq2Seq PEFT wrapper
+        # can pass duplicate input_ids into WhisperDecoder on recent versions.
+        # The generic PEFT wrapper still injects the same LoRA modules and
+        # delegates forward/generate directly to Whisper.
     )
     model = get_peft_model(base_model, lora_config)
     model.to(device)
