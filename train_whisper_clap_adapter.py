@@ -5,12 +5,14 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from jiwer import wer as jiwer_wer
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 from transformers.modeling_outputs import BaseModelOutput
 
+from compute_asr_metrics import normalize_text
 from mathspeech_utils import (
     audio_path_for_index,
     load_audio_16k,
@@ -385,12 +387,12 @@ def aggregate_stats(total, denom, align_count):
 
 
 @torch.no_grad()
-def validate(model, loader, device, args):
+def validate_loss(model, loader, device, args):
     model.eval()
     total = {"loss": 0.0, "ce": 0.0, "hidden": 0.0, "align": 0.0, "cosine": 0.0, "mse": 0.0, "clip": 0.0}
     align_count = 0
 
-    for batch in tqdm(loader, desc="valid"):
+    for batch in tqdm(loader, desc="valid_loss"):
         input_features = batch["input_features"].to(device)
         labels = batch["labels"].to(device)
         clap_emb = batch.get("clap_emb")
@@ -421,6 +423,36 @@ def validate(model, loader, device, args):
             align_count += 1
 
     return aggregate_stats(total, max(len(loader), 1), align_count)
+
+
+@torch.no_grad()
+def evaluate_validation_wer(model, loader, processor, df, text_col, device, max_new_tokens):
+    """Compute jiwer corpus-level WER on the validation split for checkpoint selection."""
+    model.eval()
+    references = []
+    predictions = []
+
+    for batch in tqdm(loader, desc="valid_wer"):
+        input_features = batch["input_features"].to(device)
+        real_indices = batch["real_indices"]
+
+        pred_ids = model.generate(
+            input_features=input_features,
+            max_new_tokens=max_new_tokens,
+            num_beams=1,
+            do_sample=False,
+            eos_token_id=processor.tokenizer.eos_token_id,
+            pad_token_id=processor.tokenizer.pad_token_id,
+        )
+        preds = processor.batch_decode(pred_ids, skip_special_tokens=True)
+
+        for real_idx, pred in zip(real_indices, preds):
+            references.append(normalize_text(str(df[text_col].iloc[real_idx])))
+            predictions.append(normalize_text(pred))
+
+    if len(references) == 0:
+        return float("inf")
+    return jiwer_wer(references, predictions)
 
 
 def main():
@@ -456,6 +488,7 @@ def main():
     parser.add_argument("--freeze_whisper", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--num_workers", type=int, default=2)
+    parser.add_argument("--selection_max_new_tokens", type=int, default=64)
     args = parser.parse_args()
 
     os.makedirs(args.save_dir, exist_ok=True)
@@ -470,6 +503,7 @@ def main():
     print("lambda_align:", args.lambda_align)
     print("lambda_hidden:", args.lambda_hidden)
     print("seed:", args.seed)
+    print("model selection: validation WER")
 
     df = pd.read_excel(args.excel_path)
     split = make_or_load_source_aware_split(
@@ -527,7 +561,7 @@ def main():
     print("clap_dim:", clap_dim)
 
     optimizer = torch.optim.AdamW(trainable_params, lr=args.lr, weight_decay=args.weight_decay)
-    best_valid_loss = float("inf")
+    best_valid_wer = float("inf")
     log_path = os.path.join(args.save_dir, "train_log.csv")
     log_rows = []
 
@@ -580,13 +614,24 @@ def main():
             )
 
         train_stats = aggregate_stats(total, max(len(train_loader), 1), align_count)
-        valid_stats = validate(model, valid_loader, device, args)
+        valid_stats = validate_loss(model, valid_loader, device, args)
+        valid_wer = evaluate_validation_wer(
+            model=model,
+            loader=valid_loader,
+            processor=processor,
+            df=df,
+            text_col=args.text_col,
+            device=device,
+            max_new_tokens=args.selection_max_new_tokens,
+        )
+        valid_stats["wer"] = valid_wer
 
         print(
             f"[epoch {epoch}] train_loss={train_stats['loss']:.4f}, train_ce={train_stats['ce']:.4f}, "
             f"train_hidden={train_stats['hidden']:.4f}, train_align={train_stats['align']:.4f} | "
             f"valid_loss={valid_stats['loss']:.4f}, valid_ce={valid_stats['ce']:.4f}, "
-            f"valid_hidden={valid_stats['hidden']:.4f}, valid_align={valid_stats['align']:.4f}"
+            f"valid_hidden={valid_stats['hidden']:.4f}, valid_align={valid_stats['align']:.4f}, "
+            f"valid_wer={valid_wer:.4f}"
         )
 
         row = {"epoch": epoch}
@@ -602,16 +647,20 @@ def main():
             "epoch": epoch,
             "train_stats": train_stats,
             "valid_stats": valid_stats,
+            "valid_wer": valid_wer,
+            "selection_metric": "valid_wer",
             "split_type": split.get("split_type"),
             "source_col": split.get("source_col"),
         }
         torch.save(ckpt, os.path.join(args.save_dir, "last.pt"))
 
-        if valid_stats["loss"] < best_valid_loss:
-            best_valid_loss = valid_stats["loss"]
-            ckpt["best_valid_loss"] = best_valid_loss
+        if valid_wer < best_valid_wer:
+            best_valid_wer = valid_wer
+            ckpt["best_valid_wer"] = best_valid_wer
             torch.save(ckpt, os.path.join(args.save_dir, "best.pt"))
-            print("saved best:", os.path.join(args.save_dir, "best.pt"))
+            print("saved best by valid_wer:", os.path.join(args.save_dir, "best.pt"))
+
+    print("best_valid_wer:", best_valid_wer)
 
 
 if __name__ == "__main__":
