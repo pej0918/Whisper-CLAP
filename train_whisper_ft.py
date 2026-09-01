@@ -3,11 +3,13 @@ import os
 
 import pandas as pd
 import torch
+from jiwer import wer as jiwer_wer
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 from transformers import WhisperForConditionalGeneration, WhisperProcessor, get_linear_schedule_with_warmup
 
+from compute_asr_metrics import normalize_text
 from mathspeech_utils import (
     audio_path_for_index,
     load_audio_16k,
@@ -106,7 +108,7 @@ def evaluate_loss(model, loader, device, use_amp):
     total_loss = 0.0
     step_count = 0
 
-    for batch in tqdm(loader, desc="valid"):
+    for batch in tqdm(loader, desc="valid_loss"):
         input_features = batch["input_features"].to(device)
         labels = batch["labels"].to(device)
 
@@ -117,6 +119,36 @@ def evaluate_loss(model, loader, device, use_amp):
         step_count += 1
 
     return total_loss / max(step_count, 1)
+
+
+@torch.no_grad()
+def evaluate_validation_wer(model, loader, processor, df, text_col, device, max_new_tokens):
+    """Compute jiwer corpus-level WER on the validation split for checkpoint selection."""
+    model.eval()
+    references = []
+    predictions = []
+
+    for batch in tqdm(loader, desc="valid_wer"):
+        input_features = batch["input_features"].to(device)
+        real_indices = batch["real_idx"].tolist()
+
+        pred_ids = model.generate(
+            input_features=input_features,
+            max_new_tokens=max_new_tokens,
+            num_beams=1,
+            do_sample=False,
+            eos_token_id=processor.tokenizer.eos_token_id,
+            pad_token_id=processor.tokenizer.pad_token_id,
+        )
+        preds = processor.batch_decode(pred_ids, skip_special_tokens=True)
+
+        for real_idx, pred in zip(real_indices, preds):
+            references.append(normalize_text(str(df[text_col].iloc[real_idx])))
+            predictions.append(normalize_text(pred))
+
+    if len(references) == 0:
+        return float("inf")
+    return jiwer_wer(references, predictions)
 
 
 def main():
@@ -143,6 +175,7 @@ def main():
     parser.add_argument("--freeze_encoder", action="store_true")
     parser.add_argument("--freeze_decoder", action="store_true")
     parser.add_argument("--fp16", action="store_true")
+    parser.add_argument("--selection_max_new_tokens", type=int, default=64)
     args = parser.parse_args()
 
     set_seed(args.seed)
@@ -218,6 +251,7 @@ def main():
 
     trainable_params = [p for p in model.parameters() if p.requires_grad]
     print("trainable params:", sum(p.numel() for p in trainable_params))
+    print("model selection: validation WER")
 
     optimizer = torch.optim.AdamW(trainable_params, lr=args.lr, weight_decay=args.weight_decay)
     total_steps = max(1, len(train_loader) * args.epochs // max(args.grad_accum_steps, 1))
@@ -230,7 +264,7 @@ def main():
 
     use_amp = args.fp16 and torch.cuda.is_available()
     scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
-    best_valid = float("inf")
+    best_valid_wer = float("inf")
     log_rows = []
     log_path = os.path.join(args.save_dir, "train_log.csv")
 
@@ -247,10 +281,20 @@ def main():
             use_amp=use_amp,
         )
         valid_loss = evaluate_loss(model=model, loader=valid_loader, device=device, use_amp=use_amp)
+        valid_wer = evaluate_validation_wer(
+            model=model,
+            loader=valid_loader,
+            processor=processor,
+            df=df,
+            text_col=args.text_col,
+            device=device,
+            max_new_tokens=args.selection_max_new_tokens,
+        )
 
         print(f"train_loss: {train_loss:.6f}")
         print(f"valid_loss: {valid_loss:.6f}")
-        log_rows.append({"epoch": epoch, "train_loss": train_loss, "valid_loss": valid_loss})
+        print(f"valid_wer: {valid_wer:.6f}")
+        log_rows.append({"epoch": epoch, "train_loss": train_loss, "valid_loss": valid_loss, "valid_wer": valid_wer})
         pd.DataFrame(log_rows).to_csv(log_path, index=False)
 
         ckpt = {
@@ -258,20 +302,22 @@ def main():
             "args": vars(args),
             "model_state_dict": model.state_dict(),
             "valid_loss": valid_loss,
+            "valid_wer": valid_wer,
+            "selection_metric": "valid_wer",
             "split_type": split.get("split_type"),
             "source_col": split.get("source_col"),
         }
         last_path = os.path.join(args.save_dir, "last.pt")
         torch.save(ckpt, last_path)
 
-        if valid_loss < best_valid:
-            best_valid = valid_loss
+        if valid_wer < best_valid_wer:
+            best_valid_wer = valid_wer
             best_path = os.path.join(args.save_dir, "best.pt")
-            ckpt["best_valid_loss"] = best_valid
+            ckpt["best_valid_wer"] = best_valid_wer
             torch.save(ckpt, best_path)
-            print("saved best:", best_path)
+            print("saved best by valid_wer:", best_path)
 
-    print("best_valid_loss:", best_valid)
+    print("best_valid_wer:", best_valid_wer)
 
 
 if __name__ == "__main__":
