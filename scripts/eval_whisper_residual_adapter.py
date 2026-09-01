@@ -151,7 +151,7 @@ def main():
     model = ResidualAdapterWhisper(args.model, args.adapter_bottleneck).to(device)
     ckpt = torch.load(args.ckpt, map_location="cpu")
     model.load_adapter_state_dict(ckpt["adapter_state_dict"], strict=True)
-    model.whisper.to(dtype=dtype)
+    model = model.to(device=device, dtype=dtype)
     model.eval()
 
     forced_decoder_ids = processor.get_decoder_prompt_ids(language="english", task="transcribe")
