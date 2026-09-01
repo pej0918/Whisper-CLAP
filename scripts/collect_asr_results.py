@@ -5,6 +5,14 @@ from pathlib import Path
 import pandas as pd
 
 
+# Fallbacks for already-finished MathSpeech runs whose training_summary.json
+# predates trainable-parameter logging in the projector trainer.
+# Whisper-base trainable params come from the controlled FullFT run summary.
+WHISPER_BASE_PARAMS = 72_593_920
+OURS_PROJECTOR_PARAMS = 790_273
+CLAP_FULLFT_PARAMS = WHISPER_BASE_PARAMS + OURS_PROJECTOR_PARAMS
+
+
 def load_json(path):
     path = Path(path)
     if not path.exists():
@@ -45,6 +53,42 @@ def infer_lr(dirname, train):
     return None
 
 
+def infer_trainable_params(method, train):
+    if method == "Whisper-base":
+        return 0
+
+    if train:
+        value = train.get("trainable_params")
+        if value is not None:
+            return int(value)
+
+        # Legacy summaries sometimes stored only the count in millions.
+        value_m = train.get("trainable_params_M")
+        if value_m is not None:
+            return int(round(float(value_m) * 1_000_000))
+
+    # Existing projector runs did print this count in train.log but did not
+    # persist it in training_summary.json. Use architecture-exact fallbacks.
+    if method == "Ours":
+        return OURS_PROJECTOR_PARAMS
+    if method == "CLAP-guided Full Fine-tuning":
+        return CLAP_FULLFT_PARAMS
+
+    return None
+
+
+def get_validation_metrics(train):
+    if not train:
+        return None, None
+
+    best_wer = train.get("best_dev_wer")
+    if best_wer is None:
+        best_wer = train.get("best_valid_wer")
+
+    best_loss = train.get("best_valid_loss")
+    return best_wer, best_loss
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output_dir", required=True)
@@ -77,17 +121,8 @@ def main():
             if freeze_whisper is None and train and isinstance(train.get("args"), dict):
                 freeze_whisper = train["args"].get("freeze_whisper")
 
-            trainable_params = None
-            if train:
-                trainable_params = train.get("trainable_params")
-                if trainable_params is None:
-                    trainable_params = train.get("trainable_params_M")
-
-            best_valid = None
-            if train:
-                best_valid = train.get("best_dev_wer", train.get("best_valid_wer"))
-                if best_valid is None:
-                    best_valid = train.get("best_valid_loss")
+            trainable_params = infer_trainable_params(method, train)
+            best_valid_wer, best_valid_loss = get_validation_metrics(train)
 
             rows.append({
                 "Method": method,
@@ -98,7 +133,9 @@ def main():
                 "RTF": test.get("rtf"),
                 "Num Eval": test.get("samples", test.get("valid_samples")),
                 "Trainable Params": trainable_params,
-                "Best Valid Metric": best_valid,
+                "Trainable Params (M)": None if trainable_params is None else trainable_params / 1_000_000,
+                "Best Valid WER": best_valid_wer,
+                "Best Valid Loss": best_valid_loss,
                 "Freeze Whisper": freeze_whisper,
                 "LoRA Targets": target_modules,
                 "Result Dir": str(d),
@@ -118,12 +155,12 @@ def main():
         df["_order"] = df["Method"].map(method_order).fillna(99)
         df = df.sort_values(["_order", "LR", "Beam"], na_position="first").drop(columns="_order")
 
-    print("=" * 140)
+    print("=" * 160)
     if df.empty:
         print("No completed beam1/beam5 test summaries found under", root)
     else:
         print(df.to_markdown(index=False))
-    print("=" * 140)
+    print("=" * 160)
 
     csv_path = Path(args.csv) if args.csv else root / "common_asr_results.csv"
     md_path = Path(args.md) if args.md else root / "common_asr_results.md"
