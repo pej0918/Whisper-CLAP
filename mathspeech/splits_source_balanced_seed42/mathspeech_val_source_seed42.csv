@@ -1,0 +1,111 @@
+sample_id,audio_path,reference_text,reference_latex,source
+960,/data1/eunju/datasets/mathspeech/dataset/960.mp3,two pi over three minus five pi over six root two,$2\pi/3-5\pi/6\sqrt{2}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+84,/data1/eunju/datasets/mathspeech/dataset/84.mp3,2 plus e to the minus 2u minus e to the 2u minus 2,$2 + e^{-2u} - e^{2u} - 2$,https://www.youtube.com/watch?v=er_tQOBgo-I
+78,/data1/eunju/datasets/mathspeech/dataset/78.mp3,x squared plus y squared equals 1,$x^{2} + y^{2} = 1$,https://www.youtube.com/watch?v=er_tQOBgo-I
+1018,/data1/eunju/datasets/mathspeech/dataset/1018.mp3,y dot plus ty equals to t,$y\dot{+}ty=t$,https://www.youtube.com/watch?v=4gJLEYc3p5w
+946,/data1/eunju/datasets/mathspeech/dataset/946.mp3,rho times cosine phi,$\rho\cos \phi$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+950,/data1/eunju/datasets/mathspeech/dataset/950.mp3, rho is the square root of r squared plus z squared,$\rho=\sqrt{r^{2}+z^{2}}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+456,/data1/eunju/datasets/mathspeech/dataset/456.mp3,f of b minus f of a and that's equal to g of b plus c minus g of a plus c,$f(b)-f(a)\stackrel{{\scriptstyle\text{def}}}{{=}}g(b+c)-g(a+c)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+883,/data1/eunju/datasets/mathspeech/dataset/883.mp3,u equals x over a,$u = \frac{\mathcal{x}}{\mathcal{a}}$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+1058,/data1/eunju/datasets/mathspeech/dataset/1058.mp3,3u t minus 2u t minus 1,$3u(t)-2u(t-1)$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+206,/data1/eunju/datasets/mathspeech/dataset/206.mp3,one times one plus two times minus two plus minus three times one,$1\times1+2\times(-2)+(-3)\times1$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+961,/data1/eunju/datasets/mathspeech/dataset/961.mp3,rho cubed over three,$\rho^{3}/3$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+962,/data1/eunju/datasets/mathspeech/dataset/962.mp3,sine phi secant cubed phi,$\sin\phi\sec^{3}\phi$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+74,/data1/eunju/datasets/mathspeech/dataset/74.mp3,e to the x plus e to the minus x,$e^{x} + e^{-x}$,https://www.youtube.com/watch?v=er_tQOBgo-I
+963,/data1/eunju/datasets/mathspeech/dataset/963.mp3, z over rho cubed delta dV,$\frac{z}{\rho^{3}}\Delta dV$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+213,/data1/eunju/datasets/mathspeech/dataset/213.mp3,d by dt of r dot r is zero,$\displaystyle \frac{d}{dt}(\mathbf{r}\cdot\mathbf{r})=0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+952,/data1/eunju/datasets/mathspeech/dataset/952.mp3, z equals r,$\mathcal{z}=\mathcal{r}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+938,/data1/eunju/datasets/mathspeech/dataset/938.mp3,two x squared plus two y squared less than four,$2x^{2}+2y^{2}<4$,https://www.youtube.com/watch?v=44R5HgbrUmc
+954,/data1/eunju/datasets/mathspeech/dataset/954.mp3,rho squared sine phi d rho d phi d theta,$\rho^2\sin \phi d\rho d\phi d\theta$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+1088,/data1/eunju/datasets/mathspeech/dataset/1088.mp3,y is equal to negative one over two m,$y=-\frac{1}{2m}$,https://www.youtube.com/watch?v=X5-ucBtneVM
+756,/data1/eunju/datasets/mathspeech/dataset/756.mp3,dr dt is v dot v plus r dot dv dt is going to be zero,$ \frac{dr}{dt}=v{{\cdot}}v+r\cdot\frac{dv}{dt}=0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+207,/data1/eunju/datasets/mathspeech/dataset/207.mp3,x plus 3y plus z equals zero,$x+3y+z=0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+750,/data1/eunju/datasets/mathspeech/dataset/750.mp3, x plus y equals zero,$x+y=0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+947,/data1/eunju/datasets/mathspeech/dataset/947.mp3,rho sine phi cos theta,$\rho\sin\phi\cos\theta$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+452,/data1/eunju/datasets/mathspeech/dataset/452.mp3,the integral from 0 to x of f of t dt,$\left(\int_{0}^{x}f(t)dt\right)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+448,/data1/eunju/datasets/mathspeech/dataset/448.mp3,f of 4 minus f of 0 is equal to f prime of c times 4 minus 0,$f(4)-f(0)=f^{\prime}(c)(4 - 0)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+457,/data1/eunju/datasets/mathspeech/dataset/457.mp3,f of x is equal to minus 1 over x,$\mathcal{f}(x)=-\frac{1}{x}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+885,/data1/eunju/datasets/mathspeech/dataset/885.mp3, dv is one over b dy,"$\displaystyle dv = \frac{1}{b} \,dy$",https://www.youtube.com/watch?v=UZb9hZIAvL4
+958,/data1/eunju/datasets/mathspeech/dataset/958.mp3,cos phi equals one over root two,$\cos\phi=\frac{1}{\sqrt{2}}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+210,/data1/eunju/datasets/mathspeech/dataset/210.mp3,y equals 3t,$y=3\mathfrak{t}$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+882,/data1/eunju/datasets/mathspeech/dataset/882.mp3,u squared plus v squared less than 1,$u^{2}+v^{2}<1$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+1023,/data1/eunju/datasets/mathspeech/dataset/1023.mp3,exponential of t squared over 2 minus 1,$\exp(t^{2}/2)-1$,https://www.youtube.com/watch?v=4gJLEYc3p5w
+1040,/data1/eunju/datasets/mathspeech/dataset/1040.mp3, exponential of minus three t,$\exp(-3t)$,https://www.youtube.com/watch?v=XbiEUwVQqVM
+83,/data1/eunju/datasets/mathspeech/dataset/83.mp3,2 times e to the u times e to the minus u,$2 e^{u}e^{-u}$,https://www.youtube.com/watch?v=er_tQOBgo-I
+459,/data1/eunju/datasets/mathspeech/dataset/459.mp3, integral from 0 to x of e to the minus t squared dt,$\int_{0}^{x}e^{-t^{2}}dt$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+937,/data1/eunju/datasets/mathspeech/dataset/937.mp3,z equals four minus x squared minus y squared,$z=4-x^{2}-y^{2}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+951,/data1/eunju/datasets/mathspeech/dataset/951.mp3,phi equals pi over four,$\phi=\frac{\pi}{4}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+454,/data1/eunju/datasets/mathspeech/dataset/454.mp3,g of x is 1 minus 1 over x,$g(x)=1-\frac{1}{x}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+754,/data1/eunju/datasets/mathspeech/dataset/754.mp3,r dot v is zero,$\displaystyle \mathbf{r}\cdot\mathbf{v}=0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+79,/data1/eunju/datasets/mathspeech/dataset/79.mp3,x squared minus y squared,$x^{2} - y^{2}$,https://www.youtube.com/watch?v=er_tQOBgo-I
+891,/data1/eunju/datasets/mathspeech/dataset/891.mp3,r cosine squared theta plus r sine squared theta,$r\cos^{2}\theta+r\sin^{2}\theta$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+944,/data1/eunju/datasets/mathspeech/dataset/944.mp3,one minus y is less than square root of one minus x squared minus y squared,$1-y<\sqrt{1-x^{2}-y^{2}}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+753,/data1/eunju/datasets/mathspeech/dataset/753.mp3,dr dt dot r plus r dot dr dt,$\frac{dr}{dt}\cdot r+r\cdot\frac{dr}{dt}$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+749,/data1/eunju/datasets/mathspeech/dataset/749.mp3, x plus 3y plus z equals zero,$x+3y+z=0.$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+211,/data1/eunju/datasets/mathspeech/dataset/211.mp3,z equals negative 6t,$z\!=\!-6t$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+1083,/data1/eunju/datasets/mathspeech/dataset/1083.mp3, 1 over 13 2 times cosine omega t plus 3 sine omega t,$\displaystyle \frac{1}{13}(2\cos\omega t+3\sin\omega t)$,https://www.youtube.com/watch?v=2IBWxERRjvM
+748,/data1/eunju/datasets/mathspeech/dataset/748.mp3,determinant of A is not zero,$\det(A)\neq0$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+949,/data1/eunju/datasets/mathspeech/dataset/949.mp3, z is rho cos phi,$z=\rho\cos\phi$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+81,/data1/eunju/datasets/mathspeech/dataset/81.mp3,e to the u plus e to the minus u over 2 quantity squared,$(\frac{e^{u} + e^{-u}}{2})^2$,https://www.youtube.com/watch?v=er_tQOBgo-I
+881,/data1/eunju/datasets/mathspeech/dataset/881.mp3,x over a squared plus y over b squared equals one,$x/a^{2}+y/b^{2}=1$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+948,/data1/eunju/datasets/mathspeech/dataset/948.mp3,rho sine phi sine theta. ,$\rho\sin\phi\sin\theta$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+955,/data1/eunju/datasets/mathspeech/dataset/955.mp3, z equals one over root two,$z=1/\sqrt{2}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+453,/data1/eunju/datasets/mathspeech/dataset/453.mp3,1 over t squared,$\frac{1}{t^2}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+214,/data1/eunju/datasets/mathspeech/dataset/214.mp3,minus v dot v,$-\mathbf{v}\cdot\mathbf{v}$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+1022,/data1/eunju/datasets/mathspeech/dataset/1022.mp3,3 equals to 1 plus c,"$3=1+c,$",https://www.youtube.com/watch?v=4gJLEYc3p5w
+1043,/data1/eunju/datasets/mathspeech/dataset/1043.mp3,e 4t cosine 5t ,$\displaystyle e^{4t}\cos(5t)$ ,https://www.youtube.com/watch?v=XbiEUwVQqVM
+451,/data1/eunju/datasets/mathspeech/dataset/451.mp3,dt over t squared,$\frac{dt}{t^{2}}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+82,/data1/eunju/datasets/mathspeech/dataset/82.mp3,e to the u minus e to the minus u over 2 quantity squared,$( \frac {e^{u} - e^{-u}} {2} )^2$,https://www.youtube.com/watch?v=er_tQOBgo-I
+1080,/data1/eunju/datasets/mathspeech/dataset/1080.mp3,e to the i omega t divided by two plus three i,$e^{i\omega t}/(2+3i)$,https://www.youtube.com/watch?v=2IBWxERRjvM
+887,/data1/eunju/datasets/mathspeech/dataset/887.mp3,u equals 3x minus 2y ,"$u=3x-2y,$",https://www.youtube.com/watch?v=UZb9hZIAvL4
+208,/data1/eunju/datasets/mathspeech/dataset/208.mp3, minus 2x minus z will be x plus 3y plus z,$-2x-z\operatorname{=}x+3y+z$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+959,/data1/eunju/datasets/mathspeech/dataset/959.mp3,phi equals pi over four,$\phi=\frac{\pi}{4}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+450,/data1/eunju/datasets/mathspeech/dataset/450.mp3, y equals one over one plus x,$y=\frac{1}{1+x}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+77,/data1/eunju/datasets/mathspeech/dataset/77.mp3,e to the x minus e to the minus x over 2,$e^{x} - e^{-x} \over 2$,https://www.youtube.com/watch?v=er_tQOBgo-I
+212,/data1/eunju/datasets/mathspeech/dataset/212.mp3,dr dt dot r plus r dot dr dt,$\displaystyle \frac{dr}{dt}\cdot{r}+r\cdot\frac{dr}{dt}$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+752,/data1/eunju/datasets/mathspeech/dataset/752.mp3,x plus y plus two z,$\displaystyle x+y+2z$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+1019,/data1/eunju/datasets/mathspeech/dataset/1019.mp3,y of 0 equals to 3,$y(0)=3$,https://www.youtube.com/watch?v=4gJLEYc3p5w
+80,/data1/eunju/datasets/mathspeech/dataset/80.mp3,cosh squared u,$\cosh^{2}u$,https://www.youtube.com/watch?v=er_tQOBgo-I
+1084,/data1/eunju/datasets/mathspeech/dataset/1084.mp3,tan inverse 3 over 2,$\tan^{-1}(3/2)$,https://www.youtube.com/watch?v=2IBWxERRjvM
+1057,/data1/eunju/datasets/mathspeech/dataset/1057.mp3,delta t exponential of t squared dt,$\delta(t)\exp(t^{2})dt$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+1041,/data1/eunju/datasets/mathspeech/dataset/1041.mp3, 8 root 4 minus 5i,$8\sqrt{4}-5{i}$,https://www.youtube.com/watch?v=XbiEUwVQqVM
+936,/data1/eunju/datasets/mathspeech/dataset/936.mp3,z equals x squared plus y squared,$z=x^{2}+y^{2}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+888,/data1/eunju/datasets/mathspeech/dataset/888.mp3,v equals x plus y,$\displaystyle v=x+y$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+1060,/data1/eunju/datasets/mathspeech/dataset/1060.mp3,4 sine 2 cos 4,$4\sin2\cos4$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+884,/data1/eunju/datasets/mathspeech/dataset/884.mp3,du is one over a dx,$\mathrm{d}u = \frac{1}{a}\mathrm{d}x$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+986,/data1/eunju/datasets/mathspeech/dataset/986.mp3,partial u over partial x squared plus partial squared u over partial y squared plus partial squared u over partial z squared,$\displaystyle \frac{\partial u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^ {2}}+\frac{\partial^{2}u}{\partial z^{2}}$,https://www.youtube.com/watch?v=wu8kXZSAp20
+943,/data1/eunju/datasets/mathspeech/dataset/943.mp3,z equals square root of one minus x squared minus y squared,$z=\sqrt{1-x^{2}-y^{2}}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+1085,/data1/eunju/datasets/mathspeech/dataset/1085.mp3, 3 pi over 2 omega,$(3\pi/2\omega)$,https://www.youtube.com/watch?v=2IBWxERRjvM
+1062,/data1/eunju/datasets/mathspeech/dataset/1062.mp3, minus two u of t minus one,$-2u(t-1)$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+755,/data1/eunju/datasets/mathspeech/dataset/755.mp3,r is perpendicular to v,$\displaystyle \textbf{r}\operatorname{\perp} \mathcal{v}$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+940,/data1/eunju/datasets/mathspeech/dataset/940.mp3, plus minus root of two minus x squared,$\pm\sqrt{2-x^{2}}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+886,/data1/eunju/datasets/mathspeech/dataset/886.mp3,du dv is one over ab dx dy,$\mathrm{d}u\mathrm{d}v= \frac{1}{ab}\mathrm{d}x\mathrm{d}y$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+1056,/data1/eunju/datasets/mathspeech/dataset/1056.mp3, delta t minus 2 exponential of t squared sine t cos 2t,$\delta(t-2)\exp(t^{2})\sin t\cos 2t$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+939,/data1/eunju/datasets/mathspeech/dataset/939.mp3,y is square root of two minus x squared,$y=\sqrt{2-x^{2}}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+957,/data1/eunju/datasets/mathspeech/dataset/957.mp3,one over root two times secant phi,$\frac{1}{\sqrt{2}}\cdot\sec\phi$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+458,/data1/eunju/datasets/mathspeech/dataset/458.mp3,L of x equals the integral from 1 to x dt over t,$L(x)=\int_{1}^{x}\frac{dt}{t}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+1082,/data1/eunju/datasets/mathspeech/dataset/1082.mp3,1 over root 13 cosine omega t minus phi,$\displaystyle \frac{1}{\sqrt{13}}\cos(\omega t-\phi)$,https://www.youtube.com/watch?v=2IBWxERRjvM
+941,/data1/eunju/datasets/mathspeech/dataset/941.mp3,x squared plus y squared plus z squared less than one,$x^{2}+y^{2}+z^{2}<1$,https://www.youtube.com/watch?v=44R5HgbrUmc
+945,/data1/eunju/datasets/mathspeech/dataset/945.mp3,negative square root of two y minus two y squared,$-\sqrt{2y-2y^{2}}$,https://www.youtube.com/watch?v=44R5HgbrUmc
+1087,/data1/eunju/datasets/mathspeech/dataset/1087.mp3,y prime equals negative y divided by x squared plus y squared,$y^{\prime}=-\frac{y}{x^{2}+y^{2}}$,https://www.youtube.com/watch?v=X5-ucBtneVM
+751,/data1/eunju/datasets/mathspeech/dataset/751.mp3, minus 2x minus z will be x plus 3y plus z,$-2x-z\operatorname{=}x+3y+z$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+455,/data1/eunju/datasets/mathspeech/dataset/455.mp3,f prime of x is equal to g prime of x,$f^{\prime}(x)\mathrel{\mathop{}}=g^{\prime}(x)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+1059,/data1/eunju/datasets/mathspeech/dataset/1059.mp3, exponential t squared dt,$\exp(t^{2})dt$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+75,/data1/eunju/datasets/mathspeech/dataset/75.mp3,1 plus x squared,$1 + x^2$,https://www.youtube.com/watch?v=er_tQOBgo-I
+890,/data1/eunju/datasets/mathspeech/dataset/890.mp3,x equals r cosine theta,$x=r\cos\theta$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+447,/data1/eunju/datasets/mathspeech/dataset/447.mp3,one over b minus a ,$\frac{1}{b-a}$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+76,/data1/eunju/datasets/mathspeech/dataset/76.mp3,1 plus 1 over 2,$1 + \frac{1}{2}$,https://www.youtube.com/watch?v=er_tQOBgo-I
+449,/data1/eunju/datasets/mathspeech/dataset/449.mp3,1 over 1 plus c times 4,$\frac{1}{1 + c}(4)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+1021,/data1/eunju/datasets/mathspeech/dataset/1021.mp3, exponential of minus t squared over 2,$\exp(-t^{2}/2)$,https://www.youtube.com/watch?v=4gJLEYc3p5w
+1061,/data1/eunju/datasets/mathspeech/dataset/1061.mp3, f of t equals three u t,$f(t)=3u(t)$,https://www.youtube.com/watch?v=q0PxCQWG3ic 
+956,/data1/eunju/datasets/mathspeech/dataset/956.mp3,rho equals one over root two cosine phi,$\rho=\frac{1}{\sqrt{2}}\cos{\phi}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+1020,/data1/eunju/datasets/mathspeech/dataset/1020.mp3, u equals exponential of t squared over 2,$u=\exp(t^{2}/2)$,https://www.youtube.com/watch?v=4gJLEYc3p5w
+964,/data1/eunju/datasets/mathspeech/dataset/964.mp3,rho cosine phi over rho cubed,$\frac{\rho\cos\phi}{\rho^{3}}$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+1089,/data1/eunju/datasets/mathspeech/dataset/1089.mp3, r squared is equal to one over four m squared,$r^{2}=\frac{1}{4m^{2}}$,https://www.youtube.com/watch?v=X5-ucBtneVM
+446,/data1/eunju/datasets/mathspeech/dataset/446.mp3,dx is equal to f of b minus f of a,$dx=f(b)-f(a)$,https://www.youtube.com/watch?v=Pd2xP5zDsRw
+942,/data1/eunju/datasets/mathspeech/dataset/942.mp3, z equals one minus y,$\displaystyle z=1-y$,https://www.youtube.com/watch?v=44R5HgbrUmc
+953,/data1/eunju/datasets/mathspeech/dataset/953.mp3,a squared sine phi d phi d theta,$\displaystyle a^{2}\sin\phi d\phi d\theta$,https://www.youtube.com/watch?v=RMBGQtwkoyU
+209,/data1/eunju/datasets/mathspeech/dataset/209.mp3,x equals minus 3t,$x=-3t$,https://www.youtube.com/watch?v=U1EcnfTKXJ0
+1042,/data1/eunju/datasets/mathspeech/dataset/1042.mp3, root 4 plus or minus 5i,$\mathrm{\sqrt{4}}\pm5i$,https://www.youtube.com/watch?v=XbiEUwVQqVM
+889,/data1/eunju/datasets/mathspeech/dataset/889.mp3,v sub x delta x plus v sub y delta y,$v_{x}\Delta x+v_{y}\Delta y$,https://www.youtube.com/watch?v=UZb9hZIAvL4
+1081,/data1/eunju/datasets/mathspeech/dataset/1081.mp3,e to the i omega t divided by root 13 e to the i phi,$\frac{e^{i\omega t}}{\sqrt{13}e^{i\phi}}$,https://www.youtube.com/watch?v=2IBWxERRjvM

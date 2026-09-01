@@ -1,0 +1,111 @@
+sample_id,audio_path,reference_text,reference_latex,source
+872,/data1/eunju/datasets/mathspeech/dataset/872.mp3, integral from zero to one of integral from x to square root of x of e to the y over y dy dx,$\displaystyle \int_{0}^{1}\int_{x}^{\sqrt{x}}\frac{e^{y}}{y}dydx$,https://www.youtube.com/watch?v=YP_B0AapU0c
+103,/data1/eunju/datasets/mathspeech/dataset/103.mp3,sine a cos b plus cos a sin b,$\sin(a)\cos(b)+\cos(a)\sin(b)$,https://www.youtube.com/watch?v=kCPVBl953eY
+5,/data1/eunju/datasets/mathspeech/dataset/5.mp3,Ax plus By plus Cz equals D,$Ax + By + Cz = D$,https://www.youtube.com/watch?v=YBajUR3EFSM
+1028,/data1/eunju/datasets/mathspeech/dataset/1028.mp3, 3 root of 3 over 2,$3\sqrt{\frac{3}{2}}$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+775,/data1/eunju/datasets/mathspeech/dataset/775.mp3, y equals a constant times exponential of a times x,$y=\text{c}\exp(ax)$,https://www.youtube.com/watch?v=UYe98CcxPbs
+862,/data1/eunju/datasets/mathspeech/dataset/862.mp3,one minus x squared minus one-third ,$1-x^{2}-\frac{1}{3}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+184,/data1/eunju/datasets/mathspeech/dataset/184.mp3,twice the logarithm of x plus a constant,$2\log(x)+\text{c}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+294,/data1/eunju/datasets/mathspeech/dataset/294.mp3, e to the minus three x one plus x to the minus a half,$e^{-3x}(1+x)^{-1/2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1054,/data1/eunju/datasets/mathspeech/dataset/1054.mp3,exponential i omega t,$\exp(i\omega t)$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+104,/data1/eunju/datasets/mathspeech/dataset/104.mp3,cosine delta x minus 1 divided by delta x,$\cos\Delta x - 1 \over \Delta x$,https://www.youtube.com/watch?v=kCPVBl953eY
+873,/data1/eunju/datasets/mathspeech/dataset/873.mp3, integral from zero to one of e to the y minus y e to the y dy,$\int_{0}^{1}e^{y}-ye^{y}dy$,https://www.youtube.com/watch?v=YP_B0AapU0c
+1024,/data1/eunju/datasets/mathspeech/dataset/1024.mp3, b modulus r ,$b\mod r$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1,/data1/eunju/datasets/mathspeech/dataset/1.mp3,ax plus by plus cz equals d,$ax + by + cz = d$,https://www.youtube.com/watch?v=YBajUR3EFSM
+1025,/data1/eunju/datasets/mathspeech/dataset/1025.mp3,pi over 2,$\frac{\pi}{2}$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+172,/data1/eunju/datasets/mathspeech/dataset/172.mp3,the antiderivative of sine x cosine x,$\int{\sin x \cos x} dx$,https://www.youtube.com/watch?v=60VGKnYBpbg
+864,/data1/eunju/datasets/mathspeech/dataset/864.mp3,y is square root of one minus x squared,$y=\sqrt{1-x^{2}}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+767,/data1/eunju/datasets/mathspeech/dataset/767.mp3, x minus y squared,$(x -y^{2})$,https://www.youtube.com/watch?v=UYe98CcxPbs
+866,/data1/eunju/datasets/mathspeech/dataset/866.mp3, root of one minus x squared minus x squared root of one minus x squared minus y minus x squared to the three halves over three,$\displaystyle \sqrt{1-x^{2}}-x^{2}\sqrt{1 - x^{2}}-\frac{(1-x^{2})^\frac{3}{2}}{3}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+1100,/data1/eunju/datasets/mathspeech/dataset/1100.mp3,1 over square root 2 pi P1 minus Pn,$1/\sqrt{2\pi p(1-p)n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+291,/data1/eunju/datasets/mathspeech/dataset/291.mp3, x minus a half x squared,$x-\frac{1}{2}x^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+105,/data1/eunju/datasets/mathspeech/dataset/105.mp3,minus cosine x divided by delta x,$-\frac{\cos x}{\Delta x}$,https://www.youtube.com/watch?v=kCPVBl953eY
+190,/data1/eunju/datasets/mathspeech/dataset/190.mp3,y is equal to minus the square root of a squared minus x squared over two,$y=-\sqrt{a^{2}-\frac{x^{2}}{2}}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+776,/data1/eunju/datasets/mathspeech/dataset/776.mp3,a x squared plus b x plus c,$ax^{2}+bx+c$,https://www.youtube.com/watch?v=UYe98CcxPbs
+180,/data1/eunju/datasets/mathspeech/dataset/180.mp3,log y plus c one is equal to minus x squared over two plus c two,$\log y+c_{1}=-\frac{x^{2}}{2}+c_2$,https://www.youtube.com/watch?v=60VGKnYBpbg
+176,/data1/eunju/datasets/mathspeech/dataset/176.mp3,a times d by dx of e to the minus x squared over two,$\displaystyle a\frac{d}{dx}(e^{-\frac{x^{2}}{2}})$,https://www.youtube.com/watch?v=60VGKnYBpbg
+185,/data1/eunju/datasets/mathspeech/dataset/185.mp3,e to the log y is equal to e to the 2 log x plus c,$e^{\log y} = e^{2\log(x)+c}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+296,/data1/eunju/datasets/mathspeech/dataset/296.mp3,f double prime is minus one over one plus x squared,$f^{\prime\prime}=-\frac{1}{1 + x^{2}}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+870,/data1/eunju/datasets/mathspeech/dataset/870.mp3,one plus cosine two theta over two,$\frac{1+ \cos{(2\theta)}}{2}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+108,/data1/eunju/datasets/mathspeech/dataset/108.mp3,the limit as delta x goes to 0 of sine delta x over delta x,$\lim_{\Delta x\to 0} \frac{\sin \Delta x}{\Delta x}$,https://www.youtube.com/watch?v=kCPVBl953eY
+293,/data1/eunju/datasets/mathspeech/dataset/293.mp3,one plus rx plus r times r minus one divided by two x squared,$1+rx+\frac{r(r-1)}{2}x^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1033,/data1/eunju/datasets/mathspeech/dataset/1033.mp3,0 modulus 2 pi,$0\mod2\pi$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1034,/data1/eunju/datasets/mathspeech/dataset/1034.mp3,n equals to 2,$(n\!=\!2)$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+10,/data1/eunju/datasets/mathspeech/dataset/10.mp3,X equals A inverse B,$X = A^{-1}B$,https://www.youtube.com/watch?v=YBajUR3EFSM
+187,/data1/eunju/datasets/mathspeech/dataset/187.mp3,minus 1 divided by 2 y divided by x,$-\frac{1}{2(y/x)}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+766,/data1/eunju/datasets/mathspeech/dataset/766.mp3, x squared minus 2xy,$x^{2}-2xy$,https://www.youtube.com/watch?v=UYe98CcxPbs
+863,/data1/eunju/datasets/mathspeech/dataset/863.mp3,two thirds x minus one-third x cubed ,$\frac{2}{3}x-\frac{1}{3}x^{3}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+182,/data1/eunju/datasets/mathspeech/dataset/182.mp3,a times e to the minus 0 squared over 2 is equal to 3,$ae^{-\frac{0^{2}}{2}}=3$,https://www.youtube.com/watch?v=60VGKnYBpbg
+289,/data1/eunju/datasets/mathspeech/dataset/289.mp3,cosine x is approximately one minus a half x squared,$\cos x\approx 1-\frac{1}{2}x^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+6,/data1/eunju/datasets/mathspeech/dataset/6.mp3,x plus y plus three z equals five,$x + y + 3z = 5$,https://www.youtube.com/watch?v=YBajUR3EFSM
+302,/data1/eunju/datasets/mathspeech/dataset/302.mp3,f of x is three x minus x cubed,$f(x)=3x-x^{3}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+773,/data1/eunju/datasets/mathspeech/dataset/773.mp3,xi squared times a plus xi times b ,$x_i^2\times a+x_i\times b$,https://www.youtube.com/watch?v=UYe98CcxPbs
+288,/data1/eunju/datasets/mathspeech/dataset/288.mp3,sine x is approximately x,$\sin x\approx x$,https://www.youtube.com/watch?v=eRCN3daFCmU
+189,/data1/eunju/datasets/mathspeech/dataset/189.mp3,x squared over 2 plus y squared,$\frac{x^{2}}{2}+y^{2}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+109,/data1/eunju/datasets/mathspeech/dataset/109.mp3,delta y over delta theta,$\frac{\Delta y}{\Delta \theta}$,https://www.youtube.com/watch?v=kCPVBl953eY
+1096,/data1/eunju/datasets/mathspeech/dataset/1096.mp3,p to the k times 1 minus p to the n minus k power,$p^{k}(1-p)^{n-k}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+188,/data1/eunju/datasets/mathspeech/dataset/188.mp3,dy dx is equal to minus x over 2y,$\frac{dy}{dx} = -\frac{x}{2y}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+861,/data1/eunju/datasets/mathspeech/dataset/861.mp3,the integral of y squared is y cubed over three,$\int y^{2}dy=\frac{y^{3}}{3}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+8,/data1/eunju/datasets/mathspeech/dataset/8.mp3,x plus y equals two,$x + y = 2$,https://www.youtube.com/watch?v=YBajUR3EFSM
+292,/data1/eunju/datasets/mathspeech/dataset/292.mp3,1 plus x to the power r,$(1+x^{r})$,https://www.youtube.com/watch?v=eRCN3daFCmU
+860,/data1/eunju/datasets/mathspeech/dataset/860.mp3,the integral of x squared is x squared times y,$\int x^{2}dx = x^{2}y$,https://www.youtube.com/watch?v=YP_B0AapU0c
+867,/data1/eunju/datasets/mathspeech/dataset/867.mp3,square root of one minus x squared will be cosine theta,$\sqrt{1-x^{2}}=\cos\theta$,https://www.youtube.com/watch?v=YP_B0AapU0c
+181,/data1/eunju/datasets/mathspeech/dataset/181.mp3,log y is equal to minus x squared over 2 plus c2 minus c1,$\log y=-\frac{x^{2}}{2}+c_{2}-c_{1}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+173,/data1/eunju/datasets/mathspeech/dataset/173.mp3,C1 minus C2 plus a half is equal to zero,$\mathcal{C}_{1}-\mathcal{C}_{2}+\frac{1}{2}=0$,https://www.youtube.com/watch?v=60VGKnYBpbg
+1032,/data1/eunju/datasets/mathspeech/dataset/1032.mp3,exponential 2n pi,$\exp(2n\pi)$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1051,/data1/eunju/datasets/mathspeech/dataset/1051.mp3, s squared plus 4,$(s^{2}+4)$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+179,/data1/eunju/datasets/mathspeech/dataset/179.mp3,plus or minus a e to the minus x squared over two,$\pm ae^{-x^{2}/2}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+9,/data1/eunju/datasets/mathspeech/dataset/9.mp3,A inverse is one over determinant of A times the adjoint matrix,$A^{-1} = \frac{1}{\text{det}(A)} \cdot \text{adj}(A)$,https://www.youtube.com/watch?v=YBajUR3EFSM
+1093,/data1/eunju/datasets/mathspeech/dataset/1093.mp3,z minus y over 2n,$z-\frac{y}{2n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+298,/data1/eunju/datasets/mathspeech/dataset/298.mp3,r times r minus one x plus one to the r minus two,$r(r-1)(x+1)^{r-2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+106,/data1/eunju/datasets/mathspeech/dataset/106.mp3,sine delta x divided by delta x,$\frac{\sin\Delta x}{\Delta x}$,https://www.youtube.com/watch?v=kCPVBl953eY
+871,/data1/eunju/datasets/mathspeech/dataset/871.mp3, one quarter plus one half cosine two theta plus one quarter cosine squared two theta ,$\displaystyle 1/4+1/2\cos2\theta+1/4\cos^{2}2\theta$ ,https://www.youtube.com/watch?v=YP_B0AapU0c
+178,/data1/eunju/datasets/mathspeech/dataset/178.mp3,natural log of absolute y is equal to minus x squared over 2 plus c,$\ln(|y|)=-\frac{x^{2}}{2}+c$,https://www.youtube.com/watch?v=60VGKnYBpbg
+4,/data1/eunju/datasets/mathspeech/dataset/4.mp3,x minus two plus five times y minus one plus ten times z plus one equals zero,$ (x - 2) + 5(y - 1) + 10(z + 1) = 0 $,https://www.youtube.com/watch?v=YBajUR3EFSM
+110,/data1/eunju/datasets/mathspeech/dataset/110.mp3,u prime v minus u v prime,$u^{\prime}v-uv^{\prime}$,https://www.youtube.com/watch?v=kCPVBl953eY
+287,/data1/eunju/datasets/mathspeech/dataset/287.mp3,f double prime of zero divided by two,$f^{\prime\prime}(0)/2$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1029,/data1/eunju/datasets/mathspeech/dataset/1029.mp3,a plus ib ,$a+\mathrm{i}b$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+7,/data1/eunju/datasets/mathspeech/dataset/7.mp3,x plus z equals one,$x + z = 1$,https://www.youtube.com/watch?v=YBajUR3EFSM
+1097,/data1/eunju/datasets/mathspeech/dataset/1097.mp3,2 to the minus n minus k,$2^{-(n-k)}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+1053,/data1/eunju/datasets/mathspeech/dataset/1053.mp3, 4 minus omega squared,$4-\omega^{2}$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+1049,/data1/eunju/datasets/mathspeech/dataset/1049.mp3, P D equals D squared plus 4i,$P(D)=D^{2}+4i$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+765,/data1/eunju/datasets/mathspeech/dataset/765.mp3, z0 plus a times x minus x0 plus b times y minus y0,$z_0+a(x-x_0)+b(y-y_0)$,https://www.youtube.com/watch?v=UYe98CcxPbs
+299,/data1/eunju/datasets/mathspeech/dataset/299.mp3,3 times 1 minus x times 1 plus x,$3(1-x)(1+x)$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1090,/data1/eunju/datasets/mathspeech/dataset/1090.mp3,d1 plus d2,$\mathcal{d}_{1}+\mathcal{d}_{2}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+295,/data1/eunju/datasets/mathspeech/dataset/295.mp3,one minus a half x plus a half times minus a half times minus three halves x squared,$1-\frac{1}{2}x+\frac{1}{2}\times(-\frac{1}{2})\times(-\frac{3}{2})x^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1027,/data1/eunju/datasets/mathspeech/dataset/1027.mp3,3 sine pi over 6,$3\sin(\pi/6)$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+772,/data1/eunju/datasets/mathspeech/dataset/772.mp3, yi minus axi,$y_{i}-ax_{i}$ ,https://www.youtube.com/watch?v=UYe98CcxPbs
+1098,/data1/eunju/datasets/mathspeech/dataset/1098.mp3, 2 to the alpha log p over alpha plus 1 minus alpha log 1 minus p over 1 minus alpha times n,$2^{(\alpha \log (\frac{p}{\alpha}) + (1-\alpha) \log (\frac{1-p}{1-\alpha})) \cdot n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+1092,/data1/eunju/datasets/mathspeech/dataset/1092.mp3,y over n times a half is y over two n,$\frac{y}{n}\times\frac{1}{2}=\frac{y}{2n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+290,/data1/eunju/datasets/mathspeech/dataset/290.mp3,e to the x is approximately one plus x plus a half x squared,$e^{x}\approx 1+x+\frac{1}{2}x^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+769,/data1/eunju/datasets/mathspeech/dataset/769.mp3, twice x minus y,$2\mathrm{(x - y)}$,https://www.youtube.com/watch?v=UYe98CcxPbs
+297,/data1/eunju/datasets/mathspeech/dataset/297.mp3,r one plus x to the r minus one,$(r\cdot 1+x^{r-1})$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1052,/data1/eunju/datasets/mathspeech/dataset/1052.mp3, s squared equal minus 4,$s^{2}=-4$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+768,/data1/eunju/datasets/mathspeech/dataset/768.mp3,2x minus 2y,$\displaystyle 2x-2y$,https://www.youtube.com/watch?v=UYe98CcxPbs
+869,/data1/eunju/datasets/mathspeech/dataset/869.mp3, two thirds times the integral from zero to pi over two of cosine to the four theta d theta,$\displaystyle \frac{2}{3}\int_{0}^{\pi/2}\cos^{4}\theta d\theta$,https://www.youtube.com/watch?v=YP_B0AapU0c
+186,/data1/eunju/datasets/mathspeech/dataset/186.mp3,e to the log x squared,$(e^{\log x})^2$,https://www.youtube.com/watch?v=60VGKnYBpbg
+1095,/data1/eunju/datasets/mathspeech/dataset/1095.mp3,one half plus one over two n,$\frac{1}{2}+\frac{1}{2n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+770,/data1/eunju/datasets/mathspeech/dataset/770.mp3, x minus y plus one squared,$(x-y+1)^{2}$,https://www.youtube.com/watch?v=UYe98CcxPbs
+774,/data1/eunju/datasets/mathspeech/dataset/774.mp3,sum of xi yi,$\mathsf{\sum_{i}(x_{i} y_{i})}$,https://www.youtube.com/watch?v=UYe98CcxPbs
+1099,/data1/eunju/datasets/mathspeech/dataset/1099.mp3,hundred over square root two pi alpha one minus alpha n,$100/\sqrt{2\pi\alpha(1-\alpha)n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+286,/data1/eunju/datasets/mathspeech/dataset/286.mp3,one plus a half v squared over c squared,$1+\frac{1}{2}v^{2}/c^{2}$,https://www.youtube.com/watch?v=eRCN3daFCmU
+183,/data1/eunju/datasets/mathspeech/dataset/183.mp3,y is equal to 3e to the minus x squared over 2,$y = 3e^{-x^{2}/2}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+1055,/data1/eunju/datasets/mathspeech/dataset/1055.mp3,omega equals to 2t,$\omega\mathrm{=}2\mathrm{t}$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+2,/data1/eunju/datasets/mathspeech/dataset/2.mp3,x plus 5y plus 10z equals zero,$x + 5y + 10z = 0$,https://www.youtube.com/watch?v=YBajUR3EFSM
+301,/data1/eunju/datasets/mathspeech/dataset/301.mp3, x is plus or minus 1,$x={}(\pm1)$,https://www.youtube.com/watch?v=eRCN3daFCmU
+175,/data1/eunju/datasets/mathspeech/dataset/175.mp3,A e to the minus x squared over two,$Ae^{-\frac{x^{2}}{2}}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+3,/data1/eunju/datasets/mathspeech/dataset/3.mp3,"x minus two y minus one and z plus one dot product with one, five, ten","$[x-2,y-1,z+1]\cdot[1,5,10]$",https://www.youtube.com/watch?v=YBajUR3EFSM
+177,/data1/eunju/datasets/mathspeech/dataset/177.mp3,h inverse of f of x plus c,$h^{-1}(f(x))+c$,https://www.youtube.com/watch?v=60VGKnYBpbg
+1031,/data1/eunju/datasets/mathspeech/dataset/1031.mp3, reverse tan of minus 3 over 2,$\tan^{-1}(-\frac{3}{2})$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1091,/data1/eunju/datasets/mathspeech/dataset/1091.mp3,z minus y over n,$\frac{z-y}{n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+868,/data1/eunju/datasets/mathspeech/dataset/868.mp3,x squared to a three halves,$x^{3/2}$ ,https://www.youtube.com/watch?v=YP_B0AapU0c
+1030,/data1/eunju/datasets/mathspeech/dataset/1030.mp3, 1 over minus 2 plus 3i,$\frac{1}{-2+3i}$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1026,/data1/eunju/datasets/mathspeech/dataset/1026.mp3,3i pi over 6 ,$3i(\pi/6)$,https://www.youtube.com/watch?v=sn3orkHWqUQ
+1101,/data1/eunju/datasets/mathspeech/dataset/1101.mp3,1 over square root 50 pi,$\frac{1}{\sqrt{50\pi}}$,https://www.youtube.com/watch?v=MOfhhFaQdjw
+174,/data1/eunju/datasets/mathspeech/dataset/174.mp3,minus x squared over two,$-\frac{x^{2}}{2}$,https://www.youtube.com/watch?v=60VGKnYBpbg
+771,/data1/eunju/datasets/mathspeech/dataset/771.mp3,axi plus b,$\mathtt{ax_i+b}$,https://www.youtube.com/watch?v=UYe98CcxPbs
+865,/data1/eunju/datasets/mathspeech/dataset/865.mp3,y minus x squared y minus y cubed over three ,$y-x^{2}y-\frac{y^{3}}{3}$,https://www.youtube.com/watch?v=YP_B0AapU0c
+107,/data1/eunju/datasets/mathspeech/dataset/107.mp3,cosine delta x minus 1 divided by delta x,$\frac{\cos\Delta x - 1}{\Delta x}$,https://www.youtube.com/watch?v=kCPVBl953eY
+1050,/data1/eunju/datasets/mathspeech/dataset/1050.mp3,x dot dot plus 4x equal f0,$x\ddot{x}+4x=f0$,https://www.youtube.com/watch?v=RzaB0t9dx0A
+300,/data1/eunju/datasets/mathspeech/dataset/300.mp3,one minus x times 1 plus x is zero,$(1 - x)(1 + x) = 0$,https://www.youtube.com/watch?v=eRCN3daFCmU
+1094,/data1/eunju/datasets/mathspeech/dataset/1094.mp3,y over 2n plus z minus y over 2n,$\frac{y}{2n}+z-\frac{y}{2n}$,https://www.youtube.com/watch?v=MOfhhFaQdjw

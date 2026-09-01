@@ -1,0 +1,882 @@
+audio_path,start,end,duration,text_spoken
+/data1/eunju/datasets/mathspeech/dataset/425.mp3,0.0,8.249958333333334,8.249958333333334,1 over n cubed times the sum i squared. i equals 1 to n
+/data1/eunju/datasets/mathspeech/dataset/329.mp3,0.0,5.561958333333333,5.561958333333333,x is equal to 2 to the 1 3rd v to the 1 3rd
+/data1/eunju/datasets/mathspeech/dataset/579.mp3,0.0,4.121958333333334,4.121958333333334,x is equal to two tan u
+/data1/eunju/datasets/mathspeech/dataset/798.mp3,0.0,5.777958333333333,5.777958333333333,dy equals f prime of x times dx
+/data1/eunju/datasets/mathspeech/dataset/482.mp3,0.0,5.849958333333333,5.849958333333333,2 pi a x minus x cubed
+/data1/eunju/datasets/mathspeech/dataset/41.mp3,0.0,5.465958333333333,5.465958333333333,minus x squared sine squared x
+/data1/eunju/datasets/mathspeech/dataset/661.mp3,0.0,2.8499583333333334,2.8499583333333334,v is equal to x squared over two
+/data1/eunju/datasets/mathspeech/dataset/926.mp3,0.0,3.3539583333333334,3.3539583333333334,Nx minus My dA
+/data1/eunju/datasets/mathspeech/dataset/522.mp3,0.0,9.281958333333334,9.281958333333334,1 quarter of 1 minus the cosine of 4x divided by 2
+/data1/eunju/datasets/mathspeech/dataset/846.mp3,0.0,8.681958333333334,8.681958333333334,dz equals minus one over six times four dx plus dy
+/data1/eunju/datasets/mathspeech/dataset/740.mp3,0.0,3.4019583333333334,3.4019583333333334, t minus sine t
+/data1/eunju/datasets/mathspeech/dataset/789.mp3,0.0,6.761958333333333,6.761958333333333,y squared times a times x over y squared
+/data1/eunju/datasets/mathspeech/dataset/369.mp3,0.0,3.3779583333333334,3.3779583333333334,five halves over x zero
+/data1/eunju/datasets/mathspeech/dataset/998.mp3,0.0,5.369958333333333,5.369958333333333,f equals x squared y plus g
+/data1/eunju/datasets/mathspeech/dataset/847.mp3,0.0,6.425958333333333,6.425958333333333,partial z over partial x is minus four over six
+/data1/eunju/datasets/mathspeech/dataset/557.mp3,0.0,7.241958333333334,7.241958333333334,natural log of x minus 1 plus 3 times natural log of x plus 3
+/data1/eunju/datasets/mathspeech/dataset/389.mp3,0.0,3.7139583333333333,3.7139583333333333,one-third x to the minus two thirds
+/data1/eunju/datasets/mathspeech/dataset/517.mp3,0.0,4.649958333333333,4.649958333333333,one plus the coisine of two theta over two
+/data1/eunju/datasets/mathspeech/dataset/443.mp3,0.0,2.2739583333333333,2.2739583333333333,b greater than or equal to 0
+/data1/eunju/datasets/mathspeech/dataset/788.mp3,0.0,6.881958333333333,6.881958333333333, a times x plus b over 2a times y squared
+/data1/eunju/datasets/mathspeech/dataset/471.mp3,0.0,5.585958333333333,5.585958333333333,y minus two times y plus one is equal to zero
+/data1/eunju/datasets/mathspeech/dataset/55.mp3,0.0,5.297958333333334,5.297958333333334,y equals arctan x
+/data1/eunju/datasets/mathspeech/dataset/413.mp3,0.0,3.7619583333333333,3.7619583333333333,a half sine squared plus cosine squared
+/data1/eunju/datasets/mathspeech/dataset/34.mp3,0.0,9.449958333333333,9.449958333333333,pi over 3 sine x plus sine pi over 3 cosine x
+/data1/eunju/datasets/mathspeech/dataset/419.mp3,0.0,3.665958333333333,3.665958333333333,1 3rd n cubed
+/data1/eunju/datasets/mathspeech/dataset/930.mp3,0.0,2.9219583333333334,2.9219583333333334,square root of x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/367.mp3,0.0,2.633958333333333,2.633958333333333,x0 squared minus 5
+/data1/eunju/datasets/mathspeech/dataset/968.mp3,0.0,2.561958333333333,2.561958333333333,four pi a squared
+/data1/eunju/datasets/mathspeech/dataset/745.mp3,0.0,3.9299583333333334,3.9299583333333334, v divided by magnitude of v
+/data1/eunju/datasets/mathspeech/dataset/375.mp3,0.0,4.9379583333333334,4.9379583333333334,e2 would be x minus x2 in absolute value
+/data1/eunju/datasets/mathspeech/dataset/610.mp3,0.0,5.873958333333333,5.873958333333333,the square root of 1 plus the quantity 2x squared dx.
+/data1/eunju/datasets/mathspeech/dataset/88.mp3,0.0,6.449958333333333,6.449958333333333,w of one plus two times e to the w of one
+/data1/eunju/datasets/mathspeech/dataset/407.mp3,0.0,2.7779583333333333,2.7779583333333333,6 e to the 6x
+/data1/eunju/datasets/mathspeech/dataset/250.mp3,0.0,6.281958333333334,6.281958333333334,log a times e to the x log a
+/data1/eunju/datasets/mathspeech/dataset/521.mp3,0.0,7.097958333333334,7.097958333333334,one half sine of two x squared
+/data1/eunju/datasets/mathspeech/dataset/366.mp3,0.0,2.177958333333333,2.177958333333333,x0 is equal to 2
+/data1/eunju/datasets/mathspeech/dataset/50.mp3,0.0,5.633958333333333,5.633958333333333,four thirds cubed plus two thirds cubed is equal to three times two thirds times four thirds
+/data1/eunju/datasets/mathspeech/dataset/669.mp3,0.0,5.561958333333333,5.561958333333333,sine five x divided by sine two x
+/data1/eunju/datasets/mathspeech/dataset/440.mp3,0.0,2.8259583333333333,2.8259583333333333,e to the b minus e to the zero
+/data1/eunju/datasets/mathspeech/dataset/94.mp3,0.0,8.441958333333334,8.441958333333334,delta f is x plus delta x to the n minus x to the n divided by delta x
+/data1/eunju/datasets/mathspeech/dataset/169.mp3,0.0,6.209958333333334,6.209958333333334,d by dt of r cross v is the zero vector
+/data1/eunju/datasets/mathspeech/dataset/98.mp3,0.0,4.385958333333333,4.385958333333333,x plus 3 over x squared plus 1
+/data1/eunju/datasets/mathspeech/dataset/1074.mp3,0.0,6.761958333333333,6.761958333333333,dy dt equals a times y
+/data1/eunju/datasets/mathspeech/dataset/583.mp3,0.0,3.8339583333333334,3.8339583333333334,u prime is one over x
+/data1/eunju/datasets/mathspeech/dataset/821.mp3,0.0,6.0419583333333335,6.0419583333333335,4x plus 2y minus 2z
+/data1/eunju/datasets/mathspeech/dataset/325.mp3,0.0,4.625958333333333,4.625958333333333,y is equal to v divided by x squared
+/data1/eunju/datasets/mathspeech/dataset/912.mp3,0.0,3.3539583333333334,3.3539583333333334,dx becomes x prime of t dt
+/data1/eunju/datasets/mathspeech/dataset/493.mp3,0.0,6.9779583333333335,6.9779583333333335,a hundred pi y minus 30 pi y squared
+/data1/eunju/datasets/mathspeech/dataset/92.mp3,0.0,6.593958333333333,6.593958333333333,minus 1 over 3 plus delta x times 3
+/data1/eunju/datasets/mathspeech/dataset/702.mp3,0.0,8.561958333333333,8.561958333333333,n plus 1 times c n plus 1 divided by n plus 1
+/data1/eunju/datasets/mathspeech/dataset/374.mp3,0.0,3.9299583333333334,3.9299583333333334,x minus x1 in absolute value
+/data1/eunju/datasets/mathspeech/dataset/993.mp3,0.0,2.585958333333333,2.585958333333333,six t to the five
+/data1/eunju/datasets/mathspeech/dataset/619.mp3,0.0,2.2259583333333333,2.2259583333333333, t equals pi over 2
+/data1/eunju/datasets/mathspeech/dataset/271.mp3,0.0,5.369958333333333,5.369958333333333,one over one plus y squared times y prime
+/data1/eunju/datasets/mathspeech/dataset/991.mp3,0.0,3.2339583333333333,3.2339583333333333,dx is 3t squared dt
+/data1/eunju/datasets/mathspeech/dataset/430.mp3,0.0,2.129958333333333,2.129958333333333,b minus a over n
+/data1/eunju/datasets/mathspeech/dataset/686.mp3,0.0,2.681958333333333,2.681958333333333,1 over the square root of x cubed
+/data1/eunju/datasets/mathspeech/dataset/626.mp3,0.0,2.2979583333333333,2.2979583333333333,x is 2 sine t
+/data1/eunju/datasets/mathspeech/dataset/355.mp3,0.0,2.8499583333333334,2.8499583333333334,the square root of x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/140.mp3,0.0,2.633958333333333,2.633958333333333,r squared sine squared theta
+/data1/eunju/datasets/mathspeech/dataset/406.mp3,0.0,3.8579583333333334,3.8579583333333334,square root of 1 plus x squared plus c
+/data1/eunju/datasets/mathspeech/dataset/824.mp3,0.0,8.873958333333333,8.873958333333333,two times y minus one minus two times z minus one equals zero
+/data1/eunju/datasets/mathspeech/dataset/667.mp3,0.0,4.0499583333333335,4.0499583333333335,f of x divided by g of x
+/data1/eunju/datasets/mathspeech/dataset/620.mp3,0.0,2.3219583333333333,2.3219583333333333,t equals pi
+/data1/eunju/datasets/mathspeech/dataset/554.mp3,0.0,7.289958333333334,7.289958333333334,du is 2 secant theta tangent theta d theta.
+/data1/eunju/datasets/mathspeech/dataset/509.mp3,0.0,7.505958333333333,7.505958333333333,sine squared of theta is 1 minus cosine of 2 theta divided by 2
+/data1/eunju/datasets/mathspeech/dataset/89.mp3,0.0,4.313958333333333,4.313958333333333,1 half times x minus 1
+/data1/eunju/datasets/mathspeech/dataset/398.mp3,0.0,4.193958333333334,4.193958333333334,integral of secant squared x dx
+/data1/eunju/datasets/mathspeech/dataset/254.mp3,0.0,3.9299583333333334,3.9299583333333334,u prime is equal to u times log a
+/data1/eunju/datasets/mathspeech/dataset/974.mp3,0.0,6.401958333333333,6.401958333333333,"f of x, y plus delta x times f sub x "
+/data1/eunju/datasets/mathspeech/dataset/380.mp3,0.0,8.657958333333333,8.657958333333333,f of b is equal to f of a plus f prime of c times b minus a
+/data1/eunju/datasets/mathspeech/dataset/1070.mp3,0.0,7.145958333333334,7.145958333333334,two plus i divided by one minus 3i
+/data1/eunju/datasets/mathspeech/dataset/442.mp3,0.0,7.0019583333333335,7.0019583333333335,e to the b minus 1 is greater than or equal to b plus b squared over 2
+/data1/eunju/datasets/mathspeech/dataset/518.mp3,0.0,3.7379583333333333,3.7379583333333333,sine squared times cosine squared
+/data1/eunju/datasets/mathspeech/dataset/692.mp3,0.0,5.321958333333333,5.321958333333333, y equals 1 over x minus 3 squared
+/data1/eunju/datasets/mathspeech/dataset/582.mp3,0.0,3.137958333333333,3.137958333333333,u is a log x
+/data1/eunju/datasets/mathspeech/dataset/975.mp3,0.0,2.5379583333333335,2.5379583333333335,f sub y times delta y
+/data1/eunju/datasets/mathspeech/dataset/384.mp3,0.0,5.201958333333334,5.201958333333334,e to the x is bigger than 1 plus x plus x squared over 2
+/data1/eunju/datasets/mathspeech/dataset/116.mp3,0.0,4.529958333333333,4.529958333333333,u of x plus delta x times v of x plus delta x
+/data1/eunju/datasets/mathspeech/dataset/794.mp3,0.0,13.913958333333333,13.913958333333333,f sub xy times change in x times change in y plus one half of fyy times y minus y0 squared
+/data1/eunju/datasets/mathspeech/dataset/1004.mp3,0.0,9.233958333333334,9.233958333333334, 6 times 1 plus 4 plus 9 plus 16 plus 25 plus 36
+/data1/eunju/datasets/mathspeech/dataset/641.mp3,0.0,1.7219583333333333,1.7219583333333333,pi a squared
+/data1/eunju/datasets/mathspeech/dataset/805.mp3,0.0,10.721958333333333,10.721958333333333,df is f sub x dx plus f sub y dy plus f sub z dz
+/data1/eunju/datasets/mathspeech/dataset/166.mp3,0.0,11.177958333333333,11.177958333333333,square root of one minus two cosine t plus cosine squared t plus sine squared t
+/data1/eunju/datasets/mathspeech/dataset/350.mp3,0.0,2.153958333333333,2.153958333333333,h squared times h
+/data1/eunju/datasets/mathspeech/dataset/150.mp3,0.0,6.0419583333333335,6.0419583333333335,y of t minus two equals t
+/data1/eunju/datasets/mathspeech/dataset/1047.mp3,0.0,4.721958333333333,4.721958333333333,log of minus c2 over c1
+/data1/eunju/datasets/mathspeech/dataset/574.mp3,0.0,2.9939583333333335,2.9939583333333335,half the argtangent
+/data1/eunju/datasets/mathspeech/dataset/795.mp3,0.0,6.713958333333333,6.713958333333333, f of x y equals x plus y plus 1 over xy
+/data1/eunju/datasets/mathspeech/dataset/126.mp3,0.0,6.377958333333333,6.377958333333333,length of A is square root of length B squared plus one
+/data1/eunju/datasets/mathspeech/dataset/1066.mp3,0.0,2.633958333333333,2.633958333333333, c1 equals minus 2
+/data1/eunju/datasets/mathspeech/dataset/718.mp3,0.0,9.377958333333334,9.377958333333334,x squared minus x to the fourth over three factorial plus x to the sixth over five factorial
+/data1/eunju/datasets/mathspeech/dataset/386.mp3,0.0,2.4179583333333334,2.4179583333333334,x cubed over 3 times 2
+/data1/eunju/datasets/mathspeech/dataset/306.mp3,0.0,2.8739583333333334,2.8739583333333334,1 plus 2 over x
+/data1/eunju/datasets/mathspeech/dataset/1076.mp3,0.0,4.385958333333333,4.385958333333333,sine of theta one plus theta two
+/data1/eunju/datasets/mathspeech/dataset/340.mp3,0.0,3.4019583333333334,3.4019583333333334,2x plus 4y
+/data1/eunju/datasets/mathspeech/dataset/417.mp3,0.0,6.521958333333333,6.521958333333333,b over n times 2b over n squared
+/data1/eunju/datasets/mathspeech/dataset/827.mp3,0.0,2.4659583333333335,2.4659583333333335,PV equals nRT
+/data1/eunju/datasets/mathspeech/dataset/394.mp3,0.0,4.9619583333333335,4.9619583333333335,f of x is x to the 1 3rd
+/data1/eunju/datasets/mathspeech/dataset/854.mp3,0.0,16.841958333333334,16.841958333333334,one half of ab times sine theta times tangent theta plus cosine theta d theta.
+/data1/eunju/datasets/mathspeech/dataset/477.mp3,0.0,5.465958333333333,5.465958333333333,a squared minus x squared minus two ax 
+/data1/eunju/datasets/mathspeech/dataset/840.mp3,0.0,2.3459583333333334,2.3459583333333334, x squared equals three
+/data1/eunju/datasets/mathspeech/dataset/256.mp3,0.0,2.9459583333333335,2.9459583333333335,d by dx x to the x
+/data1/eunju/datasets/mathspeech/dataset/85.mp3,0.0,3.6899583333333332,3.6899583333333332,w of x plus one
+/data1/eunju/datasets/mathspeech/dataset/659.mp3,0.0,11.777958333333334,11.777958333333334,A2x plus B2 x squared plus 2 squared plus c over x plus d
+/data1/eunju/datasets/mathspeech/dataset/1005.mp3,0.0,3.161958333333333,3.161958333333333,r over t times t
+/data1/eunju/datasets/mathspeech/dataset/167.mp3,0.0,2.5139583333333335,2.5139583333333335,cosine squared plus sine squared
+/data1/eunju/datasets/mathspeech/dataset/807.mp3,0.0,5.105958333333334,5.105958333333334,f sub z z prime of t dt
+/data1/eunju/datasets/mathspeech/dataset/87.mp3,0.0,10.385958333333333,10.385958333333333,1 over w of x plus 2 times e to the w of x
+/data1/eunju/datasets/mathspeech/dataset/273.mp3,0.0,5.9939583333333335,5.9939583333333335, x zero plus f prime of x zero x minus x zero
+/data1/eunju/datasets/mathspeech/dataset/602.mp3,0.0,3.569958333333333,3.569958333333333,square root of 1 plus m squared
+/data1/eunju/datasets/mathspeech/dataset/997.mp3,0.0,3.2339583333333333,3.2339583333333333, f sub x is two xy
+/data1/eunju/datasets/mathspeech/dataset/100.mp3,0.0,3.8819583333333334,3.8819583333333334,1 minus cosine x over x
+/data1/eunju/datasets/mathspeech/dataset/815.mp3,0.0,7.193958333333334,7.193958333333334,x sub u times du plus x sub v times dv
+/data1/eunju/datasets/mathspeech/dataset/232.mp3,0.0,6.449958333333333,6.449958333333333,minus y squared divided by 4y cubed plus 2xy
+/data1/eunju/datasets/mathspeech/dataset/680.mp3,0.0,2.8259583333333333,2.8259583333333333,one over x to the power p
+/data1/eunju/datasets/mathspeech/dataset/838.mp3,0.0,2.5139583333333335,2.5139583333333335,lambda squared equals four
+/data1/eunju/datasets/mathspeech/dataset/700.mp3,0.0,5.153958333333334,5.153958333333334,sum 1 over n squared plus 1 square root
+/data1/eunju/datasets/mathspeech/dataset/545.mp3,0.0,9.353958333333333,9.353958333333333,the integral of dx over x squared times the square root of 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/501.mp3,0.0,7.649958333333333,7.649958333333333,a half to the fourth power minus a half to the ninth power
+/data1/eunju/datasets/mathspeech/dataset/226.mp3,0.0,2.3459583333333334,2.3459583333333334,a minus one
+/data1/eunju/datasets/mathspeech/dataset/566.mp3,0.0,5.321958333333333,5.321958333333333,x minus one times x minus two times x plus five
+/data1/eunju/datasets/mathspeech/dataset/268.mp3,0.0,4.769958333333333,4.769958333333333,e to the x tan inverse x
+/data1/eunju/datasets/mathspeech/dataset/976.mp3,0.0,2.9699583333333335,2.9699583333333335,z equals x squared plus y squared 
+/data1/eunju/datasets/mathspeech/dataset/671.mp3,0.0,4.9619583333333335,4.9619583333333335,cosine x minus 1 divided by x squared
+/data1/eunju/datasets/mathspeech/dataset/60.mp3,0.0,3.3059583333333333,3.3059583333333333,pi times x to the pi minus 1
+/data1/eunju/datasets/mathspeech/dataset/733.mp3,0.0,12.953958333333333,12.953958333333333,minus one plus two t plus twice two plus t plus four times two minus three t
+/data1/eunju/datasets/mathspeech/dataset/513.mp3,0.0,3.7619583333333333,3.7619583333333333,minus u cubed over three
+/data1/eunju/datasets/mathspeech/dataset/500.mp3,0.0,2.8499583333333334,2.8499583333333334,1 minus e to the minus a squared
+/data1/eunju/datasets/mathspeech/dataset/705.mp3,0.0,3.7379583333333333,3.7379583333333333, minus r less than x less than r
+/data1/eunju/datasets/mathspeech/dataset/1075.mp3,0.0,2.2739583333333333,2.2739583333333333,e to the i theta two
+/data1/eunju/datasets/mathspeech/dataset/985.mp3,0.0,2.5139583333333335,2.5139583333333335,four thirds pi a cubed
+/data1/eunju/datasets/mathspeech/dataset/819.mp3,0.0,7.217958333333334,7.217958333333334,a one x plus a two y plus a three z equals c
+/data1/eunju/datasets/mathspeech/dataset/44.mp3,0.0,2.2979583333333333,2.2979583333333333,cosine of theta to the fourth
+/data1/eunju/datasets/mathspeech/dataset/42.mp3,0.0,8.657958333333333,8.657958333333333,dy dx times dx dw times dw d theta
+/data1/eunju/datasets/mathspeech/dataset/797.mp3,0.0,3.7379583333333333,3.7379583333333333, two over xy cubed
+/data1/eunju/datasets/mathspeech/dataset/763.mp3,0.0,4.553958333333333,4.553958333333333,f prime at x0 times delta x
+/data1/eunju/datasets/mathspeech/dataset/588.mp3,0.0,3.4019583333333334,3.4019583333333334,log x to the zero power dx
+/data1/eunju/datasets/mathspeech/dataset/744.mp3,0.0,1.6739583333333334,1.6739583333333334,F equals ma
+/data1/eunju/datasets/mathspeech/dataset/139.mp3,0.0,2.7539583333333333,2.7539583333333333,r squared cosine squared theta
+/data1/eunju/datasets/mathspeech/dataset/99.mp3,0.0,4.769958333333333,4.769958333333333,4 plus 3 divided by 4 squared plus 1
+/data1/eunju/datasets/mathspeech/dataset/928.mp3,0.0,9.713958333333334,9.713958333333334,integral from b to a of M of x and f2 of x dx
+/data1/eunju/datasets/mathspeech/dataset/112.mp3,0.0,5.9939583333333335,5.9939583333333335,x to the n times sine of x
+/data1/eunju/datasets/mathspeech/dataset/381.mp3,0.0,2.681958333333333,2.681958333333333,e to the x minus 1 plus x
+/data1/eunju/datasets/mathspeech/dataset/665.mp3,0.0,3.7379583333333333,3.7379583333333333, x to the 10th minus 1
+/data1/eunju/datasets/mathspeech/dataset/266.mp3,0.0,6.785958333333333,6.785958333333333,minus v to the minus 2 times v prime
+/data1/eunju/datasets/mathspeech/dataset/724.mp3,0.0,2.3459583333333334,2.3459583333333334,two over the square root of pi 
+/data1/eunju/datasets/mathspeech/dataset/919.mp3,0.0,6.233958333333334,6.233958333333334,y cubed plus 4x1 squared y 
+/data1/eunju/datasets/mathspeech/dataset/438.mp3,0.0,2.9219583333333334,2.9219583333333334,minus cosine 2pi
+/data1/eunju/datasets/mathspeech/dataset/16.mp3,0.0,4.601958333333333,4.601958333333333,two pi r e to the minus r squared dr
+/data1/eunju/datasets/mathspeech/dataset/65.mp3,0.0,2.8019583333333333,2.8019583333333333,x squared times natural log of e
+/data1/eunju/datasets/mathspeech/dataset/285.mp3,0.0,3.4979583333333335,3.4979583333333335,y equals one minus a half x squared
+/data1/eunju/datasets/mathspeech/dataset/531.mp3,0.0,9.113958333333333,9.113958333333333,a squared theta zero divided by two plus b times the square root of a squared minus b squared over two
+/data1/eunju/datasets/mathspeech/dataset/1078.mp3,0.0,4.121958333333334,4.121958333333334,e to the i theta one plus theta two
+/data1/eunju/datasets/mathspeech/dataset/672.mp3,0.0,5.681958333333333,5.681958333333333,sine of five x divided by sine of 2x
+/data1/eunju/datasets/mathspeech/dataset/127.mp3,0.0,5.537958333333333,5.537958333333333,square root of 13 plus one is square root of 14
+/data1/eunju/datasets/mathspeech/dataset/980.mp3,0.0,6.353958333333333,6.353958333333333,delta S is going to be one over cosine alpha
+/data1/eunju/datasets/mathspeech/dataset/1008.mp3,0.0,6.449958333333333,6.449958333333333,u minus expected value of r over u minus x
+/data1/eunju/datasets/mathspeech/dataset/893.mp3,0.0,4.313958333333333,4.313958333333333,the integral along C of F dot dr
+/data1/eunju/datasets/mathspeech/dataset/630.mp3,0.0,7.553958333333333,7.553958333333333,the square root of 4 cosine squared t plus sine squared t
+/data1/eunju/datasets/mathspeech/dataset/36.mp3,0.0,3.089958333333333,3.089958333333333,x equals minus pi over three
+/data1/eunju/datasets/mathspeech/dataset/114.mp3,0.0,5.489958333333333,5.489958333333333,delta of uv divided by delta x
+/data1/eunju/datasets/mathspeech/dataset/21.mp3,0.0,5.921958333333333,5.921958333333333,minus b squared times the integral from minus infinity to infinity of e to the minus x squared dx
+/data1/eunju/datasets/mathspeech/dataset/276.mp3,0.0,2.2499583333333333,2.2499583333333333,y equals one plus x
+/data1/eunju/datasets/mathspeech/dataset/679.mp3,0.0,3.137958333333333,3.137958333333333, x to the 5th over x to the 4th
+/data1/eunju/datasets/mathspeech/dataset/267.mp3,0.0,2.633958333333333,2.633958333333333,x to the ten plus eight x
+/data1/eunju/datasets/mathspeech/dataset/464.mp3,0.0,2.633958333333333,2.633958333333333,square root of pi over 2
+/data1/eunju/datasets/mathspeech/dataset/148.mp3,0.0,5.873958333333333,5.873958333333333,four a to the four cosine to the four theta
+/data1/eunju/datasets/mathspeech/dataset/539.mp3,0.0,5.489958333333333,5.489958333333333,du is minus the sine of x dx
+/data1/eunju/datasets/mathspeech/dataset/437.mp3,0.0,7.361958333333333,7.361958333333333,integral from 0 to 2pi of sine x dx
+/data1/eunju/datasets/mathspeech/dataset/40.mp3,0.0,3.9539583333333335,3.9539583333333335,cosine x cosine x is cosine squared x
+/data1/eunju/datasets/mathspeech/dataset/314.mp3,0.0,8.993958333333333,8.993958333333333,1 over log 0 plus minus 1 over log 0 plus squared
+/data1/eunju/datasets/mathspeech/dataset/487.mp3,0.0,4.0499583333333335,4.0499583333333335,1 over b minus a the integral from a to b f of x dx
+/data1/eunju/datasets/mathspeech/dataset/918.mp3,0.0,4.649958333333333,4.649958333333333, four thirds x one cubed
+/data1/eunju/datasets/mathspeech/dataset/497.mp3,0.0,4.529958333333333,4.529958333333333,minus pi e to the minus r squared
+/data1/eunju/datasets/mathspeech/dataset/427.mp3,0.0,2.681958333333333,2.681958333333333,b cubed over n cubed
+/data1/eunju/datasets/mathspeech/dataset/111.mp3,0.0,2.9939583333333335,2.9939583333333335,n x to the n minus 1
+/data1/eunju/datasets/mathspeech/dataset/310.mp3,0.0,2.9459583333333335,2.9459583333333335,e divided by log e
+/data1/eunju/datasets/mathspeech/dataset/434.mp3,0.0,4.913958333333333,4.913958333333333,b cubed over 3 minus a cubed over 3
+/data1/eunju/datasets/mathspeech/dataset/637.mp3,0.0,2.9219583333333334,2.9219583333333334,r equals one over sine theta
+/data1/eunju/datasets/mathspeech/dataset/334.mp3,0.0,2.8499583333333334,2.8499583333333334,a divided by v to the 2 3rds
+/data1/eunju/datasets/mathspeech/dataset/907.mp3,0.0,2.633958333333333,2.633958333333333,2pi a squared
+/data1/eunju/datasets/mathspeech/dataset/483.mp3,0.0,2.9939583333333335,2.9939583333333335,x equals square root a
+/data1/eunju/datasets/mathspeech/dataset/575.mp3,0.0,10.241958333333333,10.241958333333333,d by dx of natrual log of x squared plus 1 is 2x over x squared plus 1
+/data1/eunju/datasets/mathspeech/dataset/616.mp3,0.0,7.9379583333333334,7.9379583333333334,the square root of a squared over a squared minus x squared dx
+/data1/eunju/datasets/mathspeech/dataset/877.mp3,0.0,3.665958333333333,3.665958333333333,pi a to the 4 over 2
+/data1/eunju/datasets/mathspeech/dataset/787.mp3,0.0,3.4979583333333335,3.4979583333333335, f of x equals x to the five
+/data1/eunju/datasets/mathspeech/dataset/814.mp3,0.0,8.177958333333333,8.177958333333333, minus u over v squared times dv dt
+/data1/eunju/datasets/mathspeech/dataset/466.mp3,0.0,2.8979583333333334,2.8979583333333334,2 over the square root of pi
+/data1/eunju/datasets/mathspeech/dataset/567.mp3,0.0,2.5379583333333335,2.5379583333333335,x plus five
+/data1/eunju/datasets/mathspeech/dataset/373.mp3,0.0,1.7219583333333333,1.7219583333333333,one minus a half
+/data1/eunju/datasets/mathspeech/dataset/989.mp3,0.0,3.2099583333333332,3.2099583333333332,dy will be 2t dt
+/data1/eunju/datasets/mathspeech/dataset/646.mp3,0.0,7.169958333333334,7.169958333333334, integral from minus pi over two pi over two cosine squared theta d theta
+/data1/eunju/datasets/mathspeech/dataset/707.mp3,0.0,3.161958333333333,3.161958333333333, a1 x squared over 2
+/data1/eunju/datasets/mathspeech/dataset/319.mp3,0.0,2.153958333333333,2.153958333333333,e squared over two
+/data1/eunju/datasets/mathspeech/dataset/403.mp3,0.0,7.721958333333333,7.721958333333333,1 24 x to the 4th plus 2 to the power 6 plus c
+/data1/eunju/datasets/mathspeech/dataset/18.mp3,0.0,2.2259583333333333,2.2259583333333333,square root of pi over 2
+/data1/eunju/datasets/mathspeech/dataset/269.mp3,0.0,4.241958333333334,4.241958333333334,x divided by 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/204.mp3,0.0,4.745958333333333,4.745958333333333,1 over n squared plus 1 square root
+/data1/eunju/datasets/mathspeech/dataset/432.mp3,0.0,3.9299583333333334,3.9299583333333334,i over 365 f of t dt
+/data1/eunju/datasets/mathspeech/dataset/131.mp3,0.0,10.433958333333333,10.433958333333333,cosine theta is PQ dot PR over length PQ length PR
+/data1/eunju/datasets/mathspeech/dataset/401.mp3,0.0,4.097958333333334,4.097958333333334,f of x equals g of x plus a constant
+/data1/eunju/datasets/mathspeech/dataset/614.mp3,0.0,4.193958333333334,4.193958333333334, x squared over a squared minus x squared
+/data1/eunju/datasets/mathspeech/dataset/361.mp3,0.0,3.593958333333333,3.593958333333333,x squared equals 5
+/data1/eunju/datasets/mathspeech/dataset/678.mp3,0.0,3.5219583333333335,3.5219583333333335,1 over 1 over x
+/data1/eunju/datasets/mathspeech/dataset/408.mp3,0.0,3.2819583333333333,3.2819583333333333,x e to the minus x squared
+/data1/eunju/datasets/mathspeech/dataset/690.mp3,0.0,1.8659583333333334,1.8659583333333334,y equals 1 over x
+/data1/eunju/datasets/mathspeech/dataset/615.mp3,0.0,5.0339583333333335,5.0339583333333335,square root a squared minus x squared
+/data1/eunju/datasets/mathspeech/dataset/13.mp3,0.0,9.353958333333333,9.353958333333333,a half times one plus two thirds plus a half times a half
+/data1/eunju/datasets/mathspeech/dataset/779.mp3,0.0,10.601958333333334,10.601958333333334,a times x squared plus b over a xy
+/data1/eunju/datasets/mathspeech/dataset/831.mp3,0.0,3.089958333333333,3.089958333333333,f sub y is 2y 
+/data1/eunju/datasets/mathspeech/dataset/520.mp3,0.0,2.105958333333333,2.105958333333333,a quarter minus one eighth
+/data1/eunju/datasets/mathspeech/dataset/322.mp3,0.0,1.8899583333333334,1.8899583333333334,x squared over 16
+/data1/eunju/datasets/mathspeech/dataset/216.mp3,0.0,5.345958333333333,5.345958333333333,f of x y equals one minus x squared minus y squared
+/data1/eunju/datasets/mathspeech/dataset/596.mp3,0.0,7.841958333333333,7.841958333333333,the integral of 2 pi x e minus e to the x dx
+/data1/eunju/datasets/mathspeech/dataset/984.mp3,0.0,7.601958333333333,7.601958333333333,P sub x plus Q sub y plus R sub z
+/data1/eunju/datasets/mathspeech/dataset/932.mp3,0.0,5.897958333333333,5.897958333333333,minus yi plus xj over x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/538.mp3,0.0,4.505958333333333,4.505958333333333,u equals the cosine of x
+/data1/eunju/datasets/mathspeech/dataset/365.mp3,0.0,5.681958333333333,5.681958333333333,x1 is equal to x0 minus y0 divided by m
+/data1/eunju/datasets/mathspeech/dataset/506.mp3,0.0,7.817958333333333,7.817958333333333,cosine of two theta is cosine square root of theta minus the sine squre root of theta
+/data1/eunju/datasets/mathspeech/dataset/647.mp3,0.0,4.265958333333334,4.265958333333334, cosine 2 theta divided by 2
+/data1/eunju/datasets/mathspeech/dataset/479.mp3,0.0,4.073958333333334,4.073958333333334,pi times ax squared
+/data1/eunju/datasets/mathspeech/dataset/903.mp3,0.0,4.265958333333334,4.265958333333334,F dot t dS
+/data1/eunju/datasets/mathspeech/dataset/992.mp3,0.0,2.9939583333333335,2.9939583333333335,xy is t to the five
+/data1/eunju/datasets/mathspeech/dataset/270.mp3,0.0,11.753958333333333,11.753958333333333,the limit as delta x goes to 0 of f of x plus delta x minus f of x divided by delta x
+/data1/eunju/datasets/mathspeech/dataset/523.mp3,0.0,4.0019583333333335,4.0019583333333335,y equals a sin theta
+/data1/eunju/datasets/mathspeech/dataset/101.mp3,0.0,11.201958333333334,11.201958333333334,the limit of 1 minus cosine x divided by x x goes to 0 is 0
+/data1/eunju/datasets/mathspeech/dataset/197.mp3,0.0,2.7539583333333333,2.7539583333333333,1 plus a plus a squared
+/data1/eunju/datasets/mathspeech/dataset/1038.mp3,0.0,7.793958333333333,7.793958333333333,cosine omega t plus three sine omega t
+/data1/eunju/datasets/mathspeech/dataset/720.mp3,0.0,6.641958333333333,6.641958333333333, 1 minus t plus t squared minus t cubed 
+/data1/eunju/datasets/mathspeech/dataset/536.mp3,0.0,5.585958333333333,5.585958333333333,one over cosine squared of x which is secant squared
+/data1/eunju/datasets/mathspeech/dataset/469.mp3,0.0,3.065958333333333,3.065958333333333,y equals x minus 2
+/data1/eunju/datasets/mathspeech/dataset/335.mp3,0.0,8.825958333333332,8.825958333333332,2 to the 1 3rd v to the 1 3rd divided by 2 to the minus 2 3rds v to the 1 3rd
+/data1/eunju/datasets/mathspeech/dataset/977.mp3,0.0,4.721958333333333,4.721958333333333,partial r over partial u times delta u
+/data1/eunju/datasets/mathspeech/dataset/622.mp3,0.0,12.473958333333334,12.473958333333334,the square root of minus a sine t squared plus a cosine t squared dt
+/data1/eunju/datasets/mathspeech/dataset/163.mp3,0.0,2.8739583333333334,2.8739583333333334,theta minus theta cubed over six
+/data1/eunju/datasets/mathspeech/dataset/537.mp3,0.0,5.897958333333333,5.897958333333333,one over the cosine times the tangent of x
+/data1/eunju/datasets/mathspeech/dataset/223.mp3,0.0,2.7539583333333333,2.7539583333333333,x to the m minus one
+/data1/eunju/datasets/mathspeech/dataset/623.mp3,0.0,2.4419583333333335,2.4419583333333335,the square root of a squared 
+/data1/eunju/datasets/mathspeech/dataset/66.mp3,0.0,2.3699583333333334,2.3699583333333334,natural log of e is equal to 1
+/data1/eunju/datasets/mathspeech/dataset/897.mp3,0.0,5.105958333333334,5.105958333333334,M dx plus N dy
+/data1/eunju/datasets/mathspeech/dataset/758.mp3,0.0,4.673958333333333,4.673958333333333,z equals f of x y
+/data1/eunju/datasets/mathspeech/dataset/625.mp3,0.0,5.777958333333333,5.777958333333333,d over dt squared
+/data1/eunju/datasets/mathspeech/dataset/409.mp3,0.0,4.9619583333333335,4.9619583333333335,sine x cosine x dx
+/data1/eunju/datasets/mathspeech/dataset/542.mp3,0.0,3.4739583333333335,3.4739583333333335,secant squared is one plus tangent squared
+/data1/eunju/datasets/mathspeech/dataset/262.mp3,0.0,4.0499583333333335,4.0499583333333335,u times r divided by x
+/data1/eunju/datasets/mathspeech/dataset/691.mp3,0.0,3.8819583333333334,3.8819583333333334, y equals one over x to the one-half
+/data1/eunju/datasets/mathspeech/dataset/528.mp3,0.0,3.8579583333333334,3.8579583333333334,the arcsine of y over a divided by two
+/data1/eunju/datasets/mathspeech/dataset/341.mp3,0.0,4.097958333333334,4.097958333333334,8 minus 8y equals 0
+/data1/eunju/datasets/mathspeech/dataset/426.mp3,0.0,5.897958333333333,5.897958333333333,b over n times i b over n squared
+/data1/eunju/datasets/mathspeech/dataset/534.mp3,0.0,5.273958333333334,5.273958333333334,the tangent of x is sine x divided by cosine x
+/data1/eunju/datasets/mathspeech/dataset/71.mp3,0.0,3.8819583333333334,3.8819583333333334,natural log of e to the x is x
+/data1/eunju/datasets/mathspeech/dataset/257.mp3,0.0,4.121958333333334,4.121958333333334,one plus one over n to the power n
+/data1/eunju/datasets/mathspeech/dataset/470.mp3,0.0,5.153958333333334,5.153958333333334,y squared minus y minus 2 is equal to 0
+/data1/eunju/datasets/mathspeech/dataset/714.mp3,0.0,9.401958333333333,9.401958333333333,1 over 2 factorial times x squared plus 1 over 3 factorial times x cubed 
+/data1/eunju/datasets/mathspeech/dataset/780.mp3,0.0,3.6899583333333332,3.6899583333333332,b squared over 4a y squared
+/data1/eunju/datasets/mathspeech/dataset/562.mp3,0.0,4.409958333333333,4.409958333333333,a times x minus 1 times x plus 2
+/data1/eunju/datasets/mathspeech/dataset/738.mp3,0.0,2.177958333333333,2.177958333333333,t squared over two 
+/data1/eunju/datasets/mathspeech/dataset/435.mp3,0.0,2.3459583333333334,2.3459583333333334,minus cosine pi
+/data1/eunju/datasets/mathspeech/dataset/356.mp3,0.0,1.9619583333333332,1.9619583333333332,b minus y
+/data1/eunju/datasets/mathspeech/dataset/230.mp3,0.0,7.313958333333333,7.313958333333333,y to the fourth plus xy squared minus two is equal to zero
+/data1/eunju/datasets/mathspeech/dataset/1079.mp3,0.0,3.7379583333333333,3.7379583333333333,e to the negative x cosine x
+/data1/eunju/datasets/mathspeech/dataset/377.mp3,0.0,3.7139583333333333,3.7139583333333333,the interval a less than x less than b
+/data1/eunju/datasets/mathspeech/dataset/603.mp3,0.0,7.433958333333333,7.433958333333333, the integral from 0 to 10 of the square root of 1 plus m squared dx
+/data1/eunju/datasets/mathspeech/dataset/927.mp3,0.0,3.113958333333333,3.113958333333333,y equals f2 of x
+/data1/eunju/datasets/mathspeech/dataset/120.mp3,0.0,3.4259583333333334,3.4259583333333334,10 times sine of t raised to the 9th power
+/data1/eunju/datasets/mathspeech/dataset/990.mp3,0.0,11.201958333333334,11.201958333333334,the integral of yz dx plus xz dy plus xy dz
+/data1/eunju/datasets/mathspeech/dataset/239.mp3,0.0,3.0179583333333335,3.0179583333333335,one over 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/921.mp3,0.0,3.7139583333333333,3.7139583333333333,4 x squared plus 8xy
+/data1/eunju/datasets/mathspeech/dataset/91.mp3,0.0,7.793958333333333,7.793958333333333,minus 1 over x0 plus delta x times x0
+/data1/eunju/datasets/mathspeech/dataset/161.mp3,0.0,5.105958333333334,5.105958333333334,x of theta is theta minus sine theta
+/data1/eunju/datasets/mathspeech/dataset/894.mp3,0.0,3.3539583333333334,3.3539583333333334,negative t squared plus 2t squared
+/data1/eunju/datasets/mathspeech/dataset/546.mp3,0.0,5.729958333333333,5.729958333333333,minus one over u plus a constant
+/data1/eunju/datasets/mathspeech/dataset/165.mp3,0.0,9.977958333333333,9.977958333333333,square root of one minus cosine t squared plus sine squared t
+/data1/eunju/datasets/mathspeech/dataset/222.mp3,0.0,4.121958333333334,4.121958333333334,n y to the n minus 1 
+/data1/eunju/datasets/mathspeech/dataset/39.mp3,0.0,6.377958333333333,6.377958333333333,negative sine x times x squared times the sine x
+/data1/eunju/datasets/mathspeech/dataset/608.mp3,0.0,2.609958333333333,2.609958333333333,sine inverse of a
+/data1/eunju/datasets/mathspeech/dataset/251.mp3,0.0,7.793958333333333,7.793958333333333, The derivative with respect to x of 2 to the x is log 2 times 2 to the x
+/data1/eunju/datasets/mathspeech/dataset/371.mp3,0.0,7.0499583333333335,7.0499583333333335,9 4ths plus 5 halves times 4 9ths
+/data1/eunju/datasets/mathspeech/dataset/576.mp3,0.0,5.0099583333333335,5.0099583333333335,x cubed plus x squared minus 2x
+/data1/eunju/datasets/mathspeech/dataset/551.mp3,0.0,5.153958333333334,5.153958333333334,x squared plus 4x is u squared minus 4
+/data1/eunju/datasets/mathspeech/dataset/170.mp3,0.0,4.193958333333334,4.193958333333334,uv prime equals u prime v plus u v prime
+/data1/eunju/datasets/mathspeech/dataset/231.mp3,0.0,4.217958333333334,4.217958333333334,four y cubed y prime
+/data1/eunju/datasets/mathspeech/dataset/17.mp3,0.0,3.2579583333333333,3.2579583333333333,pi minus pi e to the minus r squared
+/data1/eunju/datasets/mathspeech/dataset/658.mp3,0.0,4.433958333333333,4.433958333333333,Ax plus b divided by x squared plus 2
+/data1/eunju/datasets/mathspeech/dataset/436.mp3,0.0,2.9459583333333335,2.9459583333333335,x of b minus x of a
+/data1/eunju/datasets/mathspeech/dataset/95.mp3,0.0,5.921958333333333,5.921958333333333,x to the n plus n x to the n minus 1 delta x
+/data1/eunju/datasets/mathspeech/dataset/695.mp3,0.0,2.3219583333333333,2.3219583333333333,1 over 1 minus a
+/data1/eunju/datasets/mathspeech/dataset/391.mp3,0.0,11.969958333333333,11.969958333333333,dy is 1 3rd times 64 to the minus 2 3rds dx
+/data1/eunju/datasets/mathspeech/dataset/540.mp3,0.0,5.081958333333334,5.081958333333334,sine x dx is minus du divided by u
+/data1/eunju/datasets/mathspeech/dataset/194.mp3,0.0,3.6899583333333332,3.6899583333333332,the integral from 1 to infinity dx over x
+/data1/eunju/datasets/mathspeech/dataset/309.mp3,0.0,7.193958333333334,7.193958333333334,log x minus one divided by log x squared
+/data1/eunju/datasets/mathspeech/dataset/278.mp3,0.0,5.081958333333334,5.081958333333334,r one plus x to the r minus 1
+/data1/eunju/datasets/mathspeech/dataset/1001.mp3,0.0,9.065958333333333,9.065958333333333,R sub y minus Q sub z times i plus P sub z minus R sub x times j 
+/data1/eunju/datasets/mathspeech/dataset/801.mp3,0.0,12.473958333333334,12.473958333333334,df equals f sub x dx plus f sub y dy plus f sub z dz
+/data1/eunju/datasets/mathspeech/dataset/162.mp3,0.0,3.161958333333333,3.161958333333333,one minus theta squared over two
+/data1/eunju/datasets/mathspeech/dataset/529.mp3,0.0,3.4019583333333334,3.4019583333333334,a squared sine of theta cosine of theta
+/data1/eunju/datasets/mathspeech/dataset/387.mp3,0.0,5.849958333333333,5.849958333333333,x to the fourth over four times three times two
+/data1/eunju/datasets/mathspeech/dataset/586.mp3,0.0,5.273958333333334,5.273958333333334,u prime is 2 log x times 1 over x
+/data1/eunju/datasets/mathspeech/dataset/52.mp3,0.0,6.305958333333334,6.305958333333334,6 minus 16 over 4 minus 12
+/data1/eunju/datasets/mathspeech/dataset/628.mp3,0.0,4.265958333333334,4.265958333333334,2 sine pi over 2
+/data1/eunju/datasets/mathspeech/dataset/138.mp3,0.0,2.9219583333333334,2.9219583333333334,one minus x squared minus y squared
+/data1/eunju/datasets/mathspeech/dataset/830.mp3,0.0,2.8499583333333334,2.8499583333333334,f sub y equals lambda g sub y
+/data1/eunju/datasets/mathspeech/dataset/67.mp3,0.0,4.289958333333334,4.289958333333334,natural log of m times n is equal to the natural log of m plus natural log of n
+/data1/eunju/datasets/mathspeech/dataset/556.mp3,0.0,3.161958333333333,3.161958333333333,e of x divided by q of x
+/data1/eunju/datasets/mathspeech/dataset/472.mp3,0.0,4.769958333333333,4.769958333333333,y equals x minus 2
+/data1/eunju/datasets/mathspeech/dataset/568.mp3,0.0,4.0259583333333335,4.0259583333333335,b over x minus 1 squared
+/data1/eunju/datasets/mathspeech/dataset/35.mp3,0.0,8.489958333333334,8.489958333333334,two times sine of x plus pi over three
+/data1/eunju/datasets/mathspeech/dataset/973.mp3,0.0,3.9779583333333335,3.9779583333333335, f of x plus delta x and y
+/data1/eunju/datasets/mathspeech/dataset/813.mp3,0.0,5.585958333333333,5.585958333333333,one over v times du dt 
+/data1/eunju/datasets/mathspeech/dataset/685.mp3,0.0,4.457958333333333,4.457958333333333, 1 over the square root of x cubed plus 3 
+/data1/eunju/datasets/mathspeech/dataset/62.mp3,0.0,3.161958333333333,3.161958333333333,1 over cosine x
+/data1/eunju/datasets/mathspeech/dataset/533.mp3,0.0,3.1859583333333332,3.1859583333333332,1 plus sine squared over cosine squared
+/data1/eunju/datasets/mathspeech/dataset/971.mp3,0.0,3.7379583333333333,3.7379583333333333,cosine squared phi sine phi d phi
+/data1/eunju/datasets/mathspeech/dataset/1037.mp3,0.0,4.625958333333333,4.625958333333333,k sine omega t
+/data1/eunju/datasets/mathspeech/dataset/339.mp3,0.0,6.521958333333333,6.521958333333333,4x times minus 2y over x
+/data1/eunju/datasets/mathspeech/dataset/684.mp3,0.0,5.9939583333333335,5.9939583333333335,integral from 0 to 1 dx over square root of x squared plus 10
+/data1/eunju/datasets/mathspeech/dataset/694.mp3,0.0,3.2819583333333333,3.2819583333333333,1 plus a plus a squared
+/data1/eunju/datasets/mathspeech/dataset/572.mp3,0.0,1.2899583333333333,1.2899583333333333,x cubed plus one
+/data1/eunju/datasets/mathspeech/dataset/607.mp3,0.0,3.065958333333333,3.065958333333333, x squared over 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/29.mp3,0.0,1.8899583333333334,1.8899583333333334,pi over 6 plus pi
+/data1/eunju/datasets/mathspeech/dataset/722.mp3,0.0,3.0419583333333335,3.0419583333333335,x equals minus t squared
+/data1/eunju/datasets/mathspeech/dataset/402.mp3,0.0,4.529958333333333,4.529958333333333,u is equal to x to the fourth plus two
+/data1/eunju/datasets/mathspeech/dataset/113.mp3,0.0,6.785958333333333,6.785958333333333,u times v of x plus delta x
+/data1/eunju/datasets/mathspeech/dataset/72.mp3,0.0,6.233958333333334,6.233958333333334,1 half natural log x plus 1 half
+/data1/eunju/datasets/mathspeech/dataset/347.mp3,0.0,3.3299583333333334,3.3299583333333334,two fifths h
+/data1/eunju/datasets/mathspeech/dataset/360.mp3,0.0,5.705958333333333,5.705958333333333,x divided by square root of x squared plus y squared 
+/data1/eunju/datasets/mathspeech/dataset/421.mp3,0.0,3.8819583333333334,3.8819583333333334, n plus 1 cubed divided by n cubed
+/data1/eunju/datasets/mathspeech/dataset/590.mp3,0.0,4.121958333333334,4.121958333333334,x to the n e to the x dx
+/data1/eunju/datasets/mathspeech/dataset/23.mp3,0.0,4.0019583333333335,4.0019583333333335,pi x2 squared minus x1 squared
+/data1/eunju/datasets/mathspeech/dataset/240.mp3,0.0,9.233958333333334,9.233958333333334,d by dx of tan inverse x is equal to one over 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/519.mp3,0.0,5.609958333333333,5.609958333333333,a minus b times a plus b is a squared minus b squared
+/data1/eunju/datasets/mathspeech/dataset/633.mp3,0.0,4.721958333333333,4.721958333333333,2pi times 2sine t
+/data1/eunju/datasets/mathspeech/dataset/281.mp3,0.0,6.9779583333333335,6.9779583333333335,one minus three x minus a half of x plus three halves x squared.
+/data1/eunju/datasets/mathspeech/dataset/584.mp3,0.0,5.273958333333334,5.273958333333334,x log x minus x plus c
+/data1/eunju/datasets/mathspeech/dataset/709.mp3,0.0,7.721958333333333,7.721958333333333, a n is equal to f nth derivative divided by n factorial
+/data1/eunju/datasets/mathspeech/dataset/880.mp3,0.0,3.617958333333333,3.617958333333333, three halves of pi a to the fourth
+/data1/eunju/datasets/mathspeech/dataset/966.mp3,0.0,6.761958333333333,6.761958333333333,xi yj zk 
+/data1/eunju/datasets/mathspeech/dataset/605.mp3,0.0,8.081958333333333,8.081958333333333,square root of 1 plus y prime squared dx
+/data1/eunju/datasets/mathspeech/dataset/627.mp3,0.0,5.297958333333334,5.297958333333334, 1 quarter of x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/234.mp3,0.0,9.689958333333333,9.689958333333333, minus 1 squared divided by 4 times 1 cubed plus 2 times 1 times 1
+/data1/eunju/datasets/mathspeech/dataset/896.mp3,0.0,2.4419583333333335,2.4419583333333335,dr dt times dt
+/data1/eunju/datasets/mathspeech/dataset/515.mp3,0.0,4.529958333333333,4.529958333333333,u minus u cubed over 3
+/data1/eunju/datasets/mathspeech/dataset/221.mp3,0.0,3.5219583333333335,3.5219583333333335,m x to the n minus one
+/data1/eunju/datasets/mathspeech/dataset/323.mp3,0.0,7.097958333333334,7.097958333333334,the derivative of 1 minus x squared is 2 times 1 minus x times of minus 1
+/data1/eunju/datasets/mathspeech/dataset/656.mp3,0.0,7.553958333333333,7.553958333333333,dA dt is equal to a half r squared d theta dt
+/data1/eunju/datasets/mathspeech/dataset/913.mp3,0.0,3.2819583333333333,3.2819583333333333,dy becomes y prime of t dt
+/data1/eunju/datasets/mathspeech/dataset/96.mp3,0.0,2.585958333333333,2.585958333333333,n x to the n minus one
+/data1/eunju/datasets/mathspeech/dataset/143.mp3,0.0,2.9939583333333335,2.9939583333333335,r to the four over four
+/data1/eunju/datasets/mathspeech/dataset/909.mp3,0.0,10.961958333333333,10.961958333333333, integral from 0 to 2pi of a squared times sine squared theta plus cosine squared theta d theta
+/data1/eunju/datasets/mathspeech/dataset/1009.mp3,0.0,3.617958333333333,3.617958333333333,1 over C squared plus 1
+/data1/eunju/datasets/mathspeech/dataset/134.mp3,0.0,6.329958333333333,6.329958333333333,OP dot A equals zero
+/data1/eunju/datasets/mathspeech/dataset/144.mp3,0.0,3.641958333333333,3.641958333333333,one-half m v squared
+/data1/eunju/datasets/mathspeech/dataset/931.mp3,0.0,8.105958333333334,8.105958333333334,the double integral of P sub x plus Q sub y dA
+/data1/eunju/datasets/mathspeech/dataset/122.mp3,0.0,4.361958333333333,4.361958333333333,D cubed x to the n
+/data1/eunju/datasets/mathspeech/dataset/570.mp3,0.0,4.241958333333334,4.241958333333334,"1 squared divided by 1 squared plus 1,"
+/data1/eunju/datasets/mathspeech/dataset/119.mp3,0.0,9.713958333333334,9.713958333333334,v to the minus 2 v prime minus v prime divided by v squared
+/data1/eunju/datasets/mathspeech/dataset/411.mp3,0.0,11.297958333333334,11.297958333333334,the integral of sine x cosine x dx is equal to negative a half cosine squared x plus c
+/data1/eunju/datasets/mathspeech/dataset/843.mp3,0.0,2.177958333333333,2.177958333333333,2x dx 
+/data1/eunju/datasets/mathspeech/dataset/972.mp3,0.0,3.7379583333333333,3.7379583333333333,four thirds pi a cubed
+/data1/eunju/datasets/mathspeech/dataset/983.mp3,0.0,3.161958333333333,3.161958333333333,z minus f of x y
+/data1/eunju/datasets/mathspeech/dataset/624.mp3,0.0,7.9379583333333334,7.9379583333333334,delta x delta t squared plus delta y delta t the quantity squared
+/data1/eunju/datasets/mathspeech/dataset/826.mp3,0.0,3.2819583333333333,3.2819583333333333,gradient w dot u
+/data1/eunju/datasets/mathspeech/dataset/124.mp3,0.0,5.249958333333334,5.249958333333334,D to the n plus 1 applied to x to the n
+/data1/eunju/datasets/mathspeech/dataset/22.mp3,0.0,5.129958333333334,5.129958333333334,integral from minus infinity to infinity e to the minus y squared dy
+/data1/eunju/datasets/mathspeech/dataset/505.mp3,0.0,7.769958333333333,7.769958333333333,2y n minus 2 4 yn 1 yn
+/data1/eunju/datasets/mathspeech/dataset/54.mp3,0.0,0.8339583333333334,0.8339583333333334,pi over two
+/data1/eunju/datasets/mathspeech/dataset/53.mp3,0.0,8.801958333333333,8.801958333333333,d over dx of tan x is equal to secant squared of x
+/data1/eunju/datasets/mathspeech/dataset/404.mp3,0.0,5.249958333333334,5.249958333333334,the integral of u to the minus a half du
+/data1/eunju/datasets/mathspeech/dataset/225.mp3,0.0,3.9299583333333334,3.9299583333333334,minus one plus m over n
+/data1/eunju/datasets/mathspeech/dataset/905.mp3,0.0,2.561958333333333,2.561958333333333,xi plus yj
+/data1/eunju/datasets/mathspeech/dataset/618.mp3,0.0,2.681958333333333,2.681958333333333, sine of pi over 2 is 1
+/data1/eunju/datasets/mathspeech/dataset/778.mp3,0.0,3.7379583333333333,3.7379583333333333,x squared plus 2xy
+/data1/eunju/datasets/mathspeech/dataset/571.mp3,0.0,3.9539583333333335,3.9539583333333335, a times x squared plus 1
+/data1/eunju/datasets/mathspeech/dataset/236.mp3,0.0,7.865958333333333,7.865958333333333,d by dy tan y times dy dx
+/data1/eunju/datasets/mathspeech/dataset/664.mp3,0.0,2.2019583333333332,2.2019583333333332,x log x
+/data1/eunju/datasets/mathspeech/dataset/674.mp3,0.0,4.673958333333333,4.673958333333333,a 3rd x to the minus 2 3rds
+/data1/eunju/datasets/mathspeech/dataset/235.mp3,0.0,6.545958333333333,6.545958333333333,tan inverse x is equal to pi over two
+/data1/eunju/datasets/mathspeech/dataset/987.mp3,0.0,11.729958333333334,11.729958333333334," partial u partial t is minus div F, which is therefore positive k times divergence of grad u"
+/data1/eunju/datasets/mathspeech/dataset/920.mp3,0.0,12.929958333333333,12.929958333333333,f of x one and y one is four thirds x one cubed plus y one cubed plus four x one squared y one
+/data1/eunju/datasets/mathspeech/dataset/785.mp3,0.0,4.769958333333333,4.769958333333333,u equals x plus b over two ay
+/data1/eunju/datasets/mathspeech/dataset/332.mp3,0.0,4.481958333333333,4.481958333333333,x squared plus 4v over x
+/data1/eunju/datasets/mathspeech/dataset/511.mp3,0.0,4.889958333333333,4.889958333333333,sine to the nth power of x times the cosine of x 
+/data1/eunju/datasets/mathspeech/dataset/410.mp3,0.0,4.721958333333333,4.721958333333333,2 cosine x times minus sine x
+/data1/eunju/datasets/mathspeech/dataset/632.mp3,0.0,4.289958333333334,4.289958333333334,ds squared equals dx squared plus dy squared
+/data1/eunju/datasets/mathspeech/dataset/26.mp3,0.0,4.289958333333334,4.289958333333334,square root of 3 times tan x
+/data1/eunju/datasets/mathspeech/dataset/14.mp3,0.0,6.0419583333333335,6.0419583333333335,y0 plus 4y1 plus y2
+/data1/eunju/datasets/mathspeech/dataset/485.mp3,0.0,2.9699583333333335,2.9699583333333335,a hundred minus thirty y
+/data1/eunju/datasets/mathspeech/dataset/331.mp3,0.0,5.561958333333333,5.561958333333333,2x minus 4v over x squared
+/data1/eunju/datasets/mathspeech/dataset/525.mp3,0.0,5.921958333333333,5.921958333333333,sine of theta cosine of theta over 2
+/data1/eunju/datasets/mathspeech/dataset/1067.mp3,0.0,5.321958333333333,5.321958333333333,one minus exponential of minus two t
+/data1/eunju/datasets/mathspeech/dataset/498.mp3,0.0,2.4899583333333335,2.4899583333333335,two pi r e to the minus r squared
+/data1/eunju/datasets/mathspeech/dataset/280.mp3,0.0,5.081958333333334,5.081958333333334,e to the minus three x one plus x to the minus a half
+/data1/eunju/datasets/mathspeech/dataset/760.mp3,0.0,4.289958333333334,4.289958333333334,z equals one minus x squared minus y squared
+/data1/eunju/datasets/mathspeech/dataset/999.mp3,0.0,7.745958333333333,7.745958333333333,yz cubed plus h of z
+/data1/eunju/datasets/mathspeech/dataset/494.mp3,0.0,4.241958333333334,4.241958333333334,y less than x less than 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/399.mp3,0.0,2.8739583333333334,2.8739583333333334,sine inverse x
+/data1/eunju/datasets/mathspeech/dataset/611.mp3,0.0,10.217958333333334,10.217958333333334,the integral from 0 to a of square root of 1 plus 4x squared dx
+/data1/eunju/datasets/mathspeech/dataset/20.mp3,0.0,3.7859583333333333,3.7859583333333333,e to the minus b squared times e to the minus x squared
+/data1/eunju/datasets/mathspeech/dataset/324.mp3,0.0,2.4419583333333335,2.4419583333333335,2x over 8
+/data1/eunju/datasets/mathspeech/dataset/33.mp3,0.0,10.721958333333333,10.721958333333333,h of x equals two times one-half sine x plus square root of three over two
+/data1/eunju/datasets/mathspeech/dataset/431.mp3,0.0,6.257958333333334,6.257958333333334,e to the r times 1 minus t
+/data1/eunju/datasets/mathspeech/dataset/279.mp3,0.0,6.881958333333333,6.881958333333333,e to the minus 3x divided by square root 1 plus x
+/data1/eunju/datasets/mathspeech/dataset/682.mp3,0.0,2.561958333333333,2.561958333333333, 1 over minus p plus 1
+/data1/eunju/datasets/mathspeech/dataset/892.mp3,0.0,2.057958333333333,2.057958333333333,y equals t squared
+/data1/eunju/datasets/mathspeech/dataset/1064.mp3,0.0,6.233958333333334,6.233958333333334,minus 3C1 minus 1 half C2 equals to 0
+/data1/eunju/datasets/mathspeech/dataset/1045.mp3,0.0,5.9939583333333335,5.9939583333333335,x dot of 0 equals to 0
+/data1/eunju/datasets/mathspeech/dataset/415.mp3,0.0,4.577958333333333,4.577958333333333,log x plus c
+/data1/eunju/datasets/mathspeech/dataset/844.mp3,0.0,1.6019583333333334,1.6019583333333334,x equals two
+/data1/eunju/datasets/mathspeech/dataset/601.mp3,0.0,5.273958333333334,5.273958333333334,square root of 1 plus f prime of x squared dx
+/data1/eunju/datasets/mathspeech/dataset/261.mp3,0.0,4.289958333333334,4.289958333333334,e to the r log x prime
+/data1/eunju/datasets/mathspeech/dataset/312.mp3,0.0,5.777958333333333,5.777958333333333, log x minus 1 divided by log x squared
+/data1/eunju/datasets/mathspeech/dataset/123.mp3,0.0,2.561958333333333,2.561958333333333,n times n minus 1
+/data1/eunju/datasets/mathspeech/dataset/816.mp3,0.0,9.425958333333334,9.425958333333334, dy is y sub u du plus y sub v dv
+/data1/eunju/datasets/mathspeech/dataset/514.mp3,0.0,5.585958333333333,5.585958333333333,minus cosine cubed of x over three
+/data1/eunju/datasets/mathspeech/dataset/640.mp3,0.0,5.417958333333333,5.417958333333333,minus pi over two is less than theta is less than pi over two
+/data1/eunju/datasets/mathspeech/dataset/359.mp3,0.0,3.4499583333333335,3.4499583333333335,b minus y times y prime
+/data1/eunju/datasets/mathspeech/dataset/242.mp3,0.0,9.065958333333333,9.065958333333333,a to the x1 plus x2 is a to the x1 times a to the x2
+/data1/eunju/datasets/mathspeech/dataset/820.mp3,0.0,4.9619583333333335,4.9619583333333335,x squared plus y squared minus z squared equals four 
+/data1/eunju/datasets/mathspeech/dataset/553.mp3,0.0,5.177958333333334,5.177958333333334,square root of u squared minus 4
+/data1/eunju/datasets/mathspeech/dataset/202.mp3,0.0,7.721958333333333,7.721958333333333,one plus one over two plus all the way up to one over n minus one plus 1 over n
+/data1/eunju/datasets/mathspeech/dataset/97.mp3,0.0,2.7299583333333333,2.7299583333333333,minus 1 over x squared
+/data1/eunju/datasets/mathspeech/dataset/852.mp3,0.0,10.505958333333334,10.505958333333334,zero equals dA equals cosine theta dB minus B sine theta d theta
+/data1/eunju/datasets/mathspeech/dataset/631.mp3,0.0,3.4019583333333334,3.4019583333333334, y squared equals 1
+/data1/eunju/datasets/mathspeech/dataset/352.mp3,0.0,6.593958333333333,6.593958333333333,2 is equal to pi over 3 times 2 5ths
+/data1/eunju/datasets/mathspeech/dataset/90.mp3,0.0,4.241958333333334,4.241958333333334,1 over x0 plus delta x
+/data1/eunju/datasets/mathspeech/dataset/817.mp3,0.0,8.153958333333334,8.153958333333334, f sub x times x sub u plus f sub y times y sub u 
+/data1/eunju/datasets/mathspeech/dataset/246.mp3,0.0,5.249958333333334,5.249958333333334,e to the log x is equal to x
+/data1/eunju/datasets/mathspeech/dataset/346.mp3,0.0,3.5459583333333335,3.5459583333333335,dv dt is two
+/data1/eunju/datasets/mathspeech/dataset/828.mp3,0.0,4.361958333333333,4.361958333333333,square root of x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/636.mp3,0.0,2.681958333333333,2.681958333333333, r equals square root of 2
+/data1/eunju/datasets/mathspeech/dataset/311.mp3,0.0,2.105958333333333,2.105958333333333, log e is 1
+/data1/eunju/datasets/mathspeech/dataset/118.mp3,0.0,3.7619583333333333,3.7619583333333333,v plus delta v
+/data1/eunju/datasets/mathspeech/dataset/916.mp3,0.0,4.481958333333333,4.481958333333333,three y squared plus four x squared
+/data1/eunju/datasets/mathspeech/dataset/147.mp3,0.0,3.5459583333333335,3.5459583333333335,pi a to the four over two
+/data1/eunju/datasets/mathspeech/dataset/155.mp3,0.0,6.833958333333333,6.833958333333333,Q of t is Q0 plus t times the vector Q0 Q1
+/data1/eunju/datasets/mathspeech/dataset/832.mp3,0.0,3.2099583333333332,3.2099583333333332,g sub y is x
+/data1/eunju/datasets/mathspeech/dataset/364.mp3,0.0,5.465958333333333,5.465958333333333,y minus y0 is equal to m x minus x0
+/data1/eunju/datasets/mathspeech/dataset/313.mp3,0.0,6.881958333333333,6.881958333333333,1 over log x minus 1 over log x squared
+/data1/eunju/datasets/mathspeech/dataset/11.mp3,0.0,2.8739583333333334,2.8739583333333334,log two minus log one
+/data1/eunju/datasets/mathspeech/dataset/1071.mp3,0.0,3.617958333333333,3.617958333333333,one squared plus three squared
+/data1/eunju/datasets/mathspeech/dataset/648.mp3,0.0,5.9939583333333335,5.9939583333333335,a squared times pi over 2 minus minus pi over 2
+/data1/eunju/datasets/mathspeech/dataset/902.mp3,0.0,3.8339583333333334,3.8339583333333334,dy equals 2x dx
+/data1/eunju/datasets/mathspeech/dataset/484.mp3,0.0,2.657958333333333,2.657958333333333,pi over 2a squared 
+/data1/eunju/datasets/mathspeech/dataset/612.mp3,0.0,5.0099583333333335,5.0099583333333335,dx is equal to a half secant squared u du
+/data1/eunju/datasets/mathspeech/dataset/156.mp3,0.0,6.161958333333334,6.161958333333334,x plus 2y plus 4z equals seven
+/data1/eunju/datasets/mathspeech/dataset/353.mp3,0.0,4.841958333333333,4.841958333333333,dh dt is equal to 1 over 2pi
+/data1/eunju/datasets/mathspeech/dataset/792.mp3,0.0,5.801958333333333,5.801958333333333,w sub y is bx plus 2cy
+/data1/eunju/datasets/mathspeech/dataset/146.mp3,0.0,2.3939583333333334,2.3939583333333334,x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/303.mp3,0.0,4.097958333333334,4.097958333333334,one over x plus two the quantity squared.
+/data1/eunju/datasets/mathspeech/dataset/1072.mp3,0.0,5.609958333333333,5.609958333333333, r cosine theta plus i times r sine theta
+/data1/eunju/datasets/mathspeech/dataset/901.mp3,0.0,2.3219583333333333,2.3219583333333333,y equals x squared
+/data1/eunju/datasets/mathspeech/dataset/1039.mp3,0.0,4.457958333333333,4.457958333333333, plus minus three omega cosine omega t
+/data1/eunju/datasets/mathspeech/dataset/595.mp3,0.0,2.4659583333333335,2.4659583333333335,e times two pi times x
+/data1/eunju/datasets/mathspeech/dataset/349.mp3,0.0,3.3059583333333333,3.3059583333333333,h squared times h
+/data1/eunju/datasets/mathspeech/dataset/393.mp3,0.0,5.633958333333333,5.633958333333333,f prime of a times x minus a
+/data1/eunju/datasets/mathspeech/dataset/687.mp3,0.0,2.657958333333333,2.657958333333333,one over x to the three halves
+/data1/eunju/datasets/mathspeech/dataset/193.mp3,0.0,2.4179583333333334,2.4179583333333334,1 over 1 minus p
+/data1/eunju/datasets/mathspeech/dataset/715.mp3,0.0,2.585958333333333,2.585958333333333,1 over 1 plus x
+/data1/eunju/datasets/mathspeech/dataset/712.mp3,0.0,3.2339583333333333,3.2339583333333333,x to the seventh over seven factorial
+/data1/eunju/datasets/mathspeech/dataset/935.mp3,0.0,1.6979583333333332,1.6979583333333332,xy minus x squared
+/data1/eunju/datasets/mathspeech/dataset/723.mp3,0.0,3.665958333333333,3.665958333333333,t to the fourth over two factorial
+/data1/eunju/datasets/mathspeech/dataset/444.mp3,0.0,3.7379583333333333,3.7379583333333333,u equals x cubed plus 2
+/data1/eunju/datasets/mathspeech/dataset/343.mp3,0.0,5.417958333333333,5.417958333333333,x squared plus 30 squared is equal to d squared
+/data1/eunju/datasets/mathspeech/dataset/704.mp3,0.0,2.8259583333333333,2.8259583333333333,s times one minus x
+/data1/eunju/datasets/mathspeech/dataset/382.mp3,0.0,3.8339583333333334,3.8339583333333334, e to the 0 minus 1 plus 0
+/data1/eunju/datasets/mathspeech/dataset/512.mp3,0.0,1.6739583333333334,1.6739583333333334,u to the n plus one
+/data1/eunju/datasets/mathspeech/dataset/385.mp3,0.0,1.9139583333333334,1.9139583333333334,x squared over 2
+/data1/eunju/datasets/mathspeech/dataset/429.mp3,0.0,5.201958333333334,5.201958333333334,f of x is x cubed
+/data1/eunju/datasets/mathspeech/dataset/57.mp3,0.0,5.057958333333334,5.057958333333334,square root of 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/424.mp3,0.0,11.393958333333334,11.393958333333334,the sum of a i i equals 1 to n is a 1 plus a 2 plus dot dot dot plus a n
+/data1/eunju/datasets/mathspeech/dataset/460.mp3,0.0,5.057958333333334,5.057958333333334,the integral from x to 1 with a minus sign dt over 2
+/data1/eunju/datasets/mathspeech/dataset/657.mp3,0.0,4.0499583333333335,4.0499583333333335,e x plus 2 cubed
+/data1/eunju/datasets/mathspeech/dataset/336.mp3,0.0,1.9139583333333334,1.9139583333333334,2xy
+/data1/eunju/datasets/mathspeech/dataset/253.mp3,0.0,5.153958333333334,5.153958333333334,log u prime is equal to u primie over u
+/data1/eunju/datasets/mathspeech/dataset/1086.mp3,0.0,2.3459583333333334,2.3459583333333334,y i minus y hat i
+/data1/eunju/datasets/mathspeech/dataset/845.mp3,0.0,2.9219583333333334,2.9219583333333334,y plus 3z squared
+/data1/eunju/datasets/mathspeech/dataset/137.mp3,0.0,3.617958333333333,3.617958333333333,y equals r sine theta
+/data1/eunju/datasets/mathspeech/dataset/70.mp3,0.0,3.2099583333333332,3.2099583333333332,natural log of e to the a plus b
+/data1/eunju/datasets/mathspeech/dataset/739.mp3,0.0,5.873958333333333,5.873958333333333,theta minus theta cubed over six
+/data1/eunju/datasets/mathspeech/dataset/338.mp3,0.0,8.249958333333334,8.249958333333334,2x plus 4y plus 4x y prime
+/data1/eunju/datasets/mathspeech/dataset/1010.mp3,0.0,2.081958333333333,2.081958333333333, 1 over 2c squared
+/data1/eunju/datasets/mathspeech/dataset/130.mp3,0.0,3.8819583333333334,3.8819583333333334,a dot a is length a squared
+/data1/eunju/datasets/mathspeech/dataset/532.mp3,0.0,2.3939583333333334,2.3939583333333334,a squared theta over 2
+/data1/eunju/datasets/mathspeech/dataset/688.mp3,0.0,3.7619583333333333,3.7619583333333333, x to the one half times two
+/data1/eunju/datasets/mathspeech/dataset/925.mp3,0.0,5.633958333333333,5.633958333333333,dx equals minus sine theta d theta
+/data1/eunju/datasets/mathspeech/dataset/799.mp3,0.0,7.385958333333333,7.385958333333333,dy over dx is going to be one over cosine y
+/data1/eunju/datasets/mathspeech/dataset/227.mp3,0.0,3.5219583333333335,3.5219583333333335,a x to the a minus one
+/data1/eunju/datasets/mathspeech/dataset/237.mp3,0.0,5.681958333333333,5.681958333333333,d by dx of tan inverse of x
+/data1/eunju/datasets/mathspeech/dataset/379.mp3,0.0,7.313958333333333,7.313958333333333,f of b minus f of a over b minus a is equal to f prime of c
+/data1/eunju/datasets/mathspeech/dataset/589.mp3,0.0,8.273958333333333,8.273958333333333,x log x squared minus twice f one of x
+/data1/eunju/datasets/mathspeech/dataset/68.mp3,0.0,3.7859583333333333,3.7859583333333333,e to the a equals m
+/data1/eunju/datasets/mathspeech/dataset/1014.mp3,0.0,2.105958333333333,2.105958333333333, negative c minus one
+/data1/eunju/datasets/mathspeech/dataset/198.mp3,0.0,2.0099583333333335,2.0099583333333335,one over one minus a
+/data1/eunju/datasets/mathspeech/dataset/154.mp3,0.0,6.257958333333334,6.257958333333334,z of t equals two minus 3t
+/data1/eunju/datasets/mathspeech/dataset/804.mp3,0.0,13.265958333333334,13.265958333333334,df dt equals f sub x dx dt plus f sub y dy dt plus f sub z dz dt
+/data1/eunju/datasets/mathspeech/dataset/899.mp3,0.0,2.3219583333333333,2.3219583333333333,dy equals 2x dx.
+/data1/eunju/datasets/mathspeech/dataset/243.mp3,0.0,4.121958333333334,4.121958333333334, a to the x plus delta x 
+/data1/eunju/datasets/mathspeech/dataset/676.mp3,0.0,4.073958333333334,4.073958333333334, sine x over x squared
+/data1/eunju/datasets/mathspeech/dataset/61.mp3,0.0,2.609958333333333,2.609958333333333,x times pi to the x minus 1
+/data1/eunju/datasets/mathspeech/dataset/416.mp3,0.0,3.3059583333333333,3.3059583333333333,2b over n
+/data1/eunju/datasets/mathspeech/dataset/535.mp3,0.0,3.4019583333333334,3.4019583333333334,cosine squared plus sine squared is one
+/data1/eunju/datasets/mathspeech/dataset/1069.mp3,0.0,2.5139583333333335,2.5139583333333335,a squared plus b squared 
+/data1/eunju/datasets/mathspeech/dataset/617.mp3,0.0,10.961958333333333,10.961958333333333,"x, y is equal to a cosine pi over 2, a sine pi over 2"
+/data1/eunju/datasets/mathspeech/dataset/396.mp3,0.0,2.8259583333333333,2.8259583333333333,one over a plus one
+/data1/eunju/datasets/mathspeech/dataset/428.mp3,0.0,2.585958333333333,2.585958333333333,f of x is equal to x
+/data1/eunju/datasets/mathspeech/dataset/978.mp3,0.0,2.4899583333333335,2.4899583333333335,z equals a cosine phi
+/data1/eunju/datasets/mathspeech/dataset/191.mp3,0.0,3.6899583333333332,3.6899583333333332, x to the 1 half times 2
+/data1/eunju/datasets/mathspeech/dataset/559.mp3,0.0,2.9939583333333335,2.9939583333333335,four x plus two minus three
+/data1/eunju/datasets/mathspeech/dataset/445.mp3,0.0,4.361958333333333,4.361958333333333,du is equal to 2x dx
+/data1/eunju/datasets/mathspeech/dataset/851.mp3,0.0,4.865958333333333,4.865958333333333,one half of a squared tangent theta
+/data1/eunju/datasets/mathspeech/dataset/171.mp3,0.0,9.425958333333334,9.425958333333334,dr dt cross v plus r cross dv dt
+/data1/eunju/datasets/mathspeech/dataset/488.mp3,0.0,5.873958333333333,5.873958333333333,the integral from negative 1 to 1 square root of 1 minus x squared dx
+/data1/eunju/datasets/mathspeech/dataset/643.mp3,0.0,2.7779583333333333,2.7779583333333333,r is equal to 2a cosine theta
+/data1/eunju/datasets/mathspeech/dataset/395.mp3,0.0,7.697958333333333,7.697958333333333,4 plus 1 over 48 times x minus a
+/data1/eunju/datasets/mathspeech/dataset/30.mp3,0.0,3.3430612244897957,3.3430612244897957,minus five pi over six
+/data1/eunju/datasets/mathspeech/dataset/825.mp3,0.0,6.473958333333333,6.473958333333333, y of s equals y0 plus b times s
+/data1/eunju/datasets/mathspeech/dataset/822.mp3,0.0,5.705958333333333,5.705958333333333,two delta y minus two delta z equals zero
+/data1/eunju/datasets/mathspeech/dataset/496.mp3,0.0,2.7299583333333333,2.7299583333333333,two pi r
+/data1/eunju/datasets/mathspeech/dataset/638.mp3,0.0,5.201958333333334,5.201958333333334, x minus a squared plus y squared is equal to a squared
+/data1/eunju/datasets/mathspeech/dataset/49.mp3,0.0,3.4739583333333335,3.4739583333333335,y cubed plus x cubed equals three xy
+/data1/eunju/datasets/mathspeech/dataset/233.mp3,0.0,4.505958333333333,4.505958333333333,y to the fourth plus xy squared minus 2 is equal to zero
+/data1/eunju/datasets/mathspeech/dataset/320.mp3,0.0,2.3459583333333334,2.3459583333333334,one minus x
+/data1/eunju/datasets/mathspeech/dataset/841.mp3,0.0,4.0499583333333335,4.0499583333333335,one half of a1u1 
+/data1/eunju/datasets/mathspeech/dataset/683.mp3,0.0,9.017958333333333,9.017958333333333,integral from 0 to infinity dx over the square root of x squared plus 10
+/data1/eunju/datasets/mathspeech/dataset/764.mp3,0.0,2.2259583333333333,2.2259583333333333,x0 plus h
+/data1/eunju/datasets/mathspeech/dataset/879.mp3,0.0,5.681958333333333,5.681958333333333,4a to the four cosine to the four theta
+/data1/eunju/datasets/mathspeech/dataset/203.mp3,0.0,4.121958333333334,4.121958333333334,a half plus a third
+/data1/eunju/datasets/mathspeech/dataset/362.mp3,0.0,4.601958333333333,4.601958333333333,f of x equal to x squared minus 5
+/data1/eunju/datasets/mathspeech/dataset/621.mp3,0.0,5.153958333333334,5.153958333333334,ds squared is dx squared plus dy squared
+/data1/eunju/datasets/mathspeech/dataset/28.mp3,0.0,1.3139583333333333,1.3139583333333333,pi over 6
+/data1/eunju/datasets/mathspeech/dataset/157.mp3,0.0,12.737958333333333,12.737958333333333,minus one plus 2t plus twice two plus t plus four times two minus 3t
+/data1/eunju/datasets/mathspeech/dataset/397.mp3,0.0,7.241958333333334,7.241958333333334,1 over negative x times the derivative with respect to x of negative x
+/data1/eunju/datasets/mathspeech/dataset/330.mp3,0.0,3.8819583333333334,3.8819583333333334,x squared plus 4v over x
+/data1/eunju/datasets/mathspeech/dataset/673.mp3,0.0,3.3299583333333334,3.3299583333333334,1 minus x squared over 2
+/data1/eunju/datasets/mathspeech/dataset/1012.mp3,0.0,11.921958333333333,11.921958333333333,c minus 1 times the sum j equals 1 to n expected value of tj
+/data1/eunju/datasets/mathspeech/dataset/248.mp3,0.0,4.817958333333333,4.817958333333333, e to the power log a to the power x
+/data1/eunju/datasets/mathspeech/dataset/145.mp3,0.0,4.385958333333333,4.385958333333333,one-half m r squared omega squared
+/data1/eunju/datasets/mathspeech/dataset/634.mp3,0.0,3.7859583333333333,3.7859583333333333,theta equals negative pi over 4
+/data1/eunju/datasets/mathspeech/dataset/238.mp3,0.0,6.713958333333333,6.713958333333333, cosine squared of tan inverse x
+/data1/eunju/datasets/mathspeech/dataset/376.mp3,0.0,3.7139583333333333,3.7139583333333333,y equals x squared minus 5
+/data1/eunju/datasets/mathspeech/dataset/818.mp3,0.0,9.761958333333334,9.761958333333334, f sub x times cosine theta plus f sub y times sine theta
+/data1/eunju/datasets/mathspeech/dataset/719.mp3,0.0,4.313958333333333,4.313958333333333,the integral from zero to x of dt over one plus x
+/data1/eunju/datasets/mathspeech/dataset/747.mp3,0.0,9.737958333333333,9.737958333333333,dr dt cross v plus r cross dv dt
+/data1/eunju/datasets/mathspeech/dataset/725.mp3,0.0,5.561958333333333,5.561958333333333, integral of e to the minus t squared dt from 0 to x
+/data1/eunju/datasets/mathspeech/dataset/677.mp3,0.0,6.425958333333333,6.425958333333333,1 plus 2 over x plus 1 over x to the 5th power
+/data1/eunju/datasets/mathspeech/dataset/606.mp3,0.0,6.689958333333333,6.689958333333333,"1 plus the quantity minus x over square root of 1 minus x squared, squared"
+/data1/eunju/datasets/mathspeech/dataset/1065.mp3,0.0,8.297958333333334,8.297958333333334,C2 exponential minus one half t minus exponential minus three t
+/data1/eunju/datasets/mathspeech/dataset/56.mp3,0.0,11.057958333333334,11.057958333333334,dy dx is equal to minus 1 divided by sine y
+/data1/eunju/datasets/mathspeech/dataset/933.mp3,0.0,2.9939583333333335,2.9939583333333335,u equals one plus t squared
+/data1/eunju/datasets/mathspeech/dataset/215.mp3,0.0,4.817958333333333,4.817958333333333,f of x y equals one over x plus y
+/data1/eunju/datasets/mathspeech/dataset/746.mp3,0.0,3.593958333333333,3.593958333333333, uv prime equals u prime v plus u v prime 
+/data1/eunju/datasets/mathspeech/dataset/229.mp3,0.0,5.537958333333333,5.537958333333333,2 x plus 2 y y prime
+/data1/eunju/datasets/mathspeech/dataset/27.mp3,0.0,6.281958333333334,6.281958333333334,tan of x is equal to one divided by square root of three
+/data1/eunju/datasets/mathspeech/dataset/600.mp3,0.0,14.873958333333333,14.873958333333333,the integral from a to b of the square root of 1 plus dy dx squared dx
+/data1/eunju/datasets/mathspeech/dataset/59.mp3,0.0,3.7859583333333333,3.7859583333333333,g of x is equal to natural log of cosine of x
+/data1/eunju/datasets/mathspeech/dataset/1035.mp3,0.0,1.8419583333333334,1.8419583333333334,i dot i minus one
+/data1/eunju/datasets/mathspeech/dataset/850.mp3,0.0,3.5219583333333335,3.5219583333333335,b is a over cosine theta
+/data1/eunju/datasets/mathspeech/dataset/604.mp3,0.0,3.2099583333333332,3.2099583333333332,y equals square root of 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/729.mp3,0.0,7.625958333333333,7.625958333333333,z of t minus two equals minus three t
+/data1/eunju/datasets/mathspeech/dataset/569.mp3,0.0,5.129958333333334,5.129958333333334,"negative a, plus 1, plus 1 3rd."
+/data1/eunju/datasets/mathspeech/dataset/358.mp3,0.0,1.9859583333333333,1.9859583333333333,a minus x
+/data1/eunju/datasets/mathspeech/dataset/670.mp3,0.0,8.009958333333334,8.009958333333334,five cosine five x divided by two cosine two x
+/data1/eunju/datasets/mathspeech/dataset/283.mp3,0.0,2.3219583333333333,2.3219583333333333,v squared over c squared
+/data1/eunju/datasets/mathspeech/dataset/37.mp3,0.0,3.4019583333333334,3.4019583333333334,x equals 7 pi over 6
+/data1/eunju/datasets/mathspeech/dataset/922.mp3,0.0,8.561958333333333,8.561958333333333,f sub y is three y squared plus four x squared
+/data1/eunju/datasets/mathspeech/dataset/526.mp3,0.0,3.2819583333333333,3.2819583333333333,square root of a squared minus y squared
+/data1/eunju/datasets/mathspeech/dataset/1000.mp3,0.0,4.313958333333333,4.313958333333333,zero plus three yz squared
+/data1/eunju/datasets/mathspeech/dataset/439.mp3,0.0,6.833958333333333,6.833958333333333,minus the integral from b to a of f of x dx
+/data1/eunju/datasets/mathspeech/dataset/304.mp3,0.0,2.2979583333333333,2.2979583333333333,negative two plus one
+/data1/eunju/datasets/mathspeech/dataset/48.mp3,0.0,7.169958333333334,7.169958333333334,theta is equal to pi over 2 to the 1 4th
+/data1/eunju/datasets/mathspeech/dataset/1013.mp3,0.0,8.561958333333333,8.561958333333333,e to the minus c log of c plus c minus 1
+/data1/eunju/datasets/mathspeech/dataset/463.mp3,0.0,4.841958333333333,4.841958333333333,f of minus x is equal to minus f of x
+/data1/eunju/datasets/mathspeech/dataset/558.mp3,0.0,3.161958333333333,3.161958333333333,3 times x minus 1
+/data1/eunju/datasets/mathspeech/dataset/1015.mp3,0.0,3.2339583333333333,3.2339583333333333,dy dx equal y squared
+/data1/eunju/datasets/mathspeech/dataset/859.mp3,0.0,3.569958333333333,3.569958333333333, partial h partial y is less than zero
+/data1/eunju/datasets/mathspeech/dataset/732.mp3,0.0,7.9859583333333335,7.9859583333333335,x of t plus twice y of t plus four z of t
+/data1/eunju/datasets/mathspeech/dataset/252.mp3,0.0,4.0499583333333335,4.0499583333333335,log 10 times 10 to the x
+/data1/eunju/datasets/mathspeech/dataset/875.mp3,0.0,4.9619583333333335,4.9619583333333335, one-half mr squared omega squared
+/data1/eunju/datasets/mathspeech/dataset/895.mp3,0.0,4.793958333333333,4.793958333333333,integral from zero to one of t squared dt
+/data1/eunju/datasets/mathspeech/dataset/592.mp3,0.0,3.593958333333333,3.593958333333333,x e to the x minus e to the x
+/data1/eunju/datasets/mathspeech/dataset/1017.mp3,0.0,4.721958333333333,4.721958333333333, y of x equals 1 over 1 minus x
+/data1/eunju/datasets/mathspeech/dataset/842.mp3,0.0,2.8739583333333334,2.8739583333333334,partial f over partial u one
+/data1/eunju/datasets/mathspeech/dataset/668.mp3,0.0,4.673958333333333,4.673958333333333, f of x divided by x minus a
+/data1/eunju/datasets/mathspeech/dataset/1016.mp3,0.0,3.4739583333333335,3.4739583333333335, y of x equals minus 1 over x plus c
+/data1/eunju/datasets/mathspeech/dataset/220.mp3,0.0,7.745958333333333,7.745958333333333,d dy of y to the n times dy dx
+/data1/eunju/datasets/mathspeech/dataset/711.mp3,0.0,8.441958333333334,8.441958333333334, x minus x cubed over 3 factorial plus x to the 5th over 5 factorial
+/data1/eunju/datasets/mathspeech/dataset/201.mp3,0.0,1.9139583333333334,1.9139583333333334,one over n cubed
+/data1/eunju/datasets/mathspeech/dataset/693.mp3,0.0,5.465958333333333,5.465958333333333,the integral from zero to infinity dx over x minus three squared
+/data1/eunju/datasets/mathspeech/dataset/710.mp3,0.0,8.489958333333334,8.489958333333334,the sum n equals 0 to infinity of 1 divided by n factorial x to the n
+/data1/eunju/datasets/mathspeech/dataset/777.mp3,0.0,5.537958333333333,5.537958333333333,a x squared plus b xy plus c y squared
+/data1/eunju/datasets/mathspeech/dataset/141.mp3,0.0,12.665958333333334,12.665958333333334,the integral from zero to pi over two integral from zero to one of one minus r squared r dr d theta
+/data1/eunju/datasets/mathspeech/dataset/284.mp3,0.0,6.473958333333333,6.473958333333333,t times 1 plus a half v squared over c squared
+/data1/eunju/datasets/mathspeech/dataset/706.mp3,0.0,3.2819583333333333,3.2819583333333333, sum a n x to the n
+/data1/eunju/datasets/mathspeech/dataset/133.mp3,0.0,4.769958333333333,4.769958333333333,x plus two y plus three z equals zero
+/data1/eunju/datasets/mathspeech/dataset/510.mp3,0.0,9.473958333333334,9.473958333333334,integrals of the form sine to the nth power of x cosine to the nth power of x dx
+/data1/eunju/datasets/mathspeech/dataset/508.mp3,0.0,6.449958333333333,6.449958333333333,cosine squared of theta minus the quantity 1 minus cosine squared of theta
+/data1/eunju/datasets/mathspeech/dataset/675.mp3,0.0,4.241958333333334,4.241958333333334,x to the x is equal to e to the x log x
+/data1/eunju/datasets/mathspeech/dataset/149.mp3,0.0,5.0339583333333335,5.0339583333333335,three halves of pi a to the fourth
+/data1/eunju/datasets/mathspeech/dataset/64.mp3,0.0,2.657958333333333,2.657958333333333,natural log of e to the x squared
+/data1/eunju/datasets/mathspeech/dataset/200.mp3,0.0,2.561958333333333,2.561958333333333,pi squared over 6
+/data1/eunju/datasets/mathspeech/dataset/492.mp3,0.0,2.8259583333333333,2.8259583333333333,pi x squared
+/data1/eunju/datasets/mathspeech/dataset/995.mp3,0.0,2.9939583333333335,2.9939583333333335,x squared plus z cubed
+/data1/eunju/datasets/mathspeech/dataset/265.mp3,0.0,5.537958333333333,5.537958333333333,fifty t plus ten a plus b
+/data1/eunju/datasets/mathspeech/dataset/853.mp3,0.0,6.521958333333333,6.521958333333333, a equals one half ab sine theta
+/data1/eunju/datasets/mathspeech/dataset/783.mp3,0.0,2.5139583333333335,2.5139583333333335,one over four a
+/data1/eunju/datasets/mathspeech/dataset/19.mp3,0.0,5.561958333333333,5.561958333333333,e to the minus b squared plus x squared
+/data1/eunju/datasets/mathspeech/dataset/823.mp3,0.0,2.0099583333333335,2.0099583333333335,x minus two
+/data1/eunju/datasets/mathspeech/dataset/47.mp3,0.0,2.2739583333333333,2.2739583333333333,theta to the fourth equals pi over two
+/data1/eunju/datasets/mathspeech/dataset/541.mp3,0.0,4.553958333333333,4.553958333333333,the secant of x plus the tangent of x 
+/data1/eunju/datasets/mathspeech/dataset/328.mp3,0.0,5.729958333333333,5.729958333333333,x cubed is equal to 2v
+/data1/eunju/datasets/mathspeech/dataset/378.mp3,0.0,4.121958333333334,4.121958333333334,f of b minus f of a divided by b minus a
+/data1/eunju/datasets/mathspeech/dataset/757.mp3,0.0,4.505958333333333,4.505958333333333, f of x y equals one over x plus y
+/data1/eunju/datasets/mathspeech/dataset/660.mp3,0.0,4.625958333333333,4.625958333333333,u prime is equal to 1 over 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/717.mp3,0.0,3.113958333333333,3.113958333333333,x times the sine of x
+/data1/eunju/datasets/mathspeech/dataset/741.mp3,0.0,10.097958333333333,10.097958333333333,square root of one minus cosine t squared plus sine squared t
+/data1/eunju/datasets/mathspeech/dataset/337.mp3,0.0,6.0179583333333335,6.0179583333333335,y prime is equal to minus 2xy divided by x squared
+/data1/eunju/datasets/mathspeech/dataset/699.mp3,0.0,7.505958333333333,7.505958333333333,1 plus 1 over 2 plus all the way up to 1 over n minus 1 plus 1 over n
+/data1/eunju/datasets/mathspeech/dataset/372.mp3,0.0,3.8819583333333334,3.8819583333333334,square root of 5 minus xn
+/data1/eunju/datasets/mathspeech/dataset/503.mp3,0.0,7.265958333333334,7.265958333333334,y zero plus four y one plus y two divided by six
+/data1/eunju/datasets/mathspeech/dataset/199.mp3,0.0,4.601958333333333,4.601958333333333,sum 1 over n squared n equals 1 to infinity
+/data1/eunju/datasets/mathspeech/dataset/806.mp3,0.0,5.753958333333333,5.753958333333333, f sub x times x prime of t dt
+/data1/eunju/datasets/mathspeech/dataset/915.mp3,0.0,8.417958333333333,8.417958333333333, integral from t0 to t1 of dF dt dt
+/data1/eunju/datasets/mathspeech/dataset/639.mp3,0.0,7.601958333333333,7.601958333333333,r squared minus two a r cosine theta equals zero
+/data1/eunju/datasets/mathspeech/dataset/577.mp3,0.0,6.449958333333333,6.449958333333333,b3 x plus c3 x squared plus 4 cubed
+/data1/eunju/datasets/mathspeech/dataset/196.mp3,0.0,6.425958333333333,6.425958333333333,y equals 1 over x minus 3 squared
+/data1/eunju/datasets/mathspeech/dataset/195.mp3,0.0,3.2819583333333333,3.2819583333333333,y equals 1 over the square root of x
+/data1/eunju/datasets/mathspeech/dataset/727.mp3,0.0,4.457958333333333,4.457958333333333,5 times 2 factorial
+/data1/eunju/datasets/mathspeech/dataset/981.mp3,0.0,5.561958333333333,5.561958333333333,three times little n will be negative big N
+/data1/eunju/datasets/mathspeech/dataset/742.mp3,0.0,10.409958333333334,10.409958333333334, square root of one minus two cosine t plus cosine squared t plus sine squared t
+/data1/eunju/datasets/mathspeech/dataset/423.mp3,0.0,1.8419583333333334,1.8419583333333334,1 3rd n cubed
+/data1/eunju/datasets/mathspeech/dataset/552.mp3,0.0,6.113958333333334,6.113958333333334,4 times the tangent squared of theta
+/data1/eunju/datasets/mathspeech/dataset/400.mp3,0.0,4.577958333333333,4.577958333333333,the integral of dx over 1 plus x squared
+/data1/eunju/datasets/mathspeech/dataset/244.mp3,0.0,11.297958333333334,11.297958333333334,M of a is equal to the limit as delta x goes to 0 of a to the delta x minus 1 divided by delta x
+/data1/eunju/datasets/mathspeech/dataset/153.mp3,0.0,4.649958333333333,4.649958333333333,y of t equals two plus t
+/data1/eunju/datasets/mathspeech/dataset/874.mp3,0.0,2.3219583333333333,2.3219583333333333,r minus r cubed
+/data1/eunju/datasets/mathspeech/dataset/697.mp3,0.0,2.8259583333333333,2.8259583333333333,pi squared over 6
+/data1/eunju/datasets/mathspeech/dataset/192.mp3,0.0,3.2339583333333333,3.2339583333333333,dx over x to the p
+/data1/eunju/datasets/mathspeech/dataset/1007.mp3,0.0,7.769958333333333,7.769958333333333,x is c times the expected value of r
+/data1/eunju/datasets/mathspeech/dataset/255.mp3,0.0,5.057958333333334,5.057958333333334,v prime is equal to v times 1 plus log x
+/data1/eunju/datasets/mathspeech/dataset/698.mp3,0.0,2.633958333333333,2.633958333333333, 1 over n cubed
+/data1/eunju/datasets/mathspeech/dataset/354.mp3,0.0,8.825958333333332,8.825958333333332,dv dt is equal to dv dh times dh dt
+/data1/eunju/datasets/mathspeech/dataset/368.mp3,0.0,2.2739583333333333,2.2739583333333333,minus a half x zero
+/data1/eunju/datasets/mathspeech/dataset/489.mp3,0.0,1.8179583333333333,1.8179583333333333,pi over 4
+/data1/eunju/datasets/mathspeech/dataset/152.mp3,0.0,2.7059583333333332,2.7059583333333332,minus one plus two t
+/data1/eunju/datasets/mathspeech/dataset/241.mp3,0.0,3.9539583333333335,3.9539583333333335,1 over square root of 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/260.mp3,0.0,3.0179583333333335,3.0179583333333335,ln of one plus one over k
+/data1/eunju/datasets/mathspeech/dataset/527.mp3,0.0,2.8019583333333333,2.8019583333333333,a squared theta over 2 
+/data1/eunju/datasets/mathspeech/dataset/321.mp3,0.0,2.3939583333333334,2.3939583333333334,x over 4
+/data1/eunju/datasets/mathspeech/dataset/504.mp3,0.0,5.9459583333333335,5.9459583333333335,y2 plus 4y3 plus y4 divided by 6
+/data1/eunju/datasets/mathspeech/dataset/914.mp3,0.0,11.921958333333333,11.921958333333333, the integral of f sub x times dx  dt plus f sub y times dy dt
+/data1/eunju/datasets/mathspeech/dataset/159.mp3,0.0,5.633958333333333,5.633958333333333,one times two plus two times one plus four times minus three
+/data1/eunju/datasets/mathspeech/dataset/726.mp3,0.0,5.873958333333333,5.873958333333333,x minus x cubed over 3 
+/data1/eunju/datasets/mathspeech/dataset/491.mp3,0.0,2.3699583333333334,2.3699583333333334,y equals x squared
+/data1/eunju/datasets/mathspeech/dataset/802.mp3,0.0,11.777958333333334,11.777958333333334,partial f partial x dx plus partial f partial y dy plus partial f over partial z dz
+/data1/eunju/datasets/mathspeech/dataset/790.mp3,0.0,3.9539583333333335,3.9539583333333335,a t squared plus b t plus c
+/data1/eunju/datasets/mathspeech/dataset/965.mp3,0.0,6.089958333333334,6.089958333333334,minus c times x y z over rho cubed
+/data1/eunju/datasets/mathspeech/dataset/277.mp3,0.0,3.161958333333333,3.161958333333333,f prime is one over one plus x
+/data1/eunju/datasets/mathspeech/dataset/730.mp3,0.0,2.657958333333333,2.657958333333333,minus one plus two t
+/data1/eunju/datasets/mathspeech/dataset/967.mp3,0.0,6.9779583333333335,6.9779583333333335,square root of x squared plus y squared plus z squared is equal to a 
+/data1/eunju/datasets/mathspeech/dataset/762.mp3,0.0,4.601958333333333,4.601958333333333,x squared plus y squared equals zero
+/data1/eunju/datasets/mathspeech/dataset/970.mp3,0.0,6.689958333333333,6.689958333333333,dS equals a squared sine phi d phi d theta
+/data1/eunju/datasets/mathspeech/dataset/713.mp3,0.0,4.097958333333334,4.097958333333334,x to the fourth over four factorial
+/data1/eunju/datasets/mathspeech/dataset/849.mp3,0.0,8.537958333333334,8.537958333333334,partial z over partial x is minus gx over gz
+/data1/eunju/datasets/mathspeech/dataset/782.mp3,0.0,14.681958333333334,14.681958333333334,b squared over 4 a squared y squared plus cy squared minus b squared over 4 a y squared
+/data1/eunju/datasets/mathspeech/dataset/475.mp3,0.0,3.8819583333333334,3.8819583333333334,y squared over 2 plus 2y
+/data1/eunju/datasets/mathspeech/dataset/1036.mp3,0.0,3.137958333333333,3.137958333333333,1 over k squared plus omega squared
+/data1/eunju/datasets/mathspeech/dataset/598.mp3,0.0,4.265958333333334,4.265958333333334,delta x squared plus delta y squared
+/data1/eunju/datasets/mathspeech/dataset/342.mp3,0.0,2.633958333333333,2.633958333333333,x over y is equal to 2
+/data1/eunju/datasets/mathspeech/dataset/833.mp3,0.0,2.4179583333333334,2.4179583333333334,g equals c
+/data1/eunju/datasets/mathspeech/dataset/530.mp3,0.0,6.881958333333333,6.881958333333333,a sine of theta a cosine of theta over two
+/data1/eunju/datasets/mathspeech/dataset/585.mp3,0.0,3.2099583333333332,3.2099583333333332,log x squared
+/data1/eunju/datasets/mathspeech/dataset/142.mp3,0.0,2.7539583333333333,2.7539583333333333,r minus r cubed
+/data1/eunju/datasets/mathspeech/dataset/307.mp3,0.0,3.9539583333333335,3.9539583333333335,one minus one over x plus 2
+/data1/eunju/datasets/mathspeech/dataset/900.mp3,0.0,4.145958333333334,4.145958333333334,y equals sine squared theta
+/data1/eunju/datasets/mathspeech/dataset/696.mp3,0.0,5.129958333333334,5.129958333333334, sum 1 over n squared n equals 1 to infinity
+/data1/eunju/datasets/mathspeech/dataset/781.mp3,0.0,9.377958333333334,9.377958333333334,a times x squared plus a times 2xb over 2ay
+/data1/eunju/datasets/mathspeech/dataset/462.mp3,0.0,7.865958333333333,7.865958333333333,f prime of 0 is e to the minus 0 squared which is 1
+/data1/eunju/datasets/mathspeech/dataset/1063.mp3,0.0,3.6899583333333332,3.6899583333333332, seven x dots plus three x equals f of t
+/data1/eunju/datasets/mathspeech/dataset/308.mp3,0.0,6.905958333333333,6.905958333333333,one times log x minus x times the derivative of log x
+/data1/eunju/datasets/mathspeech/dataset/803.mp3,0.0,3.7379583333333333,3.7379583333333333,delta y plus fz delta z 
+/data1/eunju/datasets/mathspeech/dataset/786.mp3,0.0,5.441958333333333,5.441958333333333,four a c minus b squared equals zero
+/data1/eunju/datasets/mathspeech/dataset/392.mp3,0.0,4.889958333333333,4.889958333333333,dy is equal to 1 48th dx
+/data1/eunju/datasets/mathspeech/dataset/737.mp3,0.0,7.0259583333333335,7.0259583333333335,x of theta is theta minus sine theta
+/data1/eunju/datasets/mathspeech/dataset/499.mp3,0.0,6.209958333333334,6.209958333333334,c pi times e to the minus r one squared minus e to the minus r two squared
+/data1/eunju/datasets/mathspeech/dataset/924.mp3,0.0,4.193958333333334,4.193958333333334,x equals two plus cosine theta
+/data1/eunju/datasets/mathspeech/dataset/433.mp3,0.0,4.745958333333333,4.745958333333333,f of b minus f of a
+/data1/eunju/datasets/mathspeech/dataset/333.mp3,0.0,7.625958333333333,7.625958333333333,two to the one third v to the one third squared plus four v 
+/data1/eunju/datasets/mathspeech/dataset/716.mp3,0.0,4.433958333333333,4.433958333333333,x over 2n plus 1
+/data1/eunju/datasets/mathspeech/dataset/721.mp3,0.0,9.881958333333333,9.881958333333333,x minus x squared over two plus x cubed over three minus x to the fourth over four
+/data1/eunju/datasets/mathspeech/dataset/357.mp3,0.0,7.505958333333333,7.505958333333333,the square root of a minus x squared plus b minus y squared
+/data1/eunju/datasets/mathspeech/dataset/465.mp3,0.0,7.9379583333333334,7.9379583333333334,2 over the square root of pi times the integral from 0 to x e to the minus t squared dt
+/data1/eunju/datasets/mathspeech/dataset/473.mp3,0.0,3.3059583333333333,3.3059583333333333,x equals y squared
+/data1/eunju/datasets/mathspeech/dataset/282.mp3,0.0,8.801958333333333,8.801958333333333,t prime is equal to t divided by the square root of 1 minus v squared over c squared
+/data1/eunju/datasets/mathspeech/dataset/1002.mp3,0.0,7.097958333333334,7.097958333333334,partial over partial y of r minus partial partial z of q
+/data1/eunju/datasets/mathspeech/dataset/1003.mp3,0.0,1.1699583333333334,1.1699583333333334,two to the n 
+/data1/eunju/datasets/mathspeech/dataset/561.mp3,0.0,3.665958333333333,3.665958333333333,1 over x minus 1 plus 3 over x plus 2
+/data1/eunju/datasets/mathspeech/dataset/422.mp3,0.0,3.593958333333333,3.593958333333333,the integral from 0 to b x squared dx
+/data1/eunju/datasets/mathspeech/dataset/594.mp3,0.0,2.9939583333333335,2.9939583333333335,2 pi e x dx
+/data1/eunju/datasets/mathspeech/dataset/728.mp3,0.0,5.9939583333333335,5.9939583333333335,minus x to the seventh over seven times three factorial
+/data1/eunju/datasets/mathspeech/dataset/1068.mp3,0.0,3.089958333333333,3.089958333333333, i squared equals negative one
+/data1/eunju/datasets/mathspeech/dataset/979.mp3,0.0,6.401958333333333,6.401958333333333,delta A equals delta S times the cosine of alpha
+/data1/eunju/datasets/mathspeech/dataset/929.mp3,0.0,8.633958333333334,8.633958333333334,M of x f two of x minus M of x f one of x
+/data1/eunju/datasets/mathspeech/dataset/708.mp3,0.0,9.161958333333333,9.161958333333333,a zero plus a one x plus a two x squared plus a three x cubed plus dot dot dot
+/data1/eunju/datasets/mathspeech/dataset/876.mp3,0.0,2.3699583333333334,2.3699583333333334,x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/734.mp3,0.0,5.225958333333334,5.225958333333334, minus 8t plus 11 equals 7
+/data1/eunju/datasets/mathspeech/dataset/855.mp3,0.0,10.793958333333334,10.793958333333334,dg is g sub x dx plus g sub y dy plus g sub z dz
+/data1/eunju/datasets/mathspeech/dataset/645.mp3,0.0,2.5379583333333335,2.5379583333333335,4a squared divided by 2
+/data1/eunju/datasets/mathspeech/dataset/1006.mp3,0.0,3.4019583333333334,3.4019583333333334,two plus a half divided by two is one and a quarter.
+/data1/eunju/datasets/mathspeech/dataset/666.mp3,0.0,2.057958333333333,2.057958333333333,x squared minus 1
+/data1/eunju/datasets/mathspeech/dataset/115.mp3,0.0,6.521958333333333,6.521958333333333,delta u divided by delta x times v of x plus delta x
+/data1/eunju/datasets/mathspeech/dataset/317.mp3,0.0,3.9539583333333335,3.9539583333333335, x log x cubed 
+/data1/eunju/datasets/mathspeech/dataset/808.mp3,0.0,2.5139583333333335,2.5139583333333335, x squared y plus z
+/data1/eunju/datasets/mathspeech/dataset/217.mp3,0.0,4.769958333333333,4.769958333333333,z equals one minus x squared minus y squared
+/data1/eunju/datasets/mathspeech/dataset/613.mp3,0.0,3.665958333333333,3.665958333333333,x equals a half tan u
+/data1/eunju/datasets/mathspeech/dataset/46.mp3,0.0,3.9059583333333334,3.9059583333333334,cosine of pi over two is equal to zero
+/data1/eunju/datasets/mathspeech/dataset/629.mp3,0.0,5.417958333333333,5.417958333333333,2 cosine t squared plus sine t
+/data1/eunju/datasets/mathspeech/dataset/228.mp3,0.0,5.777958333333333,5.777958333333333,y is equal to plus or minus square root of 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/743.mp3,0.0,4.865958333333333,4.865958333333333,square root of two minus two cosine t
+/data1/eunju/datasets/mathspeech/dataset/878.mp3,0.0,3.8819583333333334,3.8819583333333334,r equals 2a cosine theta
+/data1/eunju/datasets/mathspeech/dataset/856.mp3,0.0,8.105958333333334,8.105958333333334, minus fx gz over gx plus fz
+/data1/eunju/datasets/mathspeech/dataset/994.mp3,0.0,6.689958333333333,6.689958333333333,b y z squared minus 4z cubed 
+/data1/eunju/datasets/mathspeech/dataset/125.mp3,0.0,6.137958333333334,6.137958333333334,length A squared equals length B squared plus one
+/data1/eunju/datasets/mathspeech/dataset/652.mp3,0.0,3.5219583333333335,3.5219583333333335,one minus two r cosine theta
+/data1/eunju/datasets/mathspeech/dataset/315.mp3,0.0,4.841958333333333,4.841958333333333,one over minus infinity minus 1 over infinity
+/data1/eunju/datasets/mathspeech/dataset/663.mp3,0.0,7.217958333333334,7.217958333333334,a half x minus a half tan inverse x
+/data1/eunju/datasets/mathspeech/dataset/800.mp3,0.0,5.297958333333334,5.297958333333334,one over square root of one minus x squared
+/data1/eunju/datasets/mathspeech/dataset/549.mp3,0.0,3.9059583333333334,3.9059583333333334, x is a times the sine of theta
+/data1/eunju/datasets/mathspeech/dataset/642.mp3,0.0,3.8339583333333334,3.8339583333333334, delta theta divided by 2pi
+/data1/eunju/datasets/mathspeech/dataset/934.mp3,0.0,6.377958333333333,6.377958333333333,the curl of f which is Nx minus My
+/data1/eunju/datasets/mathspeech/dataset/264.mp3,0.0,3.4739583333333335,3.4739583333333335,y is ten x plus b
+/data1/eunju/datasets/mathspeech/dataset/481.mp3,0.0,4.793958333333333,4.793958333333333,pi A x squared minus x cubed over 3
+/data1/eunju/datasets/mathspeech/dataset/486.mp3,0.0,4.289958333333334,4.289958333333334,delta x divided by b minus a is 1 over n
+/data1/eunju/datasets/mathspeech/dataset/1011.mp3,0.0,13.217958333333334,13.217958333333334,z is c natural log of c plus 1
+/data1/eunju/datasets/mathspeech/dataset/275.mp3,0.0,1.6739583333333334,1.6739583333333334,y equals e to the x
+/data1/eunju/datasets/mathspeech/dataset/15.mp3,0.0,3.617958333333333,3.617958333333333,a half plus n minus 1 plus a half 
+/data1/eunju/datasets/mathspeech/dataset/731.mp3,0.0,5.705958333333333,5.705958333333333,x plus two y plus four z equals seven
+/data1/eunju/datasets/mathspeech/dataset/923.mp3,0.0,15.641958333333333,15.641958333333333,line integral along C of y e to the minus x dx plus one-half of x squared minus e to the minus x dy
+/data1/eunju/datasets/mathspeech/dataset/701.mp3,0.0,2.633958333333333,2.633958333333333,1 over n to the 5th square root
+/data1/eunju/datasets/mathspeech/dataset/848.mp3,0.0,4.337958333333333,4.337958333333333,dz equals minus four sixth dx
+/data1/eunju/datasets/mathspeech/dataset/635.mp3,0.0,5.201958333333334,5.201958333333334,theta equals seven pi over four
+/data1/eunju/datasets/mathspeech/dataset/835.mp3,0.0,4.553958333333333,4.553958333333333,2x minus lambda y equals zero
+/data1/eunju/datasets/mathspeech/dataset/793.mp3,0.0,2.081958333333333,2.081958333333333, x minus x zero squared
+/data1/eunju/datasets/mathspeech/dataset/128.mp3,0.0,8.249958333333334,8.249958333333334,the length of a is the square root of a one squared plus a two squared plus a three squared
+/data1/eunju/datasets/mathspeech/dataset/837.mp3,0.0,4.193958333333334,4.193958333333334,negative four plus lambda squared
+/data1/eunju/datasets/mathspeech/dataset/662.mp3,0.0,4.217958333333334,4.217958333333334,x squared over 2 tan inverse x
+/data1/eunju/datasets/mathspeech/dataset/495.mp3,0.0,2.561958333333333,2.561958333333333,y is equal to 1 minus x squared
+/data1/eunju/datasets/mathspeech/dataset/591.mp3,0.0,5.489958333333333,5.489958333333333,n times g n minus 1 of x
+/data1/eunju/datasets/mathspeech/dataset/58.mp3,0.0,4.793958333333333,4.793958333333333,f of x is equal to x to the pi plus pi to the x
+/data1/eunju/datasets/mathspeech/dataset/43.mp3,0.0,5.465958333333333,5.465958333333333,dw d theta is four theta to the third
+/data1/eunju/datasets/mathspeech/dataset/258.mp3,0.0,4.289958333333334,4.289958333333334,n log one plus one over n
+/data1/eunju/datasets/mathspeech/dataset/164.mp3,0.0,2.7539583333333333,2.7539583333333333,theta squared over two
+/data1/eunju/datasets/mathspeech/dataset/38.mp3,0.0,2.5379583333333335,2.5379583333333335,pi over 2 minus pi over 3 is pi over 6
+/data1/eunju/datasets/mathspeech/dataset/908.mp3,0.0,4.769958333333333,4.769958333333333,dx is negative a sine theta d theta
+/data1/eunju/datasets/mathspeech/dataset/305.mp3,0.0,2.153958333333333,2.153958333333333,1 plus 1 over x
+/data1/eunju/datasets/mathspeech/dataset/578.mp3,0.0,9.281958333333334,9.281958333333334,r of x is equal to a11 x to the 11th plus a10 x to the 10th
+/data1/eunju/datasets/mathspeech/dataset/467.mp3,0.0,4.745958333333333,4.745958333333333,f of x minus g of x times dx
+/data1/eunju/datasets/mathspeech/dataset/363.mp3,0.0,3.2819583333333333,3.2819583333333333,f of x equals 0
+/data1/eunju/datasets/mathspeech/dataset/507.mp3,0.0,6.065958333333334,6.065958333333334,cosine squared theta minus the sin squared of theta
+/data1/eunju/datasets/mathspeech/dataset/784.mp3,0.0,5.105958333333334,5.105958333333334,four ac minus b squared y squared
+/data1/eunju/datasets/mathspeech/dataset/480.mp3,0.0,6.641958333333333,6.641958333333333,12 3rds minus 8 3rds pi a cubed
+/data1/eunju/datasets/mathspeech/dataset/681.mp3,0.0,3.7139583333333333,3.7139583333333333,dx over x to the pth power
+/data1/eunju/datasets/mathspeech/dataset/587.mp3,0.0,6.905958333333333,6.905958333333333,u prime is n times log x to the n minus 1 times 1 over x
+/data1/eunju/datasets/mathspeech/dataset/168.mp3,0.0,5.849958333333333,5.849958333333333,square root of two minus two cosine t
+/data1/eunju/datasets/mathspeech/dataset/73.mp3,0.0,9.737958333333333,9.737958333333333,1 over 2x plus 1 over 2 times x plus 4
+/data1/eunju/datasets/mathspeech/dataset/560.mp3,0.0,4.865958333333333,4.865958333333333,b times x plus two times x minus one
+/data1/eunju/datasets/mathspeech/dataset/736.mp3,0.0,3.8579583333333334,3.8579583333333334,a minus a cosine theta
+/data1/eunju/datasets/mathspeech/dataset/158.mp3,0.0,4.0499583333333335,4.0499583333333335,minus one plus four plus eight is eleven
+/data1/eunju/datasets/mathspeech/dataset/1044.mp3,0.0,6.113958333333334,6.113958333333334,C1 exponential lambda 1 plus C2 exponential lambda 2
+/data1/eunju/datasets/mathspeech/dataset/609.mp3,0.0,3.1859583333333332,3.1859583333333332,y prime is 2x
+/data1/eunju/datasets/mathspeech/dataset/86.mp3,0.0,10.193958333333333,10.193958333333333,w of x plus 2 times e to the w of x 
+/data1/eunju/datasets/mathspeech/dataset/25.mp3,0.0,7.9619583333333335,7.9619583333333335,cosine x minus square root of 3 times sine x
+/data1/eunju/datasets/mathspeech/dataset/205.mp3,0.0,4.337958333333333,4.337958333333333,sum one over n to the five-halves
+/data1/eunju/datasets/mathspeech/dataset/51.mp3,0.0,9.857958333333332,9.857958333333332,y minus x squared over y squared minus x
+/data1/eunju/datasets/mathspeech/dataset/581.mp3,0.0,2.3699583333333334,2.3699583333333334,cosine squared of two u
+/data1/eunju/datasets/mathspeech/dataset/468.mp3,0.0,2.4419583333333335,2.4419583333333335,x equals y squared
+/data1/eunju/datasets/mathspeech/dataset/245.mp3,0.0,4.193958333333334,4.193958333333334, k times f prime of kx
+/data1/eunju/datasets/mathspeech/dataset/898.mp3,0.0,3.4739583333333335,3.4739583333333335,negative y is minus t squared
+/data1/eunju/datasets/mathspeech/dataset/274.mp3,0.0,1.9619583333333332,1.9619583333333332,y equals cosine x
+/data1/eunju/datasets/mathspeech/dataset/63.mp3,0.0,1.9859583333333333,1.9859583333333333,e to the x squared
+/data1/eunju/datasets/mathspeech/dataset/412.mp3,0.0,2.9219583333333334,2.9219583333333334, sine squared x 
+/data1/eunju/datasets/mathspeech/dataset/858.mp3,0.0,3.1859583333333332,3.1859583333333332,gradient F dot product with u
+/data1/eunju/datasets/mathspeech/dataset/829.mp3,0.0,3.7619583333333333,3.7619583333333333,f sub z equals lambda g sub z
+/data1/eunju/datasets/mathspeech/dataset/834.mp3,0.0,4.193958333333334,4.193958333333334,x squared plus nine over x squared
+/data1/eunju/datasets/mathspeech/dataset/370.mp3,0.0,4.217958333333334,4.217958333333334,x one is a half times two
+/data1/eunju/datasets/mathspeech/dataset/811.mp3,0.0,2.7539583333333333,2.7539583333333333,derivative of t squared is 2t 
+/data1/eunju/datasets/mathspeech/dataset/326.mp3,0.0,6.569958333333333,6.569958333333333,A prime is 2x minus 4v over x squared
+/data1/eunju/datasets/mathspeech/dataset/836.mp3,0.0,8.753958333333333,8.753958333333333,lambda minus two times xy equals zero
+/data1/eunju/datasets/mathspeech/dataset/550.mp3,0.0,6.233958333333334,6.233958333333334,dx over x squared plus 4x
+/data1/eunju/datasets/mathspeech/dataset/544.mp3,0.0,7.121958333333334,7.121958333333334,u plus u cubed over 3 plus a constant
+/data1/eunju/datasets/mathspeech/dataset/1077.mp3,0.0,5.681958333333333,5.681958333333333,e to the i theta times r2 e to the i theta two
+/data1/eunju/datasets/mathspeech/dataset/344.mp3,0.0,3.9059583333333334,3.9059583333333334,d D dt is minus 80
+/data1/eunju/datasets/mathspeech/dataset/259.mp3,0.0,4.841958333333333,4.841958333333333,one plus one over k to the kth power
+/data1/eunju/datasets/mathspeech/dataset/219.mp3,0.0,3.7619583333333333,3.7619583333333333,f prime at x0 times delta x
+/data1/eunju/datasets/mathspeech/dataset/644.mp3,0.0,4.481958333333333,4.481958333333333,cosine of plus or minus pi over 2 is equal to 0
+/data1/eunju/datasets/mathspeech/dataset/839.mp3,0.0,3.4259583333333334,3.4259583333333334,lambda is plus or minus two
+/data1/eunju/datasets/mathspeech/dataset/490.mp3,0.0,4.9619583333333335,4.9619583333333335,negative one over pi times cosine pi
+/data1/eunju/datasets/mathspeech/dataset/812.mp3,0.0,4.0499583333333335,4.0499583333333335,t squared times the derivative of e to the t 
+/data1/eunju/datasets/mathspeech/dataset/565.mp3,0.0,4.9859583333333335,4.9859583333333335,four minus one divided by one plus two is equal to a
+/data1/eunju/datasets/mathspeech/dataset/906.mp3,0.0,4.673958333333333,4.673958333333333, integral of x dx plus y dy
+/data1/eunju/datasets/mathspeech/dataset/135.mp3,0.0,5.0339583333333335,5.0339583333333335,x times one plus y times two plus z times three
+/data1/eunju/datasets/mathspeech/dataset/654.mp3,0.0,3.641958333333333,3.641958333333333,minus 3x squared plus y squared
+/data1/eunju/datasets/mathspeech/dataset/478.mp3,0.0,4.217958333333334,4.217958333333334,2ax minus x squared
+/data1/eunju/datasets/mathspeech/dataset/12.mp3,0.0,2.0339583333333335,2.0339583333333335,b minus a over n
+/data1/eunju/datasets/mathspeech/dataset/988.mp3,0.0,3.8099583333333333,3.8099583333333333,dx is 3t2 dt
+/data1/eunju/datasets/mathspeech/dataset/650.mp3,0.0,5.129958333333334,5.129958333333334, 2 cosine theta is equal to negative 1
+/data1/eunju/datasets/mathspeech/dataset/102.mp3,0.0,6.161958333333334,6.161958333333334,limit as x goes to x0 of f of x is equal to f of x0
+/data1/eunju/datasets/mathspeech/dataset/263.mp3,0.0,3.2339583333333333,3.2339583333333333,r x to the r minus one
+/data1/eunju/datasets/mathspeech/dataset/45.mp3,0.0,8.009958333333334,8.009958333333334,two cosine of theta to the fourth times negative sine
+/data1/eunju/datasets/mathspeech/dataset/910.mp3,0.0,4.193958333333334,4.193958333333334,one-half of sine two theta
+/data1/eunju/datasets/mathspeech/dataset/597.mp3,0.0,14.441958333333334,14.441958333333334,2 pi e integral of x dx from 0 to 1 minus 2 pi integral from 0 to 1 of x e to the x dx
+/data1/eunju/datasets/mathspeech/dataset/516.mp3,0.0,8.825958333333332,8.825958333333332,cosine of x plus cosine cubed of x over three
+/data1/eunju/datasets/mathspeech/dataset/543.mp3,0.0,6.233958333333334,6.233958333333334,the secant squared the x plus x times dx that is du
+/data1/eunju/datasets/mathspeech/dataset/441.mp3,0.0,10.025958333333334,10.025958333333334,the integral from 0 to b e to the x dx is greater than or equal to the integral from 0 to b 1 plus x dx
+/data1/eunju/datasets/mathspeech/dataset/121.mp3,0.0,5.825958333333333,5.825958333333333,sine to the 9th of t cosine of t
+/data1/eunju/datasets/mathspeech/dataset/414.mp3,0.0,1.3859583333333334,1.3859583333333334,one over u
+/data1/eunju/datasets/mathspeech/dataset/653.mp3,0.0,3.593958333333333,3.593958333333333,r squared equals 1 minus 2x squared
+/data1/eunju/datasets/mathspeech/dataset/420.mp3,0.0,2.8739583333333334,2.8739583333333334,n plus 1 squared times n plus 1
+/data1/eunju/datasets/mathspeech/dataset/911.mp3,0.0,6.089958333333334,6.089958333333334, f sub x dx plus f sub y dy
+/data1/eunju/datasets/mathspeech/dataset/316.mp3,0.0,13.889958333333333,13.889958333333333,minus log x to the minus 2 times 1 over x plus 2 log x to the minus 3 1 over x
+/data1/eunju/datasets/mathspeech/dataset/24.mp3,0.0,5.753958333333333,5.753958333333333,h of x equal to sine of x plus square root of 3 times cosine of x
+/data1/eunju/datasets/mathspeech/dataset/390.mp3,0.0,4.457958333333333,4.457958333333333,y is equal to 64 to the 1 3rd
+/data1/eunju/datasets/mathspeech/dataset/689.mp3,0.0,2.2979583333333333,2.2979583333333333,1 over x squared
+/data1/eunju/datasets/mathspeech/dataset/476.mp3,0.0,2.5379583333333335,2.5379583333333335,pi y squared
+/data1/eunju/datasets/mathspeech/dataset/348.mp3,0.0,6.185958333333334,6.185958333333334,v is equal to a 3rd pi times 2 5ths
+/data1/eunju/datasets/mathspeech/dataset/224.mp3,0.0,4.9619583333333335,4.9619583333333335,x to the m over n times n minus 1
+/data1/eunju/datasets/mathspeech/dataset/1073.mp3,0.0,6.233958333333334,6.233958333333334,a to the x times a to the y equals a to the x plus y
+/data1/eunju/datasets/mathspeech/dataset/735.mp3,0.0,5.753958333333333,5.753958333333333, minus one plus two t will be zero
+/data1/eunju/datasets/mathspeech/dataset/982.mp3,0.0,3.3779583333333334,3.3779583333333334,n over n dot i dy dz
+/data1/eunju/datasets/mathspeech/dataset/573.mp3,0.0,7.385958333333333,7.385958333333333,x plus 1 times x squared plus x plus 1
+/data1/eunju/datasets/mathspeech/dataset/1048.mp3,0.0,3.1859583333333332,3.1859583333333332, minus c2 over c1 is less than 1
+/data1/eunju/datasets/mathspeech/dataset/593.mp3,0.0,14.081958333333333,14.081958333333333,y log y squared minus 2y log y minus y
+/data1/eunju/datasets/mathspeech/dataset/996.mp3,0.0,5.657958333333333,5.657958333333333,three yz squared minus four z cubed
+/data1/eunju/datasets/mathspeech/dataset/318.mp3,0.0,3.7139583333333333,3.7139583333333333,2 minus log x
+/data1/eunju/datasets/mathspeech/dataset/655.mp3,0.0,3.3299583333333334,3.3299583333333334,1 over a plus b cosine theta
+/data1/eunju/datasets/mathspeech/dataset/651.mp3,0.0,6.209958333333334,6.209958333333334,r plus 2r cosine theta equals 1
+/data1/eunju/datasets/mathspeech/dataset/796.mp3,0.0,5.465958333333333,5.465958333333333,two over x cubed y
+/data1/eunju/datasets/mathspeech/dataset/247.mp3,0.0,3.2339583333333333,3.2339583333333333,d by dx e to the w
+/data1/eunju/datasets/mathspeech/dataset/917.mp3,0.0,3.4499583333333335,3.4499583333333335,four x squared plus eight xy
+/data1/eunju/datasets/mathspeech/dataset/809.mp3,0.0,8.753958333333333,8.753958333333333,w sub y is x squared times dy dt
+/data1/eunju/datasets/mathspeech/dataset/564.mp3,0.0,1.8659583333333334,1.8659583333333334,four x minus one
+/data1/eunju/datasets/mathspeech/dataset/791.mp3,0.0,7.769958333333333,7.769958333333333,ax over y squared plus bx over y plus c
+/data1/eunju/datasets/mathspeech/dataset/599.mp3,0.0,6.329958333333333,6.329958333333333,1 plus dy dx the quantity squared
+/data1/eunju/datasets/mathspeech/dataset/69.mp3,0.0,4.0019583333333335,4.0019583333333335,a is equal to natural log of m
+/data1/eunju/datasets/mathspeech/dataset/563.mp3,0.0,4.9379583333333334,4.9379583333333334,minus eight minus one divided by minus two minus one is equal to b
+/data1/eunju/datasets/mathspeech/dataset/649.mp3,0.0,1.6019583333333334,1.6019583333333334,sine pi
+/data1/eunju/datasets/mathspeech/dataset/857.mp3,0.0,7.841958333333333,7.841958333333333,"minus g sub z over g sub x, plus partial f over partial z"
+/data1/eunju/datasets/mathspeech/dataset/327.mp3,0.0,4.673958333333333,4.673958333333333,2x equals 2v over x squared
+/data1/eunju/datasets/mathspeech/dataset/32.mp3,0.0,2.8979583333333334,2.8979583333333334,sine of x plus square root of 3 times cosine x
+/data1/eunju/datasets/mathspeech/dataset/388.mp3,0.0,2.3219583333333333,2.3219583333333333,x to the 1 3rd
+/data1/eunju/datasets/mathspeech/dataset/548.mp3,0.0,4.481958333333333,4.481958333333333,square root of a squared minus x squared
+/data1/eunju/datasets/mathspeech/dataset/218.mp3,0.0,2.4899583333333335,2.4899583333333335,x squared plus y squared equals one
+/data1/eunju/datasets/mathspeech/dataset/351.mp3,0.0,4.121958333333334,4.121958333333334,3h squared times dh dt
+/data1/eunju/datasets/mathspeech/dataset/249.mp3,0.0,9.017958333333333,9.017958333333333,d by dx of a to the x is equal to d by dx of e to the x log a
+/data1/eunju/datasets/mathspeech/dataset/474.mp3,0.0,3.7379583333333333,3.7379583333333333,y plus 2 minus y squared is equal to 0
+/data1/eunju/datasets/mathspeech/dataset/969.mp3,0.0,2.2739583333333333,2.2739583333333333,z squared over a
+/data1/eunju/datasets/mathspeech/dataset/502.mp3,0.0,4.673958333333333,4.673958333333333,y n minus 2 plus y n minus 1 over 2
+/data1/eunju/datasets/mathspeech/dataset/580.mp3,0.0,4.169958333333334,4.169958333333334,dx is 2 secant squared u du
+/data1/eunju/datasets/mathspeech/dataset/418.mp3,0.0,6.929958333333333,6.929958333333333, b over n times n b over n squared
+/data1/eunju/datasets/mathspeech/dataset/904.mp3,0.0,3.641958333333333,3.641958333333333, x cubed plus y to the fifth
+/data1/eunju/datasets/mathspeech/dataset/383.mp3,0.0,4.361958333333333,4.361958333333333,f prime of x is e to the x
+/data1/eunju/datasets/mathspeech/dataset/759.mp3,0.0,5.873958333333333,5.873958333333333,"f of x, y equals one minus x squared minus y squared"
+/data1/eunju/datasets/mathspeech/dataset/160.mp3,0.0,3.9779583333333335,3.9779583333333335,a theta minus a sine theta
+/data1/eunju/datasets/mathspeech/dataset/761.mp3,0.0,4.337958333333333,4.337958333333333,f of x y equals minus y
+/data1/eunju/datasets/mathspeech/dataset/129.mp3,0.0,8.657958333333333,8.657958333333333, a dot b minus b dot a plus b dot b
+/data1/eunju/datasets/mathspeech/dataset/461.mp3,0.0,3.8819583333333334,3.8819583333333334,minus 2x e to the minus x squared
+/data1/eunju/datasets/mathspeech/dataset/117.mp3,0.0,6.449958333333333,6.449958333333333,u prime v minus uv prime divided by v squared
+/data1/eunju/datasets/mathspeech/dataset/547.mp3,0.0,5.345958333333333,5.345958333333333,1 over the square root of x squared minus 1
+/data1/eunju/datasets/mathspeech/dataset/405.mp3,0.0,5.873958333333333,5.873958333333333,half one plus x squared to the minus a half times two x
+/data1/eunju/datasets/mathspeech/dataset/272.mp3,0.0,4.121958333333334,4.121958333333334,one divided by the square root of one plus x squared
+/data1/eunju/datasets/mathspeech/dataset/555.mp3,0.0,4.505958333333333,4.505958333333333,natural logarithm of x plus 2 over 2 
+/data1/eunju/datasets/mathspeech/dataset/151.mp3,0.0,6.713958333333333,6.713958333333333,z of t minus two equals minus 3t
+/data1/eunju/datasets/mathspeech/dataset/703.mp3,0.0,2.4179583333333334,2.4179583333333334,1 over 1 minus x
+/data1/eunju/datasets/mathspeech/dataset/31.mp3,0.0,1.7939583333333333,1.7939583333333333,pi over 6 minus pi
+/data1/eunju/datasets/mathspeech/dataset/810.mp3,0.0,6.617958333333333,6.617958333333333,2t e to the t plus t squared e to the t plus cosine t
+/data1/eunju/datasets/mathspeech/dataset/93.mp3,0.0,7.9379583333333334,7.9379583333333334,minus 1 over x0 squared x minus x0
+/data1/eunju/datasets/mathspeech/dataset/136.mp3,0.0,3.7619583333333333,3.7619583333333333,x equals r cosine theta
+/data1/eunju/datasets/mathspeech/dataset/345.mp3,0.0,5.561958333333333,5.561958333333333,r divided by h is equal to four divided by ten
+/data1/eunju/datasets/mathspeech/dataset/1046.mp3,0.0,5.321958333333333,5.321958333333333,lambda1 c1 plus lambda2 c2 equals to 0
+/data1/eunju/datasets/mathspeech/dataset/524.mp3,0.0,9.113958333333333,9.113958333333333,sine of 2 theta is twice the sine of theta times the cosine of theta
+/data1/eunju/datasets/mathspeech/dataset/132.mp3,0.0,5.321958333333333,5.321958333333333,minus one squared plus one squared plus zero squared square root
