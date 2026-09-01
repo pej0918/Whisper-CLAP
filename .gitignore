@@ -1,1 +1,9 @@
 /MathSpeech/Experiments/
+__pycache__/
+*.py[cod]
+*.pt
+*.pth
+*.ckpt
+*.log
+*.csv
+.DS_Store
