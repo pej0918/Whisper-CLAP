@@ -15,7 +15,30 @@ from compute_asr_metrics import normalize_text
 from mathspeech_utils import set_seed
 
 
-class ResidualAdapter(nn.Module):
+class KAUSTStyleResidualAdapter(nn.Module):
+    """Residual bottleneck adapter used after an encoder block.
+
+    This mirrors the adapter placement/shape used by KAUST-Whisper-Adapter:
+    down-project hidden states, apply GELU, up-project, then add the result
+    residually to the block output. We implement it inside the Hugging Face
+    Whisper stack via encoder-layer forward hooks instead of modifying the
+    OpenAI Whisper source tree directly.
+    """
+
+    def __init__(self, hidden_dim: int, bottleneck_dim: int = 256, dropout: float = 0.0):
+        super().__init__()
+        self.down = nn.Linear(hidden_dim, bottleneck_dim)
+        self.act = nn.GELU()
+        self.dropout = nn.Dropout(dropout)
+        self.up = nn.Linear(bottleneck_dim, hidden_dim)
+
+    def forward(self, h):
+        return h + self.up(self.dropout(self.act(self.down(h))))
+
+
+class SingleOutputResidualAdapter(nn.Module):
+    """Backward-compatible single encoder-output adapter used by older runs."""
+
     def __init__(self, hidden_dim: int, bottleneck_dim: int = 256, dropout: float = 0.1, scale_init: float = 0.01):
         super().__init__()
         self.net = nn.Sequential(
@@ -36,25 +59,74 @@ class ResidualAdapterWhisper(nn.Module):
         self,
         whisper_name: str = "openai/whisper-base",
         adapter_bottleneck: int = 256,
-        dropout: float = 0.1,
+        dropout: float = 0.0,
         adapter_scale_init: float = 0.01,
         freeze_whisper: bool = True,
+        adapter_style: str = "kaust_layerwise",
     ):
         super().__init__()
         self.whisper = WhisperForConditionalGeneration.from_pretrained(whisper_name)
         self.whisper.config.use_cache = False
+        self.adapter_style = adapter_style
         hidden_dim = self.whisper.config.d_model
-        self.adapter = ResidualAdapter(hidden_dim, adapter_bottleneck, dropout, adapter_scale_init)
+        self._adapter_hooks = []
+
+        if self.adapter_style == "kaust_layerwise":
+            encoder_layers = self.whisper.model.encoder.layers
+            self.adapters = nn.ModuleList(
+                [
+                    KAUSTStyleResidualAdapter(
+                        hidden_dim=hidden_dim,
+                        bottleneck_dim=adapter_bottleneck,
+                        dropout=dropout,
+                    )
+                    for _ in range(len(encoder_layers))
+                ]
+            )
+            for layer_idx, layer in enumerate(encoder_layers):
+                self._adapter_hooks.append(layer.register_forward_hook(self._make_layerwise_adapter_hook(layer_idx)))
+        elif self.adapter_style == "single_encoder_output":
+            self.adapter = SingleOutputResidualAdapter(hidden_dim, adapter_bottleneck, dropout, adapter_scale_init)
+        else:
+            raise ValueError(f"Unknown adapter_style: {self.adapter_style}")
 
         if freeze_whisper:
             for p in self.whisper.parameters():
                 p.requires_grad = False
-        for p in self.adapter.parameters():
-            p.requires_grad = True
+
+        if self.adapter_style == "kaust_layerwise":
+            for p in self.adapters.parameters():
+                p.requires_grad = True
+        else:
+            for p in self.adapter.parameters():
+                p.requires_grad = True
+
+    def _make_layerwise_adapter_hook(self, layer_idx: int):
+        def hook(module, inputs, output):
+            adapter = self.adapters[layer_idx]
+            if isinstance(output, tuple):
+                hidden = adapter(output[0])
+                return (hidden,) + output[1:]
+            return adapter(output)
+
+        return hook
+
+    def adapter_state_dict(self):
+        if self.adapter_style == "kaust_layerwise":
+            return self.adapters.state_dict()
+        return self.adapter.state_dict()
+
+    def load_adapter_state_dict(self, state_dict, strict: bool = True):
+        if self.adapter_style == "kaust_layerwise":
+            return self.adapters.load_state_dict(state_dict, strict=strict)
+        return self.adapter.load_state_dict(state_dict, strict=strict)
 
     def encode_with_adapter(self, input_features):
-        enc = self.whisper.model.encoder(input_features)
-        return self.adapter(enc.last_hidden_state)
+        enc = self.whisper.model.encoder(input_features, return_dict=True)
+        h = enc.last_hidden_state
+        if self.adapter_style == "single_encoder_output":
+            h = self.adapter(h)
+        return h
 
     def forward(self, input_features, labels):
         h = self.encode_with_adapter(input_features)
@@ -157,8 +229,9 @@ def main():
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--fp16", action="store_true")
     parser.add_argument("--adapter_bottleneck", type=int, default=256)
-    parser.add_argument("--dropout", type=float, default=0.1)
+    parser.add_argument("--dropout", type=float, default=0.0)
     parser.add_argument("--adapter_scale_init", type=float, default=0.01)
+    parser.add_argument("--adapter_style", type=str, default="kaust_layerwise", choices=["kaust_layerwise", "single_encoder_output"])
     parser.add_argument("--train_whisper", action="store_true", help="If set, also update Whisper weights. Default freezes Whisper.")
     parser.add_argument("--selection_max_new_tokens", type=int, default=64)
     args = parser.parse_args()
@@ -198,12 +271,15 @@ def main():
         dropout=args.dropout,
         adapter_scale_init=args.adapter_scale_init,
         freeze_whisper=not args.train_whisper,
+        adapter_style=args.adapter_style,
     ).to(device)
     forced_decoder_ids = processor.get_decoder_prompt_ids(language="en", task="transcribe")
     model.whisper.config.forced_decoder_ids = forced_decoder_ids
     model.whisper.generation_config.forced_decoder_ids = forced_decoder_ids
 
     trainable_params = [p for p in model.parameters() if p.requires_grad]
+    print("adapter_style:", args.adapter_style)
+    print("num_encoder_layers:", len(model.whisper.model.encoder.layers))
     print("total params:", sum(p.numel() for p in model.parameters()))
     print("trainable params:", sum(p.numel() for p in trainable_params))
     print("freeze_whisper:", not args.train_whisper)
@@ -234,7 +310,9 @@ def main():
         ckpt = {
             "epoch": epoch,
             "args": vars(args),
-            "adapter_state_dict": model.adapter.state_dict(),
+            "adapter_state_dict": model.adapter_state_dict(),
+            "adapter_style": args.adapter_style,
+            "num_encoder_layers": len(model.whisper.model.encoder.layers),
             "valid_loss": valid_loss,
             "valid_wer": valid_wer,
             "selection_metric": "valid_wer",
