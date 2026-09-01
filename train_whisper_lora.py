@@ -91,16 +91,20 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch_size", type=int, default=4)
-    parser.add_argument("--lr", type=float, default=1e-5)
+    # LoRA-Whisper uses AdamW with peak learning rate 1e-4.
+    parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--weight_decay", type=float, default=0.01)
     parser.add_argument("--warmup_ratio", type=float, default=0.05)
     parser.add_argument("--grad_accum_steps", type=int, default=1)
     parser.add_argument("--num_workers", type=int, default=2)
     parser.add_argument("--fp16", action="store_true")
-    parser.add_argument("--lora_r", type=int, default=16)
+    # LoRA-Whisper reports best performance at r=32 and applies LoRA to
+    # Wq, Wk, Wv, and feed-forward layers in both encoder and decoder.
+    # In HF Whisper, these correspond to q_proj, k_proj, v_proj, fc1, fc2.
+    parser.add_argument("--lora_r", type=int, default=32)
     parser.add_argument("--lora_alpha", type=int, default=32)
-    parser.add_argument("--lora_dropout", type=float, default=0.05)
-    parser.add_argument("--target_modules", type=str, default="q_proj,v_proj")
+    parser.add_argument("--lora_dropout", type=float, default=0.0)
+    parser.add_argument("--target_modules", type=str, default="q_proj,k_proj,v_proj,fc1,fc2")
     parser.add_argument("--selection_max_new_tokens", type=int, default=64)
     args = parser.parse_args()
 
@@ -111,6 +115,12 @@ def main():
     print("device:", device)
     print("dataset_type:", args.dataset_type)
     print("model selection: validation WER")
+    print("LoRA-Whisper-style config:")
+    print("  r:", args.lora_r)
+    print("  alpha:", args.lora_alpha)
+    print("  dropout:", args.lora_dropout)
+    print("  target_modules:", args.target_modules)
+    print("  lr:", args.lr)
 
     processor = WhisperProcessor.from_pretrained(args.whisper_name, language="en", task="transcribe")
     train_records = load_records_from_args(args, "train", save_dir=args.save_dir)
