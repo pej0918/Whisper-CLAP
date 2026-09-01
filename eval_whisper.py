@@ -103,16 +103,19 @@ def load_residual_adapter_model(args, dtype):
         raise ValueError("--ckpt_path is required for --model_kind residual_adapter")
     ckpt = torch.load(args.ckpt_path, map_location="cpu", weights_only=False)
     train_args = ckpt.get("args", {})
+    adapter_style = ckpt.get("adapter_style", train_args.get("adapter_style", "single_encoder_output"))
     model = ResidualAdapterWhisper(
-        whisper_name=args.whisper_name,
+        whisper_name=train_args.get("whisper_name", args.whisper_name),
         adapter_bottleneck=int(train_args.get("adapter_bottleneck", args.adapter_bottleneck)),
         dropout=float(train_args.get("dropout", args.dropout)),
         adapter_scale_init=float(train_args.get("adapter_scale_init", args.adapter_scale_init)),
         freeze_whisper=True,
+        adapter_style=adapter_style,
     )
-    model.adapter.load_state_dict(ckpt["adapter_state_dict"], strict=True)
+    model.load_adapter_state_dict(ckpt["adapter_state_dict"], strict=True)
     model.to(dtype=dtype)
     print("loaded residual adapter checkpoint:", args.ckpt_path)
+    print("adapter_style:", adapter_style)
     print("selection_metric:", ckpt.get("selection_metric"))
     print("valid_wer:", ckpt.get("valid_wer"))
     return model
@@ -264,7 +267,7 @@ def main():
     parser.add_argument("--max_samples", type=int, default=None)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--adapter_bottleneck", type=int, default=256)
-    parser.add_argument("--dropout", type=float, default=0.1)
+    parser.add_argument("--dropout", type=float, default=0.0)
     parser.add_argument("--adapter_scale_init", type=float, default=0.01)
     parser.add_argument("--fp16", action="store_true")
     args = parser.parse_args()
