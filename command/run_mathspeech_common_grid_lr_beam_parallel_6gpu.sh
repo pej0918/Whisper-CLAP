@@ -80,7 +80,10 @@ run_eval_residual(){
 }
 
 run_fullft_job(){
-  local gpu="$1" lr="$2" out_dir="${OUT_ROOT}/fullft_lr${lr}"; mkdir -p "$out_dir"
+  local gpu="$1"
+  local lr="$2"
+  local out_dir="${OUT_ROOT}/fullft_lr${lr}"
+  mkdir -p "$out_dir"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_whisper_fullft_compat.py \
     --train "${TRAIN_CSV}" --dev "${VAL_CSV}" --output_dir "$out_dir" --model "${MODEL}" \
     --epochs "${EPOCHS}" --learning_rate "$lr" --train_batch_size "${BATCH_SIZE}" \
@@ -91,7 +94,10 @@ run_fullft_job(){
 }
 
 run_ours_job(){
-  local gpu="$1" lr="$2" out_dir="${OUT_ROOT}/ours_lr${lr}"; mkdir -p "$out_dir"
+  local gpu="$1"
+  local lr="$2"
+  local out_dir="${OUT_ROOT}/ours_lr${lr}"
+  mkdir -p "$out_dir"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_mathspeech_projector_source_disjoint_hf.py \
     --train_csv "${OURS_TRAIN_CSV}" --valid_csv "${OURS_VAL_CSV}" --test_csv "${OURS_TEST_CSV}" \
     --save_dir "$out_dir" --clap_emb_path "${CLAP_EMB}" --whisper_name "${MODEL}" \
@@ -104,7 +110,10 @@ run_ours_job(){
 }
 
 run_clap_fullft_job(){
-  local gpu="$1" lr="$2" out_dir="${OUT_ROOT}/clap_fullft_lr${lr}"; mkdir -p "$out_dir"
+  local gpu="$1"
+  local lr="$2"
+  local out_dir="${OUT_ROOT}/clap_fullft_lr${lr}"
+  mkdir -p "$out_dir"
   echo "[CLAP-GUIDED FULL FT] lr=${lr}; Whisper trainable"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_mathspeech_projector_source_disjoint_hf.py \
     --train_csv "${OURS_TRAIN_CSV}" --valid_csv "${OURS_VAL_CSV}" --test_csv "${OURS_TEST_CSV}" \
@@ -119,7 +128,8 @@ run_clap_fullft_job(){
 
 run_lora_job(){
   local gpu="$1" lr="$2" variant="$3" targets="$4"
-  local out_dir="${OUT_ROOT}/lora_whisper_lr${lr}_${variant}"; mkdir -p "$out_dir"
+  local out_dir="${OUT_ROOT}/lora_whisper_lr${lr}_${variant}"
+  mkdir -p "$out_dir"
   echo "[LORA] variant=${variant} targets=${targets} lr=${lr}"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_whisper_lora_controlled.py \
     --train "${TRAIN_CSV}" --dev "${VAL_CSV}" --output_dir "$out_dir" --model "${MODEL}" \
@@ -132,7 +142,10 @@ run_lora_job(){
 }
 
 run_residual_job(){
-  local gpu="$1" lr="$2" out_dir="${OUT_ROOT}/residual_b256_lr${lr}"; mkdir -p "$out_dir"
+  local gpu="$1"
+  local lr="$2"
+  local out_dir="${OUT_ROOT}/residual_b256_lr${lr}"
+  mkdir -p "$out_dir"
   CUDA_VISIBLE_DEVICES="$gpu" "$PYTHON" -u scripts/train_whisper_residual_adapter.py \
     --train "${TRAIN_CSV}" --dev "${VAL_CSV}" --save_dir "$out_dir" --model "${MODEL}" \
     --epochs "${EPOCHS}" --lr "$lr" --batch_size "${RESIDUAL_BATCH_SIZE}" --num_workers "${NUM_WORKERS}" \
