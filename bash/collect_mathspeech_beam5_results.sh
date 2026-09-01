@@ -53,10 +53,10 @@ METHODS = [
         "setting": "LoRA r=16 alpha=32 q/v; CE only; lr=1e-5; valid WER-best; beam=5 eval",
     },
     {
-        "method": "Residual Adapter",
+        "method": "KAUST-style Residual Adapter",
         "dir": EXP_ROOT / "epoch10_beam5_residual_adapter_b256",
         "log": LOG_DIR / "06_residual_adapter.log",
-        "setting": "Whisper frozen; residual adapter bottleneck=256; CE only; lr=1e-5; valid WER-best; beam=5 eval",
+        "setting": "Whisper frozen; layer-wise encoder residual bottleneck adapters; b=256; CE only; lr=1e-5; beam=5 eval",
     },
 ]
 
@@ -135,7 +135,6 @@ for item in METHODS:
     cer = metrics.get("CER", summary.get("cer", None))
     valid_wer = None
 
-    # Try training log csv first; otherwise grep plain log.
     train_log_csv = d / "train_log.csv"
     if train_log_csv.exists():
         try:
