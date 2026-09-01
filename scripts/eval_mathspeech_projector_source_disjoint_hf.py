@@ -98,6 +98,7 @@ def main():
     cargs = ckpt.get("args", {})
     clap_dim = int(ckpt.get("clap_dim", 512))
     whisper_name = cargs.get("whisper_name", "openai/whisper-base")
+    freeze_whisper = bool(cargs.get("freeze_whisper", True))
 
     processor = WhisperProcessor.from_pretrained(
         whisper_name, language="English", task="transcribe"
@@ -110,16 +111,25 @@ def main():
         adapter_bottleneck=int(cargs.get("adapter_bottleneck", 256)),
         dropout=float(cargs.get("dropout", 0.1)),
         adapter_scale_init=float(cargs.get("adapter_scale_init", 0.01)),
-        freeze_whisper=True,
+        freeze_whisper=freeze_whisper,
     )
 
-    # Prefer compact states; fall back to full model state for compatibility.
-    if "adapter_state_dict" in ckpt:
+    # Full checkpoints are authoritative. This is required for CLAP-guided
+    # full fine-tuning, where Whisper itself changes during training.
+    if "model_state_dict" in ckpt:
+        model.load_state_dict(ckpt["model_state_dict"], strict=True)
+        state_source = "full_model_state_dict"
+    elif "adapter_state_dict" in ckpt:
+        # Backward compatibility for compact frozen-Whisper checkpoints.
         model.adapter.load_state_dict(ckpt["adapter_state_dict"], strict=True)
         model.pooler.load_state_dict(ckpt["pooler_state_dict"], strict=True)
         model.align_head.load_state_dict(ckpt["align_head_state_dict"], strict=True)
+        state_source = "compact_adapter_states"
     else:
-        model.load_state_dict(ckpt["model_state_dict"], strict=False)
+        raise ValueError("Checkpoint contains neither model_state_dict nor compact adapter states")
+
+    print("checkpoint freeze_whisper:", freeze_whisper)
+    print("loaded state source      :", state_source)
 
     forced_ids = processor.get_decoder_prompt_ids(language="english", task="transcribe")
     model.whisper.config.forced_decoder_ids = forced_ids
@@ -210,6 +220,8 @@ def main():
         "lambda_align": cargs.get("lambda_align"),
         "lambda_hidden": cargs.get("lambda_hidden"),
         "align_loss_type": cargs.get("align_loss_type"),
+        "freeze_whisper": freeze_whisper,
+        "state_source": state_source,
         "cleaning": False,
     }
     with open(out_json, "w") as f:
