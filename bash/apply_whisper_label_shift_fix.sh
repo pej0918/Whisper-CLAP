@@ -78,36 +78,37 @@ patch_class_before(
     '        output = {',
 )
 
-# 4) Match LoRA-Whisper-style target set more closely by including out_proj.
+# 4) Keep LoRA-Whisper target set aligned with the paper: Wq, Wk, Wv, and FC.
+# In Hugging Face Whisper this maps to q_proj, k_proj, v_proj, fc1, fc2.
 p = Path('train_whisper_lora.py')
 text = p.read_text()
-if 'default="q_proj,k_proj,v_proj,fc1,fc2"' in text:
+if 'default="q_proj,k_proj,v_proj,out_proj,fc1,fc2"' in text:
     text = text.replace(
-        'default="q_proj,k_proj,v_proj,fc1,fc2"',
         'default="q_proj,k_proj,v_proj,out_proj,fc1,fc2"',
+        'default="q_proj,k_proj,v_proj,fc1,fc2"',
         1,
     )
     p.write_text(text)
-    print('[PATCHED] train_whisper_lora.py target_modules default adds out_proj')
-elif 'default="q_proj,k_proj,v_proj,out_proj,fc1,fc2"' in text:
-    print('[SKIP already patched] train_whisper_lora.py target_modules default')
+    print('[PATCHED] train_whisper_lora.py target_modules removes out_proj')
+elif 'default="q_proj,k_proj,v_proj,fc1,fc2"' in text:
+    print('[OK] train_whisper_lora.py target_modules already paper-aligned')
 else:
     print('[WARN] train_whisper_lora.py target_modules default pattern not found; check manually')
 
-# 5) Controlled MathSpeech LoRA runner uses explicit target modules.
+# 5) Controlled MathSpeech LoRA runner uses explicit target modules; keep it paper-aligned too.
 p = Path('bash/run_mathspeech_lora_whisper_controlled_epoch10_beam5.sh')
 if p.exists():
     text = p.read_text()
-    if '--target_modules q_proj,k_proj,v_proj,fc1,fc2' in text:
+    if '--target_modules q_proj,k_proj,v_proj,out_proj,fc1,fc2' in text:
         text = text.replace(
-            '--target_modules q_proj,k_proj,v_proj,fc1,fc2',
             '--target_modules q_proj,k_proj,v_proj,out_proj,fc1,fc2',
+            '--target_modules q_proj,k_proj,v_proj,fc1,fc2',
             1,
         )
         p.write_text(text)
-        print('[PATCHED] controlled LoRA runner target_modules adds out_proj')
-    elif '--target_modules q_proj,k_proj,v_proj,out_proj,fc1,fc2' in text:
-        print('[SKIP already patched] controlled LoRA runner target_modules')
+        print('[PATCHED] controlled LoRA runner target_modules removes out_proj')
+    elif '--target_modules q_proj,k_proj,v_proj,fc1,fc2' in text:
+        print('[OK] controlled LoRA runner target_modules already paper-aligned')
     else:
         print('[WARN] controlled LoRA runner target_modules pattern not found; check manually')
 
