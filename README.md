@@ -1,11 +1,12 @@
 # Whisper-CLAP
 
-Clean MathSpeech ASR experiments with a source-aware split, Hugging Face Whisper evaluation, and corpus-level jiwer metrics.
+Clean MathSpeech ASR experiments with a source-aware split, Hugging Face Whisper evaluation, validation-WER checkpoint selection, and corpus-level jiwer metrics.
 
 ## What changed
 
 - MathSpeech split is now **source-aware** with `seed=42`, preventing the same source from appearing in both train and test.
 - Whisper-base baseline and all model variants use the same **Hugging Face Transformers** Whisper pipeline.
+- Training scripts now save `best.pt` using **validation WER** rather than validation loss.
 - WER/CER are computed with official `jiwer` **corpus-level** metrics instead of averaging per-sample WER/CER.
 - Old OpenAI-Whisper baseline and duplicate v2 scripts were removed in favor of clearer canonical filenames.
 
@@ -14,8 +15,8 @@ Clean MathSpeech ASR experiments with a source-aware split, Hugging Face Whisper
 | File | Purpose |
 | --- | --- |
 | `mathspeech_utils.py` | Shared seed, ffmpeg audio loading, and source-aware split utilities |
-| `train_whisper_ft.py` | Hugging Face Whisper fine-tuning baseline |
-| `train_whisper_clap_adapter.py` | Whisper + CLAP-guided adapter training |
+| `train_whisper_ft.py` | Hugging Face Whisper fine-tuning baseline; selects `best.pt` by validation WER |
+| `train_whisper_clap_adapter.py` | Whisper + CLAP-guided adapter training; selects `best.pt` by validation WER |
 | `eval_hf_whisper.py` | Hugging Face Whisper-base or fine-tuned Whisper evaluation |
 | `eval_whisper_clap_adapter.py` | Evaluation for the CLAP-guided adapter checkpoint |
 | `compute_asr_metrics.py` | Corpus-level WER/CER and MathSpeech auxiliary metrics |
@@ -37,6 +38,7 @@ python train_whisper_clap_adapter.py \
   --clap_emb_path /data1/eunju/datasets/mathspeech/dataset/mathspeech_clap_text_emb.pt \
   --save_dir /home/pej0918/Projects/Audio_Text/MathSpeech/Experiments/source_aware_clap_adapter \
   --whisper_name openai/whisper-base \
+  --source_col Source \
   --seed 42 \
   --force_new_split
 ```
@@ -51,7 +53,7 @@ print(df.columns.tolist())
 PY
 ```
 
-Then rerun with, for example, `--source_col source`.
+Then rerun with, for example, `--source_col Source`.
 
 ## Evaluate Hugging Face Whisper-base
 
@@ -86,4 +88,4 @@ python compute_asr_metrics.py \
   --out_csv /home/pej0918/Projects/Audio_Text/MathSpeech/Experiments/source_aware_clap_adapter/hf_whisper_base_test_metrics.csv
 ```
 
-The reported `WER` and `CER` are corpus-level jiwer metrics.
+The reported `WER` and `CER` are corpus-level jiwer metrics. Training-time `valid_wer` uses the same normalization before jiwer corpus-level WER and is used for model selection.
