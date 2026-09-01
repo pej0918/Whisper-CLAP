@@ -8,11 +8,11 @@ DATA_XLSX="/data1/eunju/datasets/mathspeech/dataset/MathSpeech.xlsx"
 AUDIO_DIR="/data1/eunju/datasets/mathspeech/dataset"
 EXP_ROOT="${ROOT}/MathSpeech/Experiments"
 SPLIT_PATH="${EXP_ROOT}/source_aware_seed42/split_indices.pt"
-LOG_DIR="${EXP_ROOT}/logs_lora_residual_epoch10"
+LOG_DIR="${EXP_ROOT}/logs_lora_residual_epoch10_beam5"
 mkdir -p "${LOG_DIR}"
 
-LORA_DIR="${EXP_ROOT}/epoch10_lora_whisper_r16"
-RESIDUAL_DIR="${EXP_ROOT}/epoch10_residual_adapter_b256"
+LORA_DIR="${EXP_ROOT}/epoch10_lora_whisper_r16_beam5"
+RESIDUAL_DIR="${EXP_ROOT}/epoch10_residual_adapter_b256_beam5"
 mkdir -p "${LORA_DIR}" "${RESIDUAL_DIR}"
 
 cd "${ROOT}"
@@ -50,15 +50,21 @@ fi
     --target_modules q_proj,v_proj \
     --num_workers 2
 
-  CUDA_VISIBLE_DEVICES=1 python eval_whisper_lora.py \
+  CUDA_VISIBLE_DEVICES=1 python eval_whisper.py \
+    --model_kind lora \
     --dataset_type mathspeech \
     --excel_path "${DATA_XLSX}" \
     --audio_dir "${AUDIO_DIR}" \
     --split_path "${SPLIT_PATH}" \
     --adapter_dir "${LORA_DIR}/best_adapter" \
-    --save_csv "${LORA_DIR}/test.csv" \
+    --output_csv "${LORA_DIR}/test.csv" \
+    --summary_json "${LORA_DIR}/test_summary.json" \
     --eval_split test \
-    --pred_col pred_lora_whisper_test
+    --pred_col pred_lora_whisper_test \
+    --whisper_name openai/whisper-base \
+    --num_beams 5 \
+    --batch_size 16 \
+    --num_workers 4
 
   python compute_asr_metrics.py \
     --csv "${LORA_DIR}/test.csv" \
@@ -93,15 +99,21 @@ fi
     --adapter_bottleneck 256 \
     --num_workers 2
 
-  CUDA_VISIBLE_DEVICES=2 python eval_whisper_residual_adapter.py \
+  CUDA_VISIBLE_DEVICES=2 python eval_whisper.py \
+    --model_kind residual_adapter \
     --dataset_type mathspeech \
     --excel_path "${DATA_XLSX}" \
     --audio_dir "${AUDIO_DIR}" \
     --split_path "${SPLIT_PATH}" \
     --ckpt_path "${RESIDUAL_DIR}/best.pt" \
-    --save_csv "${RESIDUAL_DIR}/test.csv" \
+    --output_csv "${RESIDUAL_DIR}/test.csv" \
+    --summary_json "${RESIDUAL_DIR}/test_summary.json" \
     --eval_split test \
-    --pred_col pred_residual_adapter_test
+    --pred_col pred_residual_adapter_test \
+    --whisper_name openai/whisper-base \
+    --num_beams 5 \
+    --batch_size 16 \
+    --num_workers 4
 
   python compute_asr_metrics.py \
     --csv "${RESIDUAL_DIR}/test.csv" \
@@ -112,7 +124,7 @@ fi
   echo "[2/2] Done"
 ) > "${LOG_DIR}/02_residual_adapter.log" 2>&1 &
 
-echo "[INFO] Launched MathSpeech LoRA/Residual jobs."
+echo "[INFO] Launched MathSpeech LoRA/Residual jobs with beam=5 final eval."
 echo "[INFO] Logs:"
 echo "  ${LOG_DIR}/01_lora_whisper.log"
 echo "  ${LOG_DIR}/02_residual_adapter.log"
@@ -121,3 +133,4 @@ wait
 
 echo "[DONE] MathSpeech LoRA/Residual finished."
 find "${LORA_DIR}" "${RESIDUAL_DIR}" -name "test_metrics.csv" -print -exec cat {} \;
+find "${LORA_DIR}" "${RESIDUAL_DIR}" -name "test_summary.json" -print -exec cat {} \;
