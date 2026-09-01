@@ -5,7 +5,7 @@ export TOKENIZERS_PARALLELISM=false
 
 ROOT="/home/pej0918/Projects/Audio_Text"
 EXP_ROOT="${ROOT}/Speech2Latex/Experiments"
-LOG_DIR="${EXP_ROOT}/logs_english_human_epoch10"
+LOG_DIR="${EXP_ROOT}/logs_english_human_epoch10_beam5"
 mkdir -p "${LOG_DIR}"
 
 cd "${ROOT}"
@@ -18,7 +18,7 @@ run_one_subset () {
   local GPU_LORA="$5"
   local GPU_RES="$6"
 
-  local SUB_ROOT="${EXP_ROOT}/${TAG}"
+  local SUB_ROOT="${EXP_ROOT}/${TAG}_beam5"
   local SPLIT_PATH="${SUB_ROOT}/split.pt"
   local BASE_DIR="${SUB_ROOT}/whisper_base"
   local FT_DIR="${SUB_ROOT}/whisper_full_ft"
@@ -26,26 +26,29 @@ run_one_subset () {
   local RES_DIR="${SUB_ROOT}/residual_adapter_b256"
   mkdir -p "${BASE_DIR}" "${FT_DIR}" "${LORA_DIR}" "${RES_DIR}"
 
-  echo "[INFO] Running ${SUBSET} English Human subset"
+  echo "[INFO] Running ${SUBSET} English Human subset with final eval beam=5"
 
   # 1. Whisper-base eval only
   (
     set -euo pipefail
     cd "${ROOT}"
     echo "[${TAG} BASE] GPU ${GPU_BASE}"
-    CUDA_VISIBLE_DEVICES=${GPU_BASE} python eval_hf_whisper_generic.py \
+    CUDA_VISIBLE_DEVICES=${GPU_BASE} python eval_whisper.py \
+      --model_kind hf \
       --dataset_type s2l \
       --s2l_subset "${SUBSET}" \
       --s2l_language eng \
       --s2l_target_col pronunciation \
       --split_path "${SPLIT_PATH}" \
       --force_new_split \
-      --save_csv "${BASE_DIR}/test.csv" \
+      --output_csv "${BASE_DIR}/test.csv" \
+      --summary_json "${BASE_DIR}/test_summary.json" \
       --eval_split test \
       --pred_col pred_whisper_base_test \
       --whisper_name openai/whisper-base \
-      --batch_size 4 \
-      --num_workers 2
+      --num_beams 5 \
+      --batch_size 16 \
+      --num_workers 4
 
     python compute_asr_metrics.py \
       --csv "${BASE_DIR}/test.csv" \
@@ -73,19 +76,22 @@ run_one_subset () {
       --lr 1e-5 \
       --num_workers 2
 
-    CUDA_VISIBLE_DEVICES=${GPU_FT} python eval_hf_whisper_generic.py \
+    CUDA_VISIBLE_DEVICES=${GPU_FT} python eval_whisper.py \
+      --model_kind hf \
       --dataset_type s2l \
       --s2l_subset "${SUBSET}" \
       --s2l_language eng \
       --s2l_target_col pronunciation \
       --split_path "${SPLIT_PATH}" \
       --ckpt_path "${FT_DIR}/best.pt" \
-      --save_csv "${FT_DIR}/test.csv" \
+      --output_csv "${FT_DIR}/test.csv" \
+      --summary_json "${FT_DIR}/test_summary.json" \
       --eval_split test \
       --pred_col pred_whisper_full_ft_test \
       --whisper_name openai/whisper-base \
-      --batch_size 4 \
-      --num_workers 2
+      --num_beams 5 \
+      --batch_size 16 \
+      --num_workers 4
 
     python compute_asr_metrics.py \
       --csv "${FT_DIR}/test.csv" \
@@ -117,19 +123,22 @@ run_one_subset () {
       --target_modules q_proj,v_proj \
       --num_workers 2
 
-    CUDA_VISIBLE_DEVICES=${GPU_LORA} python eval_whisper_lora.py \
+    CUDA_VISIBLE_DEVICES=${GPU_LORA} python eval_whisper.py \
+      --model_kind lora \
       --dataset_type s2l \
       --s2l_subset "${SUBSET}" \
       --s2l_language eng \
       --s2l_target_col pronunciation \
       --split_path "${SPLIT_PATH}" \
       --adapter_dir "${LORA_DIR}/best_adapter" \
-      --save_csv "${LORA_DIR}/test.csv" \
+      --output_csv "${LORA_DIR}/test.csv" \
+      --summary_json "${LORA_DIR}/test_summary.json" \
       --eval_split test \
       --pred_col pred_lora_whisper_test \
       --whisper_name openai/whisper-base \
-      --batch_size 4 \
-      --num_workers 2
+      --num_beams 5 \
+      --batch_size 16 \
+      --num_workers 4
 
     python compute_asr_metrics.py \
       --csv "${LORA_DIR}/test.csv" \
@@ -158,19 +167,22 @@ run_one_subset () {
       --adapter_bottleneck 256 \
       --num_workers 2
 
-    CUDA_VISIBLE_DEVICES=${GPU_RES} python eval_whisper_residual_adapter.py \
+    CUDA_VISIBLE_DEVICES=${GPU_RES} python eval_whisper.py \
+      --model_kind residual_adapter \
       --dataset_type s2l \
       --s2l_subset "${SUBSET}" \
       --s2l_language eng \
       --s2l_target_col pronunciation \
       --split_path "${SPLIT_PATH}" \
       --ckpt_path "${RES_DIR}/best.pt" \
-      --save_csv "${RES_DIR}/test.csv" \
+      --output_csv "${RES_DIR}/test.csv" \
+      --summary_json "${RES_DIR}/test_summary.json" \
       --eval_split test \
       --pred_col pred_residual_adapter_test \
       --whisper_name openai/whisper-base \
-      --batch_size 4 \
-      --num_workers 2
+      --num_beams 5 \
+      --batch_size 16 \
+      --num_workers 4
 
     python compute_asr_metrics.py \
       --csv "${RES_DIR}/test.csv" \
@@ -189,4 +201,5 @@ run_one_subset equations s2l_eq 1 2 3 4
 wait
 
 echo "[DONE] S2L English Human experiments finished."
-find "${EXP_ROOT}" -name "test_metrics.csv" -print -exec cat {} \;
+find "${EXP_ROOT}" -path "*beam5*" -name "test_metrics.csv" -print -exec cat {} \;
+find "${EXP_ROOT}" -path "*beam5*" -name "test_summary.json" -print -exec cat {} \;
