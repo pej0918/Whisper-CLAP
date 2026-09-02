@@ -5,8 +5,9 @@ Research code for CLAP-guided parameter-efficient adaptation of Whisper for spec
 > **Active paper branch:** `common_clap_whisper`
 >
 > The canonical MathSpeech entry point for the currently reported configurations is
-> `command/run_mathspeech_reported_configs.sh`. Older `*_v2.sh`, `*_v3.sh`, `*_fixed.sh`,
-> and grid scripts are retained only for experiment provenance.
+> `command/run_mathspeech_reported_configs.sh`. Obsolete `*_v2.sh`, `*_v3.sh`, and
+> `*_fixed.sh` launchers have been removed; remaining grid scripts are retained only for
+> experiment provenance.
 
 ## 1. Environment
 
@@ -173,8 +174,9 @@ The analysis reports:
 - bootstrap 95% confidence intervals.
 
 Semantic-alignment shifts should only be interpreted for variants whose AlignHead was
-actually trained with the CLAP alignment objective. For CE-only and CE+Hidden variants,
-use the hidden-space preservation/drift metrics instead.
+actually trained with the CLAP alignment objective. The analyzer emits a warning when
+`lambda_align=0` or `align_loss_type=none`; for CE-only and CE+Hidden variants, use the
+hidden-space preservation/drift metrics instead.
 
 ## 7. Key implementation details
 
@@ -205,9 +207,8 @@ mathspeech/  source-disjoint MathSpeech split manifests
 scripts/     training, evaluation, collection, and analysis code
 ```
 
-The older MathSpeech grid/parallel scripts remain in `command/` to preserve the exact
-history of intermediate sweeps. For current paper reproduction, prefer
-`command/run_mathspeech_reported_configs.sh`.
+For current paper reproduction, prefer `command/run_mathspeech_reported_configs.sh`.
+Remaining historical grid/parallel scripts are kept only for experiment provenance.
 
 S2L/M3AV scripts are retained as ongoing extension experiments and are not part of the
 current finalized MathSpeech result table.
