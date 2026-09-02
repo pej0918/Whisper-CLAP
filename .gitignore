@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Local logs and temporary files
+*.log
+*.bak
+*.bak_*
+
+# Local experiment outputs / checkpoints
+results/
+outputs/
+checkpoints/
+*.pt
+*.pth
+
+# Editor / OS
+.vscode/
+.DS_Store
