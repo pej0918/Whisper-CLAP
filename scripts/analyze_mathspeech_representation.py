@@ -202,7 +202,7 @@ def make_delta_histogram(df, output_path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True, help="MathSpeech validation/test manifest")
-    ap.add_argument("--ckpt", required=True, help="Ours best.pt checkpoint")
+    ap.add_argument("--ckpt", required=True, help="Projector checkpoint (best.pt)")
     ap.add_argument(
         "--clap_emb_path",
         default="/data1/eunju/datasets/mathspeech/dataset/mathspeech_clap_text_emb.pt",
@@ -228,6 +228,12 @@ def main():
 
     model, ckpt, train_args = load_model_from_checkpoint(args.ckpt, device)
 
+    lambda_align = float(train_args.get("lambda_align", 0.0) or 0.0)
+    align_loss_type = str(train_args.get("align_loss_type", "none"))
+    semantic_alignment_supervised = (
+        lambda_align > 0.0 and align_loss_type != "none"
+    )
+
     print("-" * 72)
     print("checkpoint epoch       :", ckpt.get("epoch"))
     print("checkpoint valid WER   :", ckpt.get("valid_wer"))
@@ -239,6 +245,16 @@ def main():
     print("pool_type              :", train_args.get("pool_type"))
     print("freeze_whisper         :", train_args.get("freeze_whisper"))
     print("-" * 72)
+
+    if not semantic_alignment_supervised:
+        print(
+            "[WARNING] This checkpoint did not train AlignHead with the CLAP "
+            "alignment objective. Semantic alignment scores (S_orig, S_new, ΔS) "
+            "are still computed for diagnostics but should NOT be interpreted "
+            "as meaningful CLAP-space alignment. Use hidden-space preservation "
+            "and drift metrics for this variant."
+        )
+        print("-" * 72)
 
     whisper_name = train_args.get("whisper_name", "openai/whisper-base")
     processor = WhisperProcessor.from_pretrained(whisper_name, language="English", task="transcribe")
@@ -311,6 +327,7 @@ def main():
         "negative_ratio": float((delta < 0).mean()),
         "zero_ratio": float((delta == 0).mean()),
         "delta_mean_bootstrap_95ci": [ci_low, ci_high],
+        "semantic_alignment_supervised": semantic_alignment_supervised,
 
         "hidden_cosine_mean": float(hidden_cosine.mean()),
         "hidden_cosine_std": float(hidden_cosine.std(ddof=1)),
