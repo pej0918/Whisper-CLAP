@@ -80,6 +80,37 @@ def extract_representation_scores(model, loader, device):
         # H_new : projector/adaptor-applied encoder representation
         h_new, h_orig = model.encode_with_adapter(feats, return_original=True)
 
+        # ----------------------------------------------------
+        # Hidden representation preservation / drift
+        # Measured directly in Whisper hidden space,
+        # BEFORE AlignHead.
+        # h_orig, h_new: [B, T, D]
+        # ----------------------------------------------------
+        h_orig_f = h_orig.float()
+        h_new_f = h_new.float()
+
+        # Higher = better preservation
+        hidden_cosine = F.cosine_similarity(
+            h_orig_f,
+            h_new_f,
+            dim=-1,
+        ).mean(dim=-1)  # [B]
+
+        # Lower = smaller drift
+        hidden_mse = (
+            (h_new_f - h_orig_f) ** 2
+        ).mean(dim=(1, 2))  # [B]
+
+        # Relative Frobenius L2 drift
+        diff_norm = torch.sqrt(
+            ((h_new_f - h_orig_f) ** 2).sum(dim=(1, 2))
+        )
+        orig_norm = torch.sqrt(
+            (h_orig_f ** 2).sum(dim=(1, 2))
+        ).clamp_min(1e-12)
+
+        hidden_relative_l2 = diff_norm / orig_norm  # [B]
+
         # Current pool_type='cls' implementation means first encoder time step h[:, 0].
         pooled_orig = model.pooler(h_orig)
         pooled_new = model.pooler(h_new)
@@ -107,6 +138,9 @@ def extract_representation_scores(model, loader, device):
                     "s_new": float(s_new[i].cpu()),
                     "delta_s": float(delta[i].cpu()),
                     "improved": bool(delta[i].item() > 0),
+                    "hidden_cosine": float(hidden_cosine[i].cpu()),
+                    "hidden_mse": float(hidden_mse[i].cpu()),
+                    "hidden_relative_l2": float(hidden_relative_l2[i].cpu()),
                 }
             )
 
@@ -233,8 +267,31 @@ def main():
     s_orig = df["s_orig"].to_numpy()
     s_new = df["s_new"].to_numpy()
     delta = df["delta_s"].to_numpy()
+
+    hidden_cosine = df["hidden_cosine"].to_numpy()
+    hidden_mse = df["hidden_mse"].to_numpy()
+    hidden_relative_l2 = df["hidden_relative_l2"].to_numpy()
+
     ci_low, ci_high = bootstrap_mean_ci(
         delta,
+        n_boot=args.bootstrap_samples,
+        seed=args.seed,
+    )
+
+    hidden_cos_ci_low, hidden_cos_ci_high = bootstrap_mean_ci(
+        hidden_cosine,
+        n_boot=args.bootstrap_samples,
+        seed=args.seed,
+    )
+
+    hidden_mse_ci_low, hidden_mse_ci_high = bootstrap_mean_ci(
+        hidden_mse,
+        n_boot=args.bootstrap_samples,
+        seed=args.seed,
+    )
+
+    hidden_l2_ci_low, hidden_l2_ci_high = bootstrap_mean_ci(
+        hidden_relative_l2,
         n_boot=args.bootstrap_samples,
         seed=args.seed,
     )
@@ -254,6 +311,28 @@ def main():
         "negative_ratio": float((delta < 0).mean()),
         "zero_ratio": float((delta == 0).mean()),
         "delta_mean_bootstrap_95ci": [ci_low, ci_high],
+
+        "hidden_cosine_mean": float(hidden_cosine.mean()),
+        "hidden_cosine_std": float(hidden_cosine.std(ddof=1)),
+        "hidden_cosine_bootstrap_95ci": [
+            hidden_cos_ci_low,
+            hidden_cos_ci_high,
+        ],
+
+        "hidden_mse_mean": float(hidden_mse.mean()),
+        "hidden_mse_std": float(hidden_mse.std(ddof=1)),
+        "hidden_mse_bootstrap_95ci": [
+            hidden_mse_ci_low,
+            hidden_mse_ci_high,
+        ],
+
+        "hidden_relative_l2_mean": float(hidden_relative_l2.mean()),
+        "hidden_relative_l2_std": float(hidden_relative_l2.std(ddof=1)),
+        "hidden_relative_l2_bootstrap_95ci": [
+            hidden_l2_ci_low,
+            hidden_l2_ci_high,
+        ],
+
         "checkpoint": str(args.ckpt),
         "manifest": str(args.manifest),
         "checkpoint_epoch": ckpt.get("epoch"),
@@ -289,6 +368,23 @@ def main():
     print(f"Median ΔS       : {summary['delta_median']:+.6f}")
     print(f"Positive ratio  : {100 * summary['positive_ratio']:.2f}%")
     print(f"95% CI mean ΔS  : [{ci_low:+.6f}, {ci_high:+.6f}]")
+
+    print()
+    print("HIDDEN REPRESENTATION PRESERVATION")
+    print("-" * 72)
+    print(
+        f"Hidden cosine   : {summary['hidden_cosine_mean']:.6f} "
+        f"[{hidden_cos_ci_low:.6f}, {hidden_cos_ci_high:.6f}]"
+    )
+    print(
+        f"Hidden MSE      : {summary['hidden_mse_mean']:.8f} "
+        f"[{hidden_mse_ci_low:.8f}, {hidden_mse_ci_high:.8f}]"
+    )
+    print(
+        f"Relative L2     : {summary['hidden_relative_l2_mean']:.6f} "
+        f"[{hidden_l2_ci_low:.6f}, {hidden_l2_ci_high:.6f}]"
+    )
+
     print("-" * 72)
     print("CSV             :", csv_path)
     print("summary         :", summary_path)
