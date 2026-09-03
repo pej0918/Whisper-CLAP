@@ -5,9 +5,7 @@ Research code for CLAP-guided parameter-efficient adaptation of Whisper for spec
 > **Active paper branch:** `common_clap_whisper`
 >
 > The canonical MathSpeech entry point for the currently reported configurations is
-> `command/run_mathspeech_reported_configs.sh`. Obsolete `*_v2.sh`, `*_v3.sh`, and
-> `*_fixed.sh` launchers have been removed; remaining grid scripts are retained only for
-> experiment provenance.
+> `command/run_mathspeech_reported_configs.sh`.
 
 ## 1. Environment
 
@@ -202,13 +200,14 @@ adapted Whisper encoder representation is passed directly to the frozen Whisper 
 ## 8. Repository organization
 
 ```text
-command/     experiment launchers
+command/     current experiment launchers
 mathspeech/  source-disjoint MathSpeech split manifests
 scripts/     training, evaluation, collection, and analysis code
 ```
 
-For current paper reproduction, prefer `command/run_mathspeech_reported_configs.sh`.
-Remaining historical grid/parallel scripts are kept only for experiment provenance.
+For MathSpeech, use `command/run_mathspeech_reported_configs.sh` as the single canonical
+launcher. Obsolete MathSpeech grid, sweep, rerun, and parallel RQ launchers have been
+removed from the active branch to avoid ambiguity. Their history remains available in Git.
 
 S2L/M3AV scripts are retained as ongoing extension experiments and are not part of the
 current finalized MathSpeech result table.
