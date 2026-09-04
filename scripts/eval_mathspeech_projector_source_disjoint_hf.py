@@ -99,6 +99,7 @@ def main():
     clap_dim = int(ckpt.get("clap_dim", 512))
     whisper_name = cargs.get("whisper_name", "openai/whisper-base")
     freeze_whisper = bool(cargs.get("freeze_whisper", True))
+    alignment_mode = cargs.get("alignment_mode", "absolute")
 
     processor = WhisperProcessor.from_pretrained(
         whisper_name, language="English", task="transcribe"
@@ -129,6 +130,7 @@ def main():
         raise ValueError("Checkpoint contains neither model_state_dict nor compact adapter states")
 
     print("checkpoint freeze_whisper:", freeze_whisper)
+    print("checkpoint alignment_mode:", alignment_mode)
     print("loaded state source      :", state_source)
 
     forced_ids = processor.get_decoder_prompt_ids(language="english", task="transcribe")
@@ -217,6 +219,7 @@ def main():
         "rtf": rtf,
         "adapter_type": cargs.get("adapter_type", "gated"),
         "pool_type": cargs.get("pool_type", "mean"),
+        "alignment_mode": alignment_mode,
         "lambda_align": cargs.get("lambda_align"),
         "lambda_hidden": cargs.get("lambda_hidden"),
         "align_loss_type": cargs.get("align_loss_type"),
