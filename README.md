@@ -48,7 +48,52 @@ for each trainable method
 | CLAP-guided Full Fine-tuning | Trainable | Whisper + Gated Adapter + Align Head | Yes | CE + 0.1 Hidden + 0.05 Align |
 | Ours (CLAP-guided Adapter) | Frozen | Gated Adapter + Align Head | Yes | CE + 0.1 Hidden + 0.05 Align |
 
-Ours uses a gated residual projector with bottleneck 256, `pool_type=cls` (the first Whisper encoder time step), dropout 0.1, adapter-scale initialization 0.01, cosine CLAP alignment, and a frozen Whisper backbone.
+Ours uses a gated residual projector with bottleneck 256, `pool_type=cls` (the first Whisper encoder time step), dropout 0.1, adapter-scale initialization 0.01, and a frozen Whisper backbone.
+
+### Semantic alignment modes
+
+`scripts/train_mathspeech_projector_best_wer.py` supports two alignment modes through `--alignment_mode`.
+
+```text
+absolute  : original implementation
+            align the adapted representation directly to the CLAP text embedding
+
+relative  : margin-free relative semantic alignment
+            encourage the adapted representation to be more CLAP-aligned than
+            the original Whisper representation
+```
+
+The original absolute cosine objective is preserved:
+
+```text
+L_align_abs = 1 - cos(z_adapted, e_CLAP)
+```
+
+The new relative objective uses a smooth margin-free ranking loss:
+
+```text
+s_adapted  = cos(z_adapted,  e_CLAP)
+s_original = cos(z_original, e_CLAP)
+L_align_rel = softplus(s_original - s_adapted)
+```
+
+The original Whisper reference branch is detached in relative mode, so it acts only as a semantic reference. No additional margin hyperparameter is introduced. Relative mode currently uses cosine similarity and therefore requires `--align_loss_type cosine`.
+
+Use the original implementation with:
+
+```bash
+--alignment_mode absolute \
+--align_loss_type cosine
+```
+
+Use relative semantic alignment with:
+
+```bash
+--alignment_mode relative \
+--align_loss_type cosine
+```
+
+Unless explicitly stated otherwise, previously reported Ours results correspond to the original `absolute` alignment mode.
 
 ## 3. MathSpeech
 
