@@ -38,13 +38,49 @@ class WhisperSemanticASR(BaseWhisperSemanticASR):
 
       No margin or additional tunable hyperparameter is introduced. The
       original branch is detached so it acts only as a reference.
+
+    alignment_mode="absolute_relational": complementary point-wise and
+      structural semantic supervision. The absolute term anchors each adapted
+      utterance to its Lecture-CLAP text target, while the relational term
+      matches pairwise semantic similarities among samples directly in the
+      decoder-facing pooled Whisper representation:
+
+          L_align = 0.5 * L_absolute + 0.5 * L_relational
+
+      where L_relational is the off-diagonal MSE between the student and
+      teacher cosine-similarity matrices. This mode introduces no additional
+      tunable loss weight and currently requires --align_loss_type cosine.
     """
 
     def __init__(self, *args, alignment_mode="absolute", **kwargs):
         super().__init__(*args, **kwargs)
-        if alignment_mode not in {"absolute", "relative"}:
+        if alignment_mode not in {"absolute", "relative", "absolute_relational"}:
             raise ValueError(f"Unknown alignment_mode: {alignment_mode}")
         self.alignment_mode = alignment_mode
+
+    @staticmethod
+    def relational_semantic_loss(student_repr, teacher_emb):
+        """Match pairwise semantic geometry without projecting spaces together.
+
+        student_repr: [B, d] pooled adapted Whisper representations.
+        teacher_emb:  [B, d_t] frozen Lecture-CLAP text embeddings.
+
+        The diagonal is excluded because self-similarity is always 1 and gives
+        no useful relational supervision. For a singleton batch there are no
+        valid pairs, so return a differentiable zero.
+        """
+        if student_repr.size(0) < 2:
+            return student_repr.sum() * 0.0
+
+        student_norm = F.normalize(student_repr, dim=-1)
+        teacher_norm = F.normalize(teacher_emb.detach(), dim=-1)
+
+        student_sim = student_norm @ student_norm.transpose(0, 1)
+        teacher_sim = teacher_norm @ teacher_norm.transpose(0, 1)
+
+        bsz = student_sim.size(0)
+        off_diag = ~torch.eye(bsz, dtype=torch.bool, device=student_sim.device)
+        return F.mse_loss(student_sim[off_diag], teacher_sim[off_diag])
 
     def forward(
         self,
@@ -72,6 +108,8 @@ class WhisperSemanticASR(BaseWhisperSemanticASR):
 
         zero = ce_loss.new_tensor(0.0)
         align_loss = None
+        absolute_align_loss = None
+        relational_align_loss = None
         parts = {
             "cosine": zero.detach(),
             "mse": zero.detach(),
@@ -93,7 +131,9 @@ class WhisperSemanticASR(BaseWhisperSemanticASR):
                     lambda_mse,
                     lambda_clip,
                 )
-            else:
+                absolute_align_loss = align_loss
+
+            elif self.alignment_mode == "relative":
                 # Relative semantic alignment is intentionally cosine-only.
                 # This keeps the objective margin-free and introduces no new
                 # hyperparameter beyond the existing lambda_align/lambda_cosine.
@@ -123,6 +163,38 @@ class WhisperSemanticASR(BaseWhisperSemanticASR):
                 # with the existing logs: absolute cosine distance of adapted z.
                 parts["cosine"] = (1.0 - sim_adapted).mean().detach()
 
+            else:
+                # Absolute + relational semantic alignment.
+                # Point-wise absolute supervision still uses AlignHead so the
+                # trainable parameter count and original semantic anchoring are
+                # preserved. In parallel, relational supervision bypasses the
+                # AlignHead and acts directly on the pooled representation that
+                # is derived from the decoder-facing h_adapted.
+                if align_loss_type != "cosine":
+                    raise ValueError(
+                        "alignment_mode='absolute_relational' currently requires "
+                        "--align_loss_type cosine"
+                    )
+
+                absolute_align_loss, parts = compute_alignment_loss(
+                    z_adapted,
+                    clap_emb,
+                    "cosine",
+                    temperature,
+                    lambda_cosine,
+                    lambda_mse,
+                    lambda_clip,
+                )
+                relational_align_loss = lambda_cosine * self.relational_semantic_loss(
+                    pooled_adapted,
+                    clap_emb,
+                )
+
+                # Equal, fixed composition: no extra mixing hyperparameter.
+                align_loss = 0.5 * (
+                    absolute_align_loss + relational_align_loss
+                )
+
             total_loss = total_loss + lambda_align * align_loss
 
         return {
@@ -130,6 +202,12 @@ class WhisperSemanticASR(BaseWhisperSemanticASR):
             "ce_loss": ce_loss.detach(),
             "hidden_loss": hidden_loss.detach(),
             "align_loss": align_loss.detach() if align_loss is not None else None,
+            "absolute_align_loss": (
+                absolute_align_loss.detach() if absolute_align_loss is not None else None
+            ),
+            "relational_align_loss": (
+                relational_align_loss.detach() if relational_align_loss is not None else None
+            ),
             "cosine_loss": parts["cosine"].detach(),
             "mse_loss": parts["mse"].detach(),
             "clip_loss": parts["clip"].detach(),
@@ -194,11 +272,14 @@ def main():
     ap.add_argument(
         "--alignment_mode",
         default="absolute",
-        choices=["absolute", "relative"],
+        choices=["absolute", "relative", "absolute_relational"],
         help=(
             "absolute: original alignment implementation; "
             "relative: margin-free softplus(sim_original - sim_adapted) "
-            "semantic alignment (requires --align_loss_type cosine)"
+            "semantic alignment; "
+            "absolute_relational: equal-weight point-wise cosine alignment + "
+            "pairwise semantic-geometry matching. The latter two modes require "
+            "--align_loss_type cosine"
         ),
     )
     ap.add_argument("--lambda_align", type=float, default=0.05)
@@ -219,8 +300,14 @@ def main():
     ap.add_argument("--selection_max_new_tokens", type=int, default=256)
     args = ap.parse_args()
 
-    if args.alignment_mode == "relative" and args.align_loss_type not in {"none", "cosine"}:
-        ap.error("--alignment_mode relative requires --align_loss_type cosine (or none)")
+    if (
+        args.alignment_mode in {"relative", "absolute_relational"}
+        and args.align_loss_type not in {"none", "cosine"}
+    ):
+        ap.error(
+            f"--alignment_mode {args.alignment_mode} requires "
+            "--align_loss_type cosine (or none)"
+        )
 
     set_seed(args.seed)
     outdir = Path(args.save_dir)
@@ -314,6 +401,8 @@ def main():
     print("freeze_whisper       :", args.freeze_whisper)
     print("alignment_mode       :", args.alignment_mode)
     print("align_loss_type      :", args.align_loss_type)
+    if args.alignment_mode == "absolute_relational":
+        print("align composition    : 0.5 * absolute + 0.5 * relational")
     print("selection_num_beams  :", args.selection_num_beams)
     print("selection metric     : valid_wer")
     print("total params         :", total_count)
@@ -327,8 +416,17 @@ def main():
 
     for epoch in range(1, args.epochs + 1):
         model.train()
-        sums = {"loss": 0.0, "ce": 0.0, "hidden": 0.0, "align": 0.0}
+        sums = {
+            "loss": 0.0,
+            "ce": 0.0,
+            "hidden": 0.0,
+            "align": 0.0,
+            "absolute_align": 0.0,
+            "relational_align": 0.0,
+        }
         align_count = 0
+        absolute_count = 0
+        relational_count = 0
 
         pbar = tqdm(train_loader, desc=f"epoch {epoch} train")
         for batch in pbar:
@@ -362,6 +460,12 @@ def main():
             if out["align_loss"] is not None:
                 sums["align"] += out["align_loss"].item()
                 align_count += 1
+            if out["absolute_align_loss"] is not None:
+                sums["absolute_align"] += out["absolute_align_loss"].item()
+                absolute_count += 1
+            if out["relational_align_loss"] is not None:
+                sums["relational_align"] += out["relational_align_loss"].item()
+                relational_count += 1
 
             pbar.set_postfix(
                 loss=f"{out['loss'].item():.4f}",
@@ -374,6 +478,8 @@ def main():
             "ce": sums["ce"] / n,
             "hidden": sums["hidden"] / n,
             "align": sums["align"] / max(align_count, 1),
+            "absolute_align": sums["absolute_align"] / max(absolute_count, 1),
+            "relational_align": sums["relational_align"] / max(relational_count, 1),
         }
         valid_stats = validate(model, valid_loader, device, args)
         valid_wer = evaluate_validation_wer(
@@ -389,6 +495,12 @@ def main():
             f"[epoch {epoch}] train_loss={train_stats['loss']:.4f} "
             f"valid_loss={valid_stats['loss']:.4f} valid_wer={valid_wer:.6f}"
         )
+        if args.alignment_mode == "absolute_relational":
+            print(
+                f"           train_align={train_stats['align']:.4f} "
+                f"absolute={train_stats['absolute_align']:.4f} "
+                f"relational={train_stats['relational_align']:.4f}"
+            )
 
         rows.append({
             "epoch": epoch,
