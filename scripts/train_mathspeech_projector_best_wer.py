@@ -4,19 +4,137 @@ from pathlib import Path
 
 import pandas as pd
 import torch
+import torch.nn.functional as F
 from jiwer import wer
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from transformers import WhisperProcessor
+from transformers.modeling_outputs import BaseModelOutput
 
 from train_mathspeech_projector_source_disjoint_hf import (
     DataCollatorSpeechSeq2SeqWithClap,
     MathSpeechDataset,
-    WhisperSemanticASR,
+    WhisperSemanticASR as BaseWhisperSemanticASR,
+    compute_alignment_loss,
     set_seed,
     torch_load_compat,
     validate,
 )
+
+
+class WhisperSemanticASR(BaseWhisperSemanticASR):
+    """
+    MathSpeech projector model with selectable semantic-alignment objective.
+
+    alignment_mode="absolute": preserves the original implementation exactly.
+      L_align = the loss selected by --align_loss_type between the adapted
+      representation and the CLAP text embedding.
+
+    alignment_mode="relative": parameter-free relative semantic alignment.
+      For cosine alignment, encourage the adapted representation to have
+      higher CLAP cosine similarity than the original Whisper representation:
+
+          L_rel = softplus(sim_original - sim_adapted)
+
+      No margin or additional tunable hyperparameter is introduced. The
+      original branch is detached so it acts only as a reference.
+    """
+
+    def __init__(self, *args, alignment_mode="absolute", **kwargs):
+        super().__init__(*args, **kwargs)
+        if alignment_mode not in {"absolute", "relative"}:
+            raise ValueError(f"Unknown alignment_mode: {alignment_mode}")
+        self.alignment_mode = alignment_mode
+
+    def forward(
+        self,
+        input_features,
+        labels,
+        clap_emb=None,
+        lambda_align=0.1,
+        lambda_hidden=0.1,
+        align_loss_type="cosine",
+        temperature=0.07,
+        lambda_cosine=1.0,
+        lambda_mse=1.0,
+        lambda_clip=1.0,
+    ):
+        h_adapted, h_original = self.encode_with_adapter(input_features, True)
+        outputs = self.whisper(
+            encoder_outputs=BaseModelOutput(last_hidden_state=h_adapted),
+            labels=labels,
+            return_dict=True,
+        )
+
+        ce_loss = outputs.loss
+        hidden_loss = F.mse_loss(h_adapted, h_original.detach())
+        total_loss = ce_loss + lambda_hidden * hidden_loss
+
+        zero = ce_loss.new_tensor(0.0)
+        align_loss = None
+        parts = {
+            "cosine": zero.detach(),
+            "mse": zero.detach(),
+            "clip": zero.detach(),
+        }
+
+        if clap_emb is not None and lambda_align > 0 and align_loss_type != "none":
+            pooled_adapted = self.pooler(h_adapted)
+            z_adapted = self.align_head(pooled_adapted)
+
+            if self.alignment_mode == "absolute":
+                # Original behavior: keep all existing absolute alignment losses.
+                align_loss, parts = compute_alignment_loss(
+                    z_adapted,
+                    clap_emb,
+                    align_loss_type,
+                    temperature,
+                    lambda_cosine,
+                    lambda_mse,
+                    lambda_clip,
+                )
+            else:
+                # Relative semantic alignment is intentionally cosine-only.
+                # This keeps the objective margin-free and introduces no new
+                # hyperparameter beyond the existing lambda_align/lambda_cosine.
+                if align_loss_type != "cosine":
+                    raise ValueError(
+                        "alignment_mode='relative' currently requires "
+                        "--align_loss_type cosine"
+                    )
+
+                pooled_original = self.pooler(h_original.detach())
+                z_original = self.align_head(pooled_original).detach()
+
+                z_adapted_norm = F.normalize(z_adapted, dim=-1)
+                z_original_norm = F.normalize(z_original, dim=-1)
+                target_norm = F.normalize(clap_emb, dim=-1)
+
+                sim_adapted = (z_adapted_norm * target_norm).sum(dim=-1)
+                sim_original = (z_original_norm * target_norm).sum(dim=-1)
+
+                # Smooth, margin-free ranking objective:
+                #   lower loss when adapted semantics are better than original.
+                align_loss = lambda_cosine * F.softplus(
+                    sim_original - sim_adapted
+                ).mean()
+
+                # Keep cosine_loss as an interpretable diagnostic compatible
+                # with the existing logs: absolute cosine distance of adapted z.
+                parts["cosine"] = (1.0 - sim_adapted).mean().detach()
+
+            total_loss = total_loss + lambda_align * align_loss
+
+        return {
+            "loss": total_loss,
+            "ce_loss": ce_loss.detach(),
+            "hidden_loss": hidden_loss.detach(),
+            "align_loss": align_loss.detach() if align_loss is not None else None,
+            "cosine_loss": parts["cosine"].detach(),
+            "mse_loss": parts["mse"].detach(),
+            "clip_loss": parts["clip"].detach(),
+            "logits": outputs.logits,
+        }
 
 
 def normalize_text(tokenizer, text):
@@ -73,6 +191,16 @@ def main():
     ap.add_argument("--adapter_scale_init", type=float, default=0.01)
 
     ap.add_argument("--align_loss_type", default="cosine", choices=["none", "cosine", "mse", "clip", "cosine_clip", "cosine_mse", "all"])
+    ap.add_argument(
+        "--alignment_mode",
+        default="absolute",
+        choices=["absolute", "relative"],
+        help=(
+            "absolute: original alignment implementation; "
+            "relative: margin-free softplus(sim_original - sim_adapted) "
+            "semantic alignment (requires --align_loss_type cosine)"
+        ),
+    )
     ap.add_argument("--lambda_align", type=float, default=0.05)
     ap.add_argument("--lambda_hidden", type=float, default=0.1)
     ap.add_argument("--lambda_cosine", type=float, default=1.0)
@@ -90,6 +218,9 @@ def main():
     ap.add_argument("--selection_num_beams", type=int, default=5)
     ap.add_argument("--selection_max_new_tokens", type=int, default=256)
     args = ap.parse_args()
+
+    if args.alignment_mode == "relative" and args.align_loss_type not in {"none", "cosine"}:
+        ap.error("--alignment_mode relative requires --align_loss_type cosine (or none)")
 
     set_seed(args.seed)
     outdir = Path(args.save_dir)
@@ -147,6 +278,7 @@ def main():
         dropout=args.dropout,
         adapter_scale_init=args.adapter_scale_init,
         freeze_whisper=args.freeze_whisper,
+        alignment_mode=args.alignment_mode,
     )
 
     forced_ids = processor.get_decoder_prompt_ids(language="english", task="transcribe")
@@ -180,6 +312,8 @@ def main():
     print("=" * 70)
     print("CLAP PROJECTOR TRAINING — BEST VALIDATION WER SELECTION")
     print("freeze_whisper       :", args.freeze_whisper)
+    print("alignment_mode       :", args.alignment_mode)
+    print("align_loss_type      :", args.align_loss_type)
     print("selection_num_beams  :", args.selection_num_beams)
     print("selection metric     : valid_wer")
     print("total params         :", total_count)
